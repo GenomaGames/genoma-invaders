@@ -3,10 +3,10 @@ default:
   highlight_theme: default
   lang: en
   paths:
-    root: /
-    home: /
-    archive: /archive.html
-    rss: /feed.xml
+    root: /../
+    home: /../
+    archive: /../archive/
+    rss: /../feed.xml
   mathjax: false
   mathjax_autoNumber: false
   mermaid: false

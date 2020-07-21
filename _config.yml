@@ -21,7 +21,7 @@ text_skin: dark # "default" (default), "dark", "forest", "ocean", "chocolate", "
 highlight_theme: tomorrow-night # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url: "" # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl: /genoma-invaders # does not include hostname
-title: Genoma Games - Genoma Invaders
+title: Genoma Games
 description: >- # this means to ignore newlines until "Language & timezone"
   2D Game Shoot 'em Up like Space Invaders made to teach Game Development with Unity.
 
