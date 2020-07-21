@@ -1,0 +1,12 @@
+header:
+  - titles:
+      # @start locale config
+      en: &EN Archive
+      # @end locale config
+    url: /archive
+
+  - titles:
+      # @start locale config
+      en: &EN About
+      # @end locale config
+    url: /about

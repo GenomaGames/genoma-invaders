@@ -1,0 +1,24 @@
+$main-color-1: #81e66c;
+
+a {
+  font-weight: map-get($base, font-weight-bold);
+  @include link-colors($main-color-1);
+}
+
+.header {
+  a {
+    font-weight: map-get($base, font-weight);
+    text-decoration: none !important;
+    @include link-colors($header-text-color, $main-color-1);
+  }
+}
+
+a > .item__header, a.item__header, .item__header > a {
+  @include link-colors($text-color-d, $main-color-1);
+}
+
+.footer {
+  a {
+    @include link-colors ($footer-text-color, $main-color-1);
+  }
+}
