@@ -56,14 +56,6 @@ author:
 repository: GenomaGames/genoma-invaders
 repository_tree: gh-pages
 
-## => Paths
-##############################
-paths:
-  root: / # title link url, "/" (default)
-  home: / # home layout url, "/" (default)
-  archive: /archive # "/archive.html" (default)
-  rss: feed.xml # "/feed.xml" (default)
-
 ## => Post
 ##############################
 ## excerpt
