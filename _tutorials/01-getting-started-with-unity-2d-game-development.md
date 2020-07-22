@@ -197,4 +197,6 @@ We have seen:
 
 This is all for now.
 
+The resulting work of this tutorial can be checked out in the [Genoma Invaders Github, branch `tutorial/01`](https://github.com/GenomaGames/genoma-invaders/tree/tutorial/01).
+
 Happy Game Dev! :space_invader:
