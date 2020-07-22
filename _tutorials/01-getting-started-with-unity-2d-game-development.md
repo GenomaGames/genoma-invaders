@@ -1,5 +1,6 @@
 ---
 lesson: 1
+date: 2020-07-22
 ---
 
 # Genoma Invaders - Getting Started in Unity 2D Game Development
