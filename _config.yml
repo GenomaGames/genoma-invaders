@@ -174,10 +174,16 @@ exclude:
   - /node_modules
   - /vendor
 
+collections:
+  tutorials:
+    sort_by: lesson
+    output: true
+    permalink: /:collection/:title/
+
 defaults:
   - scope:
       path: ""
-      type: posts
+      type: tutorials
     values:
       layout: article
       author: AlbertoFdzM
