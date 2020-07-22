@@ -12,8 +12,8 @@ This post will cover the basics to start making 2D games in Unity.
 To follow this Unity tutorial you will need to:
 
 - [Install UnityHub](https://unity3d.com/es/get-unity/download)
-- [Install Unity](../_posts/2020-07-02-how-to-install-unity-2020.md)
-- [Create a new 2D Game Unity Project](../_posts/2020-07-16-how-to-create-a-unity-2d-project.md)
+- [Install Unity](/tutorials/unity/2020/07/02/how-to-install-unity-2020/)
+- [Create a new 2D Game Unity Project](/tutorials/unity/2020/07/16/how-to-create-a-unity-2d-project/)
 - [Have basic knowledge about Unity's interface](https://docs.unity3d.com/2020.1/Documentation/Manual/UsingTheEditor.html)
 
 ## Genoma Invaders Game
@@ -22,7 +22,7 @@ The game we will be developing during this tutorial series is **Genoma Invaders*
 
 > Genoma Invaders is a [Fixed shooter](https://en.wikipedia.org/wiki/Category:Fixed_shooters) from the [Shoot 'em up](https://en.wikipedia.org/wiki/Shoot_%27em_up#Fixed_shooters) game genre where you are a microscopic submarine killing bacteria, virus, and other microorganisms inside a human body.
 
-To define this project and its scope a very simple [Game Design Document](https://github.com/GenomaGames/genoma-invaders/tree/post/01/docs/one-page-design-document.md) has been created.
+To define this project and its scope a very simple [Game Design Document](https://github.com/GenomaGames/genoma-invaders/tree/post/01/docs/game-design-document.md) has been created.
 
 <small>_**Note:** Don't use this project as an example for game design as there is not much design process behind this project due to its educational purpose_</small>
 
