@@ -1,7 +1,9 @@
 header:
   - titles:
+      # @start locale config
       en: &EN Genoma Invaders
-    url: /../genoma-invaders/
+      # @end locale config
+    url: /
 
   - titles:
       # @start locale config
