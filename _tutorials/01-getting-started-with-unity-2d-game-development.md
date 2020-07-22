@@ -1,3 +1,7 @@
+---
+lesson: 1
+---
+
 # Genoma Invaders - Getting Started in Unity 2D Game Development
 
 This post will cover the basics to start making 2D games in Unity.
@@ -17,7 +21,7 @@ The game we will be developing during this tutorial series is **Genoma Invaders*
 
 > Genoma Invaders is a [Fixed shooter](https://en.wikipedia.org/wiki/Category:Fixed_shooters) from the [Shoot 'em up](https://en.wikipedia.org/wiki/Shoot_%27em_up#Fixed_shooters) game genre where you are a microscopic submarine killing bacteria, virus, and other microorganisms inside a human body.
 
-To define this project and its scope a very simple [Game Design Document](../docs/one-page-design-document.md) has been created.
+To define this project and its scope a very simple [Game Design Document](https://github.com/GenomaGames/genoma-invaders/tree/post/01/docs/one-page-design-document.md) has been created.
 
 <small>_**Note:** Don't use this project as an example for game design as there is not much design process behind this project due to its educational purpose_</small>
 
@@ -29,7 +33,7 @@ It is not mandatory, but a way to keep things tidy is to create a new directory 
 
 Let's start with the [**Scene**](https://docs.unity3d.com/2020.1/Documentation/Manual/CreatingScenes.html) Unity creates whenever you create a new project by renaming it from `SampleScene` to `Game`. Here is where all the game action will happen.
 
-![01-Unity_2020.1.0b13_(Beta)_blank_2D_project](/assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/01-Unity_2020.1.0b13_(Beta)_blank_2D_project.png)
+![01-Unity_2020_blank_2D_project](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/01-Unity_2020.1_blank_2D_project.png)
 
 Every game in Unity is contained within one or multiple scenes. For this project, we will be using them to store one level in each one and the main menu in another one, but for now, we only need one to start our game development.
 
@@ -41,11 +45,11 @@ Unity starts a project always by placing a [**Camera**](https://docs.unity3d.com
 
 A Game Object will represent the player. To create Game Objects in the Scene, click on the menu `GameObject > 2D Object > Sprite`.
 
-![02-Unity_GameObject_2D_Object_Sprite_menu](/assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/02-Unity_GameObject_2D_Object_Sprite_menu.png)
+![02-Unity_GameObject_2D_Object_Sprite_menu](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/02-Unity_GameObject_2D_Object_Sprite_menu.png)
 
 It will create a new Game Object in the Scene called `New Sprite`. Rename it to `Player` and ensure its position is in `X=0 Y=0 Z=0` in the [**Inspector window**](https://docs.unity3d.com/2020.1/Documentation/Manual/UsingTheInspector.html).
 
-![03-Unity_Inspector_Player_Game_Object](/assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/03-Unity_Inspector_Player_Game_Object.png)
+![03-Unity_Inspector_Player_Game_Object](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/03-Unity_Inspector_Player_Game_Object.png)
 
 ### Components
 
@@ -55,9 +59,9 @@ Each section in the Inspector window, divided by a line and a header, represents
 
 ### Sprites
 
-Time to inject some graphics into the game. Take this Player [sprite](https://en.wikipedia.org/wiki/Sprite_(computer_graphics)):
+Time to inject some graphics into the game. Take this [Player sprite](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/Player.png):
 
-![Player](/assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/Player.png)
+![Player](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/Player.png)
 
 And put it into the project. You can do it by dragging it into the [**Project window**](https://docs.unity3d.com/2020.1/Documentation/Manual/ProjectView.html) or placing it with your operating system file explorer into the project `Assets` directory. Place it under `Assets/Genoma Invaders/Player/Player.png`.
 
@@ -67,11 +71,11 @@ Let assign the Player sprite to the Player Game Object in the Scene:
 1. In the Inspector window, on the **Sprite Renderer** component, click on the circle of the left to the Sprite field to open the **Select Sprite** window
 1. Select the Player sprite on the Select Sprite window
 
-![04-Unity_Inspector_Sprite_Selection](/assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/04-Unity_Inspector_Sprite_Selection.png)
+![04-Unity_Inspector_Sprite_Selection](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/04-Unity_Inspector_Sprite_Selection.png)
 
 Now the Player entity is visible within the game Camera. To check this, go to the [**Game view**](https://docs.unity3d.com/2020.1/Documentation/Manual/GameView.html) view, you should see something like this:
 
-![05-Unity_Game_Panel](/assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/05-Unity_Game_Panel.png)
+![05-Unity_Game_Panel](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/05-Unity_Game_Panel.png)
 
 That little dot is our **Player** rendered by the camera. The reason it is so small is that the size of the sprite is 16x16 pixels. Sprites, Cameras, and settings in Unity need to be configured to render [Pixel Art](https://en.wikipedia.org/wiki/Pixel_art) correctly.
 
@@ -85,7 +89,7 @@ The primary problem Unity has with Pixel Art is that it treats the images used f
 
 To configure Player Sprite with proper settings, select it on the Project window to display its settings on the Inspector window.
 
-![06-Unity_Inspector_window_Texture_2D_Import_Settings](/assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/06-Unity_Inspector_window_Texture_2D_Import_Settings.png)
+![06-Unity_Inspector_window_Texture_2D_Import_Settings](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/06-Unity_Inspector_window_Texture_2D_Import_Settings.png)
 
 - **Pixels Per Unit**: 16 (It will make the sprite bigger in the Scene because when applying this value, it means that for this sprite 16 pixels will have to be rendered inside 1 game world unit)
 - **Filter Mode**: Point (no filter) (Will prevent blurriness with the pixels since that option is in charge of filtering the texture when it gets stretched)
@@ -93,13 +97,13 @@ To configure Player Sprite with proper settings, select it on the Project window
 
 Press the **Apply** button to save the changes.
 
-![07-Unity_Inspector_window_Import_Settings_for_Pixel_Art_16_pixels](/assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/07-Unity_Inspector_window_Import_Settings_for_Pixel_Art_16_pixels.png)
+![07-Unity_Inspector_window_Import_Settings_for_Pixel_Art_16_pixels](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/07-Unity_Inspector_window_Import_Settings_for_Pixel_Art_16_pixels.png)
 
 <small>_**Note:** This process needs to be made with every sprite included in the project._</small>
 
 If you look now in the Game view, the Player Sprite should look bigger.
 
-![08-Unity_Game_view_pixel_player](/assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/08-Unity_Game_view_pixel_player.png)
+![08-Unity_Game_view_pixel_player](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/08-Unity_Game_view_pixel_player.png)
 
 ### 2D Pixel Perfect Package
 
@@ -111,15 +115,15 @@ Another tweak we can do to help the Unity project render pixel graphics is to in
 
 To install the package, open the **Package Manager** window.
 
-![09-Unity_Window_menu](/assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/09-Unity_Window_menu.png)
+![09-Unity_Window_menu](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/09-Unity_Window_menu.png)
 
 Set **Packages** option to show **All** packages.
 
-![10-Unity_Package_Manager_window_Package_filter](/assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/10-Unity_Package_Manager_window_Package_filter.png)
+![10-Unity_Package_Manager_window_Package_filter](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/10-Unity_Package_Manager_window_Package_filter.png)
 
 Select the **2D Pixel Perfect** package and the press the **Install** button.
 
-![11-Unity_Package_Manager_2D_Pixel_Perfect_Install](/assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/11-Unity_Package_Manager_2D_Pixel_Perfect_Install.png)
+![11-Unity_Package_Manager_2D_Pixel_Perfect_Install](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/11-Unity_Package_Manager_2D_Pixel_Perfect_Install.png)
 
 #### 2D Pixel Perfect Package's Pixel Camera
 
@@ -127,7 +131,7 @@ The **2D Pixel Perfect** package comes with a **Component** called **Pixel Camer
 
 Select the **Main Camera** in the Hierarchy window to show its Inspector window. To add the **Pixel Camera** Component to the Main Camera, click on the **Add Component** button. Go to **Rendering** and then select **Pixel Perfect Camera** (you can also find it using the search input).
 
-![12-Unity_Add_Component_Pixel_Perfect_Camera](/assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/12-Unity_Add_Component_Pixel_Perfect_Camera.png)
+![12-Unity_Add_Component_Pixel_Perfect_Camera](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/12-Unity_Add_Component_Pixel_Perfect_Camera.png)
 
 Once the Main Camera has the Pixel Perfect Camera Component, edit its parameters.
 
@@ -136,7 +140,7 @@ Once the Main Camera has the Pixel Perfect Camera Component, edit its parameters
 - **Upscale Render Texture:** checked
 - **Crop Frame:** X and Y checked
 
-![13-Unity_Pixel_Perfect_Camera_Component](/assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/13-Unity_Pixel_Perfect_Camera_Component.png)
+![13-Unity_Pixel_Perfect_Camera_Component](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/13-Unity_Pixel_Perfect_Camera_Component.png)
 
 <small>_**Note:** checkout [2D Pixel Perfect package documentation](https://docs.unity3d.com/Packages/com.unity.2d.pixel-perfect@3.0/manual/index.html) for more info._</small>
 
@@ -146,22 +150,22 @@ Once the Main Camera has the Pixel Perfect Camera Component, edit its parameters
 
 Unity can simulate resolutions and aspect ratios freely. Let's begin by setting up a new **Aspect** configuration on the Game view:
 
-![14-Unity_Game_view_aspect_configuration_menu](/assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/14-Unity_Game_view_aspect_configuration_menu.png)
+![14-Unity_Game_view_aspect_configuration_menu](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/14-Unity_Game_view_aspect_configuration_menu.png)
 
 To simulate a Taito arcade machine create a mew aspect with 224 with and 256 height:
-![15-Unity_Game_view_new_aspect_form](/assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/15-Unity_Game_view_new_aspect_form.png)
+![15-Unity_Game_view_new_aspect_form](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/15-Unity_Game_view_new_aspect_form.png)
 
 When the new aspect is selected, the Game view will change to represent this resolution. To try how the game looks under this resolution, press the **Play** button and select it.
 
-![16-Unity_Game_view_aspect_selected](/assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/16-Unity_Game_view_aspect_selected.png)
+![16-Unity_Game_view_aspect_selected](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/16-Unity_Game_view_aspect_selected.png)
 
 Stop the game by pressing the **Play** button again.
 
 ## Enemies
 
-Let's make the same process with this Enemy sprite:
+Let's make the same process with this [Enemy sprite](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/Enemy.png):
 
-![Enemy](/assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/Enemy.png)
+![Enemy](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/Enemy.png)
 
 Place it under `/Assets/Genoma Invaders/Enemy/Enemy.png` and update its settings as we did with the Player sprite.
 
@@ -171,15 +175,15 @@ Place it under `/Assets/Genoma Invaders/Enemy/Enemy.png` and update its settings
 
 Now, to create the Enemy Game Object in the Scene, there is another way to create it. Drag and drop the Enemy Sprite from the Project window to the Hierarchy window, this will create a new Game Object with a Sprite Renderer Component called "Enemy" in the Scene. 
 
-![17-Unity_Editor_create_sprite_object_in_scene](/assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/17-Unity_Editor_create_sprite_object_in_scene.png)
+![17-Unity_Editor_create_sprite_object_in_scene](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/17-Unity_Editor_create_sprite_object_in_scene.png)
 
 Now that we have two visible game objects in the Scene let's place them where they suppose to be in the game. Move the Player and the Enemy to be positioned similar to this.
 
-![18-Unity_Editor_Scene_Game_Object_move](/assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/18-Unity_Editor_Scene_Game_Object_move.png)
+![18-Unity_Editor_Scene_Game_Object_move](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/18-Unity_Editor_Scene_Game_Object_move.png)
 
 Now select the Enemy Game Object and press <kbd>Ctrl/Cmd</kbd> + <kbd>D</kbd>, in the Hierarchy should appear an `Enemy (1)` Game Object, you have just duplicated a Game Object, place it next to its partner, and you should end with something that starts to smell like a game.
 
-![19-Unity_Editor_Scene_Game_Object_duplication](/assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/19-Unity_Editor_Scene_Game_Object_duplication.png)
+![19-Unity_Editor_Scene_Game_Object_duplication](../assets/2020-07-18-genoma-invaders-getting-started-with-unity-2d-game-development/19-Unity_Editor_Scene_Game_Object_duplication.png)
 
 ## Wrap Up
 
