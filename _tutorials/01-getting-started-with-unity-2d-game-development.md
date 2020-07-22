@@ -22,7 +22,7 @@ The game we will be developing during this tutorial series is **Genoma Invaders*
 
 > Genoma Invaders is a [Fixed shooter](https://en.wikipedia.org/wiki/Category:Fixed_shooters) from the [Shoot 'em up](https://en.wikipedia.org/wiki/Shoot_%27em_up#Fixed_shooters) game genre where you are a microscopic submarine killing bacteria, virus, and other microorganisms inside a human body.
 
-To define this project and its scope a very simple [Game Design Document](https://github.com/GenomaGames/genoma-invaders/tree/post/01/docs/game-design-document.md) has been created.
+To define this project and its scope a very simple [Game Design Document](https://github.com/GenomaGames/genoma-invaders/tree/tutorial/01/docs/game-design-document.md) has been created.
 
 <small>_**Note:** Don't use this project as an example for game design as there is not much design process behind this project due to its educational purpose_</small>
 
