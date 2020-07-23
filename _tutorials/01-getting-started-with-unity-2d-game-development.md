@@ -1,11 +1,13 @@
 ---
 lesson: 1
+name: Getting Started in Unity 2D Game Development
+excerpt: This tutorial covers some basic concepts about start developing 2D games in Unity. Game Object, Components, Sprites, how to handle Pixel Art for games in Unity, and helps to get used to Unity editor interface.
 date: 2020-07-22
 ---
 
 # Genoma Invaders - Getting Started in Unity 2D Game Development
 
-This post will cover the basics to start making 2D games in Unity.
+This tutorial covers some basic concepts about start developing 2D games in Unity. Game Object, Components, Sprites, how to handle Pixel Art for games in Unity, and helps to get used to Unity editor interface.
 
 ## Requirements
 
@@ -20,7 +22,7 @@ To follow this Unity tutorial you will need to:
 
 The game we will be developing during this tutorial series is **Genoma Invaders**.
 
-> Genoma Invaders is a [Fixed shooter](https://en.wikipedia.org/wiki/Category:Fixed_shooters) from the [Shoot 'em up](https://en.wikipedia.org/wiki/Shoot_%27em_up#Fixed_shooters) game genre where you are a microscopic submarine killing bacteria, virus, and other microorganisms inside a human body.
+> Genoma Invaders is a [Fixed shooter](https://en.wikipedia.org/wiki/Category:Fixed_shooters) from the [Shoot 'em up](https://en.wikipedia.org/wiki/Shoot_%27em_up) game genre where you are a microscopic submarine killing bacteria, virus, and other microorganisms inside a human body.
 
 To define this project and its scope a very simple [Game Design Document](https://github.com/GenomaGames/genoma-invaders/tree/tutorial/01/docs/game-design-document.md) has been created.
 
