@@ -183,12 +183,26 @@ collections:
 defaults:
   - scope:
       path: ""
+      type: posts
+    values:
+      layout: article
+      author: AlbertoFdzM
+      sharing: false
+      license: CC-BY-SA-4.0
+      aside:
+        toc: false
+      show_edit_on_github: false
+      show_subscribe: false
+      pageview: false
+      comment: false
+  - scope:
+      path: ""
       type: tutorials
     values:
       layout: article
       author: AlbertoFdzM
       sharing: false
-      license: false
+      license: CC-BY-SA-4.0
       aside:
         toc: false
       show_edit_on_github: false
