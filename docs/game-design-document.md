@@ -2,7 +2,7 @@
 
 ## Game Identity / Mantra
 
-Genoma Invaders is a [Fixed shooter](https://en.wikipedia.org/wiki/Category:Fixed_shooters) from the [Shoot 'em up](https://en.wikipedia.org/wiki/Shoot_%27em_up#Fixed_shooters) game genre about a microscopic robot killing bacteria, virus, and other microorganisms inside a human body.
+Genoma Invaders is a [Fixed shooter](https://en.wikipedia.org/wiki/Category:Fixed_shooters) from the [Shoot 'em up](https://en.wikipedia.org/wiki/Shoot_%27em_up) game genre about a microscopic robot killing bacteria, virus, and other microorganisms inside a human body.
 
 The company making this robots is Homeostack CORP and the product is called Vascuphen.
 
