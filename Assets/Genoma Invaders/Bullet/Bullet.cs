@@ -5,7 +5,7 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     private float speed = 5;
 
-    void Update()
+    private void Update()
     {
         // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Vector3-up.html
         Vector3 direction = Vector3.up;
