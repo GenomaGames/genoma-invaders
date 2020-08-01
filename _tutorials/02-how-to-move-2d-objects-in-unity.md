@@ -19,7 +19,7 @@ This time we will **learn to move 2D Object in Unity by scripting in C# using Ga
 - To have completed ["**Getting Started in Unity 2D Game Development**"](../_tutorials/01-getting-started-with-unity-2d-game-development.md)
 - [Have **basics knowledge in programming with C#**](https://www.codecademy.com/learn/learn-c-sharp)
   
-  Due to this course's intention, we will not cover knowledge about programming in C# but rather provide info with complex terms in the language or Unity API. The link provided should give you enough experience to complete this lesson once you finish it.
+  <small>_**Note:** Due to this course's intention, we will not cover knowledge about programming in C# but rather provide info with complex terms in the language or Unity API. The link provided should give you enough experience to complete this lesson once you finish it._</small>
 - [**Visual Studio Editor**](https://visualstudio.microsoft.com/es/vs/) (you should have installed it when installing Unity) or another code editor of your preference.
 
 In the previous tutorial about "Getting Started in Unity 2D Game Development", we walk through basic concepts about developing 2D games in Unity, ending up with a scene with some still Game Objects. It's time to give them some movement logic starting by the Player.
