@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
         // https://docs.unity3d.com/ScriptReference/Input.GetAxisRaw.html
         float rawHorizontalAxis = Input.GetAxisRaw("Horizontal");
 
+        // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Vector3-zero.html
         Vector3 direction = Vector3.zero;
         direction.x = rawHorizontalAxis;
 
