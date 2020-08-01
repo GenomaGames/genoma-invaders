@@ -5,6 +5,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float speed = 2;
 
+    [SerializeField]
+    private GameObject bullet;
+
     void Update()
     {
         // https://docs.unity3d.com/ScriptReference/Input.GetAxisRaw.html
@@ -23,5 +26,14 @@ public class Player : MonoBehaviour
         transform.Translate(
           translation
         );
+
+        // https://docs.unity3d.com/ScriptReference/Input.GetButtonDown.html
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Vector3 playerPosition = transform.position;
+
+            // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Quaternion-identity.html
+            Instantiate(bullet, playerPosition, Quaternion.identity);
+        }
     }
 }
