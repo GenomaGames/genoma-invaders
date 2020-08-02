@@ -120,6 +120,7 @@ public class Player : MonoBehaviour
 }
 
 ```
+
 <small>_**Note:** Visit any of the links in the code's comments for more info._</small>
 
 
@@ -127,7 +128,7 @@ This code is creating a [`Vector3`](https://docs.unity3d.com/2020.1/Documentatio
 
 TL;DR; This will make the player move 1 Scene unit per second to the right.
 
-To see the result go to Unity Editor and press the "Play" button (You can als use the keyboard shortcut <kbd>Ctrl/Cmd</kbd>+<kbd>P</kbd>).
+To see the result go to Unity Editor and press the "Play" button (You can use the keyboard shortcut <kbd>Ctrl/Cmd</kbd>+<kbd>P</kbd>).
 
 ![04-Unity_Editor_Player_moving_right](../assets/lesson-02/04-Unity_Editor_Player_moving_right.gif)
 
