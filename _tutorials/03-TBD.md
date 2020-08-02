@@ -2,7 +2,6 @@
 lesson: 2
 name: Not defined
 excerpt: Not defined
-date: 2020-07-24
 published: false
 ---
 
