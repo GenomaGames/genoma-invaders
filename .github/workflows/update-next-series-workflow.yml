@@ -13,4 +13,4 @@ jobs:
         with:
           script: |
             const script = require(`${process.env.GITHUB_WORKSPACE}/.github/scripts/update-next-series-script.js`)
-            console.log(script({github, context, core, io}))
+            console.log(await script({github, context, core, io}))
