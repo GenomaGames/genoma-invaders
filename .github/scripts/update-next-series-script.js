@@ -39,6 +39,7 @@ module.exports = async ({ github, context, core, io }) => {
     }
 
     if (baseBranch) {
+      console.log(`Merging ${headBranchName} into ${baseBranchName}`);
       await github.repos.merge({
         owner,
         repo,
@@ -46,7 +47,7 @@ module.exports = async ({ github, context, core, io }) => {
         head: headBranchName,
       });
 
-      let headBranchName = baseBranchName;
+      headBranchName = baseBranchName;
     }
   } while (baseBranch);
 };
