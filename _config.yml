@@ -324,5 +324,5 @@ footer:
       url: https://github.com/GenomaGames
     - label: feed_label
       icon: fas fa-fw fa-rss-square
-      url: /tutorials/feed.xml
+      url: /feed.xml
 
