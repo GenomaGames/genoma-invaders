@@ -3,6 +3,7 @@ module.exports = async ({ github, context, core, io }) => {
   const repo = context.repo.repo;
   const head = context.ref;
   const branchSections = head.split("/");
+  console.log(branchSections);
   const padding = branchSections[1].length;
   const next = Number.parseInt(branchSections[1]) + 1;
   const nextId = next.toString().padStart(padding, "0");
