@@ -3,13 +3,6 @@ on:
   push:
     branches:
       - tutorial/**
-  workflow_run:
-    workflows:
-      - Update Next Branch Series
-    branches:
-      - tutorial/**
-    types:
-      - completed
 jobs:
   merge_on_next:
     name: Merge on Next
