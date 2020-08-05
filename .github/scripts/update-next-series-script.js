@@ -6,39 +6,48 @@ module.exports = async ({ github, context, core, io }) => {
     repo,
     branch: context.ref,
   });
-  const head = headBranch.name;
-  const branchSections = head.split("/");
-  const padding = branchSections[1].length;
-  const next = Number.parseInt(branchSections[1]) + 1;
-  const nextId = next.toString().padStart(padding, "0");
-  const base = `${branchSections[0]}/${nextId}`;
+  let headBranchName = headBranch.name;
+  const branchSections = headBranchName.split("/");
+  const indexPadding = branchSections[1].length;
 
-  let baseBranch;
+  let baseBranch = null;
+  let branchIndex = Number.parseInt(branchSections[1])
 
-  try {
-    const response = await github.repos.getBranch({
-      owner,
-      repo,
-      branch: base,
-    });
+  do {
+    branchIndex++;
+    const formattedIndex = branchIndex.toString().padStart(indexPadding, "0");
+    const baseBranchName = `${branchSections[0]}/${formattedIndex}`;
 
-    baseBranch = response.data;
-  } catch (err) {
-    if (err.status && err.status === 404) {
-      console.log(`Branch ${base} not found`);
-    } else {
-      throw err;
+    let baseBranch;
+
+    try {
+      const response = await github.repos.getBranch({
+        owner,
+        repo,
+        branch: baseBranchName,
+      });
+
+      baseBranch = response.data;
+    } catch (err) {
+      if (err.status && err.status === 404) {
+        console.log(`Branch ${baseBranchName} not found`);
+      } else {
+        throw err;
+      }
+
+      baseBranch = null;
     }
-  }
 
-  if (baseBranch) {
-    return github.repos.merge({
-      owner,
-      repo,
-      base,
-      head,
-    });
-  } else {
-    return;
-  }
+    if (baseBranch) {
+      console.log(`Merging ${headBranchName} into ${baseBranchName}`);
+      await github.repos.merge({
+        owner,
+        repo,
+        base: baseBranchName,
+        head: headBranchName,
+      });
+
+      headBranchName = baseBranchName;
+    }
+  } while (baseBranch);
 };
