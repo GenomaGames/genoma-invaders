@@ -15,7 +15,7 @@ module.exports = async ({ github, context, core, io }) => {
 
   do {
     branchIndex++;
-    const formattedIndex = next.toString().padStart(indexPadding, "0");
+    const formattedIndex = branchIndex.toString().padStart(indexPadding, "0");
     const baseBranchName = `${branchSections[0]}/${formattedIndex}`;
 
     let baseBranch;
