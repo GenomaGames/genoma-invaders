@@ -32,11 +32,13 @@ module.exports = async ({ github, context, core, io }) => {
   }
 
   if (baseBranch) {
-    await github.repos.merge({
+    return github.repos.merge({
       owner,
       repo,
       base,
       head,
     });
+  } else {
+    return;
   }
 };
