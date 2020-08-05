@@ -14,20 +14,25 @@ source "https://rubygems.org"
 # gem "minima", "~> 2.0"
 
 # Theme
-gem "jekyll-text-theme"
+# gem "jekyll-text-theme"
+gem 'minimal-mistakes-jekyll'
 
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
-gem "github-pages", group: :jekyll_plugins
+gem 'github-pages', group: :jekyll_plugins
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.6"
+  gem 'jekyll-feed'
   gem 'jekyll-default-layout'
   gem 'jekyll-optional-front-matter'
   gem 'jekyll-titles-from-headings'
   gem 'jekyll-relative-links'
+  gem 'jekyll-github-metadata'
+  gem 'jekyll-redirect-from'
+  gem 'jekyll-sitemap'
+  gem 'jekyll-remote-theme'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

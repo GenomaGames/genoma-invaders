@@ -156,6 +156,7 @@ Unity can simulate resolutions and aspect ratios freely. Let's begin by setting 
 ![14-Unity_Game_view_aspect_configuration_menu](../assets/lesson-01/14-Unity_Game_view_aspect_configuration_menu.png)
 
 To simulate a Taito arcade machine create a mew aspect with 224 with and 256 height:
+
 ![15-Unity_Game_view_new_aspect_form](../assets/lesson-01/15-Unity_Game_view_new_aspect_form.png)
 
 When the new aspect is selected, the Game view will change to represent this resolution. To try how the game looks under this resolution, press the **Play** button and select it.

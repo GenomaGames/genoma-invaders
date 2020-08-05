@@ -1,18 +1,11 @@
-header:
-  - titles:
-      # @start locale config
-      en: &EN Genoma Invaders
-      # @end locale config
+main:
+  - title: Genoma Invaders
     url: /
 
-  - titles:
-      # @start locale config
-      en: &EN Archive
-      # @end locale config
-    url: /../archive/
-
-  - titles:
-      # @start locale config
-      en: &EN About
-      # @end locale config
-    url: /../about/
+tutorial:
+  - title: Genoma Invaders
+    children:
+      - title: 1. Getting Started in Unity 2D Game Development
+        url: /01-getting-started-with-unity-2d-game-development/
+      - title: 2. How to Move 2D Object in Unity
+        url: /02-how-to-move-2d-objects-in-unity/

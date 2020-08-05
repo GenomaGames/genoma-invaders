@@ -6,17 +6,29 @@ kbd {
     0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
   color: #333;
   display: inline-block;
-  font-family: map-get($base, font-family-code);
-  font-size: 0.85em;
+  font-family: $monospace;
+  font-size: $type-size-6;
   font-weight: 700;
   line-height: 1;
   padding: 0.1em 0.4em;
   white-space: nowrap;
 }
 
-.layout--article {
+.layout--single .page__content {
   p > img {
     display: block;
     margin: 0 auto;
   }
+
+  .emoji {
+    display: inline-block;
+    height: 1.2em;
+    margin: 0 0.1em;
+    vertical-align: -0.2em;
+    width: auto;
+  }
+}
+
+.sidebar {
+  opacity: 1;
 }

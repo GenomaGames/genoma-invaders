@@ -1,0 +1,23 @@
+{%- assign i18n = site.data.ui-text[site.locale] -%}
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    {%- if i18n.follow_label -%}
+      <li><strong>{{ i18n.follow_label }}</strong></li>
+    {%- endif -%}
+
+    {%- if site.footer.links -%}
+      {%- for link in site.footer.links -%}
+        {%- if link.label and link.url -%}
+          <li>
+            <a href="{{ link.url | relative_url }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ i18n[link.label] | default: link.label }}</a>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+  </ul>
+</div>
+
+<div class="page__footer-copyright">
+  &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. {{ i18n.powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.
+</div>

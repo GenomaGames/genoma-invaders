@@ -1,169 +1,32 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+# https://pages.github.com/versions/
+# https://github.com/jekyll/jekyll/blob/v3.8.7/docs/_docs/configuration.md
+# Where things are
+# source: .
+# destination: ./_site
+# collections_dir: .
+# plugins_dir: _plugins
+# layouts_dir: _layouts
+# data_dir: _data
+# includes_dir: _includess
+# https://jekyllrb.com/docs/assets/#sassscss
+# sass:
+#   sass_dir: _sass
+#   style: compressed
+sass:
+  style: compressed
+collections:
+  # posts:
+  #   output: true
+  tutorials:
+    sort_by: lesson
+    output: true
+    permalink: /:title/
 
-## !USE TEXT THEME
-# theme: jekyll-text-theme # Gem-based Jekyll Themes
-remote_theme: kitian616/jekyll-TeXt-theme # Jekyll Remote Theme, see https://github.com/benbalter/jekyll-remote-theme for more information.
-# https://tianqi.name/jekyll-TeXt-theme/docs/en/quick-start
-#
-# ,--------.      ,--.   ,--. ,--.
-# '--.  .--',---.  \  `.'  /,-'  '-.
-#    |  |  | .-. :  .'    \ '-.  .-'
-#    |  |  \   --. /  .'.  \  |  |
-#    `--'   `----''--'   '--' `--'
-## => Site Settings
-##############################
-text_skin: dark # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
-highlight_theme: tomorrow-night # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
-url: https://genomagames.com # the base hostname & protocol for your site e.g. https://www.someone.com
-baseurl: /genoma-invaders # does not include hostname
-title: Genoma Games
-description: >- # this means to ignore newlines until "Language & timezone"
-  2D Game Shoot 'em Up like Space Invaders made to teach Game Development with Unity.
-
-## => Language and Timezone
-##############################
-lang: en # the language of your site, default as "en"
-timezone: Europe/Madrid # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
-
-## => Author and Social
-##############################
-author:
-  type: organization # "person" (default), "organization"
-  name: Genoma Games
-  url: https://genomagames.com
-  # avatar: # path or url of avatar image (square)
-  bio: Indie Game Development Studio based in Madrid, Spain.
-  email: info@genomagames.com
-  facebook: GenomaGames # "user_name" the last part of your profile url, e.g. https://www.facebook.com/user_name
-  twitter: GenomaGames # "user_name" the last part of your profile url, e.g. https://twitter.com/user_name
-  # weibo: # "user_id"   the last part of your profile url, e.g. https://www.weibo.com/user_id/profile?...
-  # googleplus: # "user_id"   the last part of your profile url, e.g. https://plus.google.com/u/0/user_id
-  telegram: GenomaGames # "user_name" the last part of your profile url, e.g. https://t.me/user_name
-  medium: genoma-games # "user_name" the last part of your profile url, e.g. https://medium.com/user_name
-  # zhihu: # "user_name" the last part of your profile url, e.g. https://www.zhihu.com/people/user_name
-  # douban: # "user_name" the last part of your profile url, e.g. https://www.douban.com/people/user_name
-  # linkedin: # "user_name" the last part of your profile url, e.g. https://www.linkedin.com/in/user_name
-  github: GenomaGames # "user_name" the last part of your profile url, e.g. https://github.com/user_name
-  # npm: genoma-games # "user_name" the last part of your profile url, e.g. https://www.npmjs.com/~user_name
-
-## => GitHub Repository (if the site is hosted by GitHub)
-##############################
-repository: GenomaGames/genoma-invaders
-repository_tree: gh-pages
-
-## => Post
-##############################
-## excerpt
-excerpt_separator: <!--more-->
-
-## license
-license: CC-BY-SA-4.0 # "CC-BY-4.0", "CC-BY-SA-4.0", "CC-BY-NC-4.0", "CC-BY-ND-4.0"
-
-## TOC
-toc:
-  selectors: h1,h2,h3 # "h1,h2,h3" (default)
-
-## => Markdown Enhancements
-##############################
-## Mathjax https://tianqi.name/jekyll-TeXt-theme/docs/en/markdown-enhancements#mathjax
-mathjax: false # false (default), true
-mathjax_autoNumber: false # false (default), true
-
-## Mermaid https://tianqi.name/jekyll-TeXt-theme/docs/en/markdown-enhancements#mermaid
-mermaid: false # false (default), true
-
-## Chart https://tianqi.name/jekyll-TeXt-theme/docs/en/markdown-enhancements#chart
-chart: false # false (default), true
-
-## => Paginate
-##############################
-paginate: 8
-paginate_path: /page:num # don't change this unless for special need
-
-## => Sources
-##############################
-sources: unpkg # bootcdn (default), unpkg
-
-## => Sharing
-##############################
-sharing:
-  provider: false # false (default), "addtoany", "addthis", "custom"
-
-  ## AddThis
-  # addthis:
-  #   id: # AddThis pubid, e.g. ra-5xxxxxxxxxxx
-
-## => Comments
-##############################
-comments:
-  provider: false # false (default), "disqus", "gitalk", "valine", "custom"
-
-  ## Disqus
-  disqus:
-    shortname: genoma-games # the Disqus shortname for the site
-
-  ## Gitalk
-  # please refer to https://github.com/gitalk/gitalk for more info.
-  # gitalk:
-  #   clientID: # GitHub Application Client ID
-  #   clientSecret: # GitHub Application Client Secret
-  #   repository: # GitHub repo
-  #   owner: # GitHub repo owner
-  #   admin:# GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
-  #     # - your GitHub Id
-  ## Valine
-  # please refer to https://valine.js.org/en/ for more info.
-  # valine:
-  #   app_id: # LeanCloud App id
-  #   app_key: # LeanCloud App key
-  #   placeholder: # Prompt information
-  #   visitor: # false (default)
-  #   meta: # "[nick, mail, link]" (default) nickname, E-mail, Personal-site
-
-## => Pageview
-##############################
-pageview:
-  provider: false # false (default), "leancloud", "custom"
-
-  ## Leancloud
-  # leancloud:
-  #   app_id: # LeanCloud App id
-  #   app_key: # LeanCloud App key
-  #   app_class: # LeanCloud App class
-
-## => Search
-##############################
-search:
-  provider: false # "default" (default), false, "google", "custom"
-
-  ## Google Custom Search Engine
-  # google:
-  #   custom_search_engine_id: # Google Custom Search Engine ID
-
-## => Analytics
-##############################
-analytics:
-  provider: false # false (default), "google", "custom"
-
-  ## Google Analytics
-  # google:
-  #   tracking_id: # Google Analytics id for the site
-  #   anonymize_ip: false # Anonymize IP tracking for Analytics
-
-## => Build
-##############################
-# https://jekyllrb.com/docs/configuration/markdown/
-markdown: GFM # kramdown, GFM
-# https://jekyllrb.com/docs/liquid/tags/#code-snippet-highlighting
-highlighter: rouge
-# https://jekyllrb.com/docs/permalinks/#global
-permalink: pretty
-
+# Handling Reading
+# safe: false
+safe: true
+include:
+  - .htaccess
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -171,66 +34,295 @@ exclude:
   - README.md
   - package-lock.json
   - package.json
-  - /node_modules
-  - /vendor
+  - node_modules
+  - vendor/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+# keep_files:
+#   - .git
+#   - .svn
+# encoding: utf-8
+# markdown_ext: markdown,mkdown,mkdn,mkd,md
+markdown_ext: md
+strict_front_matter: false
 
-collections:
-  tutorials:
-    sort_by: lesson
-    output: true
-    permalink: /:collection/:title/
+# Filtering Content
+# show_drafts: null
+# limit_posts: 0
+# future: false
+# unpublished: false
 
-defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: article
-      author: AlbertoFdzM
-      sharing: false
-      license: CC-BY-SA-4.0
-      aside:
-        toc: false
-      show_edit_on_github: false
-      show_subscribe: false
-      pageview: false
-      comment: false
-  - scope:
-      path: ""
-      type: tutorials
-    values:
-      layout: article
-      author: AlbertoFdzM
-      sharing: false
-      license: CC-BY-SA-4.0
-      aside:
-        toc: false
-      show_edit_on_github: false
-      show_subscribe: false
-      pageview: false
-      comment: false
-
-## => Plugins
-##############################
-
-optional_front_matter:
-  remove_originals: true
-
-titles_from_headings:
-  enabled: true
-  strip_title: true
-  collections: true
-
-relative_links:
-  enabled: true
-  collections: true
-
+# Plugins
+# whitelist: []
+# https://github.com/github/pages-gem/blob/master/lib/github-pages/plugins.rb#L21
+whitelist:
+  # https://github.com/jekyll/jekyll-coffeescript
+  - jekyll-coffeescript
+  # https://github.com/github/jekyll-commonmark-ghpages
+  - jekyll-commonmark-ghpages
+  # https://github.com/jekyll/jekyll-feed
+  - jekyll-feed
+  # https://github.com/jekyll/jekyll-gist
+  - jekyll-gist
+  # https://github.com/jekyll/github-metadata
+  - jekyll-github-metadata
+  # https://github.com/jekyll/jekyll-paginate
+  - jekyll-paginate
+  # https://github.com/jekyll/jekyll-redirect-from
+  - jekyll-redirect-from
+  # https://github.com/jekyll/jekyll-seo-tag
+  # https://jekyll.github.io/jekyll-seo-tag/usage/
+  - jekyll-seo-tag
+  # https://github.com/jekyll/jekyll-sitemap
+  - jekyll-sitemap
+  # https://github.com/benbalter/jekyll-avatar
+  - jekyll-avatar
+  # https://github.com/jekyll/jemoji
+  - jemoji
+  # https://github.com/jekyll/jekyll-mentions
+  - jekyll-mentions
+  # https://github.com/benbalter/jekyll-relative-links
+  - jekyll-relative-links
+  # https://github.com/benbalter/jekyll-optional-front-matter
+  - jekyll-optional-front-matter
+  # https://github.com/benbalter/jekyll-readme-index
+  - jekyll-readme-index
+  # https://github.com/benbalter/jekyll-default-layout
+  - jekyll-default-layout
+  # https://github.com/benbalter/jekyll-titles-from-headings
+  - jekyll-titles-from-headings
+  # https://github.com/benbalter/jekyll-include-cache
+  - jekyll-include-cache
+  # https://primer.style/octicons/packages/jekyll
+  - jekyll-octicons
+  # https://github.com/benbalter/jekyll-remote-theme
+  - jekyll-remote-theme
+  # https://github.com/jekyll/jekyll-admin
+  - jekyll-admin
+# plugins: []
 plugins:
   - jekyll-feed
-  - jekyll-paginate
   - jekyll-sitemap
   - jemoji
   - jekyll-default-layout
   - jekyll-optional-front-matter
   - jekyll-titles-from-headings
   - jekyll-relative-links
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+  - jekyll-remote-theme
+
+# Conversion
+# https://jekyllrb.com/docs/configuration/markdown/
+# https://docs.github.com/en/github/working-with-github-pages/setting-a-markdown-processor-for-your-github-pages-site-using-jekyll
+# markdown: kramdown
+markdown: kramdown
+# https://jekyllrb.com/docs/liquid/tags/#code-snippet-highlighting
+# highlighter: rouge
+# lsi: false
+# excerpt_separator: \n\n
+# incremental: false
+
+# Serving
+# detach: false
+# port: 4000
+# host: 127.0.0.1
+# the base hostname & protocol for your site e.g. https://www.someone.com
+url: https://genomagames.com
+# does not include hostname
+baseurl: /genoma-invaders
+# show_dir_listing: false
+
+# Outputting
+# https://jekyllrb.com/docs/permalinks/#global
+# permalink: date
+permalink: pretty
+# https://jekyllrb.com/docs/pagination/
+# paginate_path: /page:num
+# see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
+timezone: Europe/Madrid
+
+# quiet: false
+# verbose: false
+# defaults: []
+defaults:
+  - scope:
+      path: ""
+      type: tutorials
+    values:
+      layout: single
+      sidebar:
+        nav: tutorial
+      toc: true
+      toc_label: Index
+      toc_icon: file-alt
+      toc_sticky: true
+      author: AlbertoFdzM
+      author_profile: false
+      read_time: true
+      comments: true
+      share: true
+      related: false
+
+# liquid:
+#   error_mode: warn
+
+# Markdown Processors
+# rdiscount:
+#   extensions: []
+
+# redcarpet:
+#   extensions: []
+
+# https://jekyllrb.com/docs/configuration/markdown/
+# https://kramdown.gettalong.org/options.html
+kramdown:
+  input: GFM # GFM, kramdown
+  parse_block_html: true
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+## PLUGINS ##
+
+# https://github.com/jekyll/jekyll-feed
+feed:
+  path: /index.xml
+  collections:
+    tutorials:
+      path: /feed.xml
+
+# https://github.com/jekyll/jekyll-mentions
+jekyll-mentions:
+  base_url: https://twitter.com
+
+# https://github.com/benbalter/jekyll-optional-front-matter
+optional_front_matter:
+  remove_originals: true
+
+# https://github.com/benbalter/jekyll-titles-from-headings
+titles_from_headings:
+  enabled: true
+  strip_title: true
+  collections: true
+
+# https://github.com/benbalter/jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
+
+## THEME ##
+
+# Jekyll Remote Theme, see https://github.com/benbalter/jekyll-remote-theme for more information.
+
+# https://raw.githubusercontent.com/mmistakes/minimal-mistakes/4.19.3/_config.yml
+# theme: minimal-mistakes-jekyll
+remote_theme: mmistakes/minimal-mistakes@4.19.3
+minimal_mistakes_skin: genoma # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
+locale: en-US
+title: Genoma Games
+title_separator: "-"
+subtitle:
+name: Genoma Games
+description: >-
+  2D Game Shoot 'em Up like Space Invaders made to teach Game Development with Unity.
+home_url: /../
+repository: GenomaGames/genoma-invaders
+repository_tree: gh-pages
+head_scripts:
+teaser:
+logo: /assets/icon_156.png
+# https://mmistakes.github.io/minimal-mistakes/docs/navigation/#breadcrumbs-beta
+breadcrumbs: true
+words_per_minute: 300
+
+# https://mmistakes.github.io/minimal-mistakes/docs/configuration/#comments
+comments:
+  provider: disqus
+  disqus:
+    shortname: genoma-games
+
+# https://mmistakes.github.io/minimal-mistakes/docs/configuration/#custom-feed-url
+# atom_feed:
+#   path: "http://feeds.feedburner.com/youFeedname"
+
+# https://mmistakes.github.io/minimal-mistakes/docs/configuration/#site-search
+# search: true
+# search_full_content: false
+# search_provider: lunr
+
+# https://mmistakes.github.io/minimal-mistakes/docs/configuration/#seo-social-sharing-and-analytics-settings
+google_site_verification:
+bing_site_verification:
+naver_site_verification:
+yandex_site_verification:
+
+# https://mmistakes.github.io/minimal-mistakes/docs/configuration/#twitter-cards-and-facebook-open-graph
+twitter:
+  username: GenomaGames
+facebook:
+  username: GenomaGames
+  publisher: https://www.facebook.com/GenomaGames
+og_image: /assets/icon.png
+
+# https://mmistakes.github.io/minimal-mistakes/docs/configuration/#include-your-social-profile-in-search-results
+social:
+  type: Organization
+  name: Genoma Games
+  links:
+
+# https://mmistakes.github.io/minimal-mistakes/docs/configuration/#analytics
+analytics:
+  provider: google-gtag
+  google:
+    tracking_id: UA-74490555-3
+    anonymize_ip: false
+
+# https://mmistakes.github.io/minimal-mistakes/docs/configuration/#site-author
+# author:
+#   name: "Your Name"
+#   avatar: "/assets/images/bio-photo.jpg"
+#   bio: "I am an **amazing** person." # Note: Markdown is allowed
+#   location: "Somewhere"
+#   links:
+#     - label: "Made Mistakes"
+#       icon: "fas fa-fw fa-link"
+#       url: "https://mademistakes.com"
+#     - label: "Twitter"
+#       icon: "fab fa-fw fa-twitter-square"
+#       url: "https://twitter.com/mmistakes"
+#     - label: "GitHub"
+#       icon: "fab fa-fw fa-github"
+#       url: "https://github.com/mmistakes"
+#     - label: "Instagram"
+#       icon: "fab fa-fw fa-instagram"
+#       url: "https://instagram.com/mmistakes"
+
+# https://mmistakes.github.io/minimal-mistakes/docs/configuration/#site-footer
+footer:
+  links:
+    - label: Twitter
+      icon: fab fa-fw fa-twitter-square
+      url: https://twitter.com/GenomaGames
+    - label: Instagram
+      icon: fab fa-fw fa-instagram
+      url: https://instagram.com/GenomaGames
+    - label: Facebook
+      icon: fab fa-fw fa-facebook
+      url: https://facebook.com/GenomaGames
+    - label: GitHub
+      icon: fab fa-fw fa-github
+      url: https://github.com/GenomaGames
+    - label: feed_label
+      icon: fas fa-fw fa-rss-square
+      url: /tutorials/feed.xml
+
