@@ -4,7 +4,7 @@ on:
     branches:
       - tutorial/**
   workflow_run:
-    workflow:
+    workflows:
       - Update Next Branch Series
     branches:
       - tutorial/**
