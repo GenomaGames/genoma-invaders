@@ -1,7 +1,7 @@
 module.exports = async ({ github, context, core, io }) => {
   const owner = context.repo.owner;
   const repo = context.repo.repo;
-  const { data: headBranch } = await await github.repos.getBranch({
+  const { data: headBranch } = await github.repos.getBranch({
     owner,
     repo,
     branch: context.ref,
@@ -12,16 +12,31 @@ module.exports = async ({ github, context, core, io }) => {
   const next = Number.parseInt(branchSections[1]) + 1;
   const nextId = next.toString().padStart(padding, "0");
   const base = `${branchSections[0]}/${nextId}`;
-  const { data: baseBranch } = await await github.repos.getBranch({
-    owner,
-    repo,
-    branch: base,
-  });
 
-  return github.repos.merge({
-    owner,
-    repo,
-    base,
-    head,
-  });
+  let baseBranch;
+
+  try {
+    const response = await github.repos.getBranch({
+      owner,
+      repo,
+      branch: base,
+    });
+
+    baseBranch = response.data;
+  } catch (err) {
+    if (err.status && err.status === 404) {
+      console.log(`Branch ${base} not found`);
+    } else {
+      throw err;
+    }
+  }
+
+  if (baseBranch) {
+    await github.repos.merge({
+      owner,
+      repo,
+      base,
+      head,
+    });
+  }
 };
