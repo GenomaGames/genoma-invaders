@@ -50,4 +50,6 @@ module.exports = async ({ github, context, core, io }) => {
       headBranchName = baseBranchName;
     }
   } while (baseBranch);
+
+  return `All next "${branchSections[0]}" branches up to date`
 };
