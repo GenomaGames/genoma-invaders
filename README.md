@@ -7,6 +7,7 @@ Genoma Invaders is a [Fixed shooter](https://en.wikipedia.org/wiki/Category:Fixe
 | Lesson | Title                                                     | Branch                              |
 | ------ | --------------------------------------------------------- | ----------------------------------- |
 | 1      | [Getting Started in Unity 2D Game Development][lesson-01] | [`tutorial/01`](./tree/tutorial/01) |
+| 2      | [Getting Started in Unity 2D Game Development][lesson-02] | [`tutorial/02`](./tree/tutorial/02) |
 
 ## Author
 
@@ -20,3 +21,4 @@ Licensed under [CC-BY-SA-4.0](./LICENSE)
 
 
 [lesson-01]: http://genomagames.com/genoma-invaders/tutorials/01-getting-started-with-unity-2d-game-development/
+[lesson-02]: https://genomagames.com/genoma-invaders/02-how-to-move-2d-objects-in-unity/

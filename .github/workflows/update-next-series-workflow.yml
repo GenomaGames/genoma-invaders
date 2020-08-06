@@ -1,0 +1,16 @@
+name: Update Next Branch Series
+on:
+  push:
+    branches:
+      - tutorial/**
+jobs:
+  merge_on_next:
+    name: Merge on Next
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/github-script@v2
+        with:
+          script: |
+            const script = require(`${process.env.GITHUB_WORKSPACE}/.github/scripts/update-next-series-script.js`)
+            console.log(await script({github, context, core, io}))
