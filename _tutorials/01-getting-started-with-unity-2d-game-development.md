@@ -5,6 +5,7 @@ excerpt: This tutorial covers some basic concepts about start developing 2D game
 date: 2020-07-22
 redirect_from:
   - /tutorials/01-getting-started-with-unity-2d-game-development
+  - /tutorials/01-getting-started-with-unity-2d-game-development/
 ---
 
 # Genoma Invaders - Getting Started in Unity 2D Game Development
