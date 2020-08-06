@@ -65,17 +65,34 @@ module.exports = async ({ github, context, core, io }) => {
 
   const defaultBranchName = repository.default_branch;
 
-  console.log(
-    `Creating PR to merge ${headBranchName} into ${defaultBranchName}`
-  );
-
-  const { date: pullRequest } = await github.pulls.create({
+  const { data: pullRequests } = await github.pulls.list({
     owner: owner,
     repo: repositoryName,
-    title: `Accumulative from "${headBranch.name}"`,
     head: headBranchName,
     base: defaultBranchName,
   });
+
+  let pullRequest = null;
+
+  if (pullRequests.length === 0) {
+    console.log(
+      `Creating PR to merge ${headBranchName} into ${defaultBranchName}`
+    );
+
+    const response = await github.pulls.create({
+      owner: owner,
+      repo: repositoryName,
+      title: `Accumulative from "${headBranch.name}"`,
+      head: headBranchName,
+      base: defaultBranchName,
+    });
+
+    pullRequest = response.data;
+  } else {
+    console.log(`PR to merge ${headBranchName} into ${defaultBranchName} already exists`)
+
+    pullRequest = pullRequests[0];
+  }
 
   console.log(pullRequest.url);
 
