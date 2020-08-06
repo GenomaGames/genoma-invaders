@@ -94,7 +94,7 @@ module.exports = async ({ github, context, core, io }) => {
     pullRequest = pullRequests[0];
   }
 
-  console.log(pullRequest.url);
+  console.log(pullRequest.html_url);
 
   return `All branches after "${headBranch.name}" are up to date`;
 };
