@@ -35,7 +35,7 @@ Select the Player Game Object and press the "Add Component" button in the Inspec
 
 This action will create a C# file under `/Assets/Player.cs` that defines a component named "Player", and then it will add this Component to the Player Game Object. Move the `Player.cs` file to `/Assets/Genoma Invaders/Player/` directory using the Project window to maintain the project's files organized.
 
-### Player Controller
+## Player Controller
 
 The Player component will be the Player Controller or, in other words, the Component in charge of handle the player's logic.
 
@@ -76,7 +76,7 @@ When `Enemy.cs` file is created, Unity reloads for a sort time and will register
 
 <small>_**Note:** Remember to add the Enemy component to both enemies._</small>
 
-### Game Object Movement
+## Game Object Movement
 
 To make the Player Game Object move, edit `Player.cs` file. First, we will clean it up a bit, so it doesn't have unnecessary code:
 
@@ -133,7 +133,7 @@ To see the result go to Unity Editor and press the "Play" button (You can use th
 
 It's alive!!! But we need to be able to control this little guy.
 
-### Detect Player Input
+## Detect Player Input
 
 To control the Player, we need to use Unity's [Input Manager](https://docs.unity3d.com/2020.1/Documentation/Manual/class-InputManager.html). With the [`Input.GetAxisRaw`](https://docs.unity3d.com/ScriptReference/Input.GetAxisRaw.html) method, you can retrieve the corresponding axis input value, in this case, if some left or right key is pressed.
 
@@ -220,7 +220,7 @@ Now the `2` we set for the `speed` property will be a default value when the Com
 
 <small>_**Note:** Properties changed during Play mode will not be saved and will reset to its value before stating Play mode. More info in Unity's Manual section "[Game View](https://docs.unity3d.com/2020.1/Documentation/Manual/GameView.html)"_</small>
 
-### Instantiate Game Objects
+## Instantiate Game Objects
 
 Time to make our Player shoot some bullets. Download this Bullet sprite:
 
