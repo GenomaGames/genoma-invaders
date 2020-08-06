@@ -3,6 +3,8 @@ lesson: 1
 name: Getting Started in Unity 2D Game Development
 excerpt: This tutorial covers some basic concepts about start developing 2D games in Unity. Game Object, Components, Sprites, how to handle Pixel Art for games in Unity, and helps to get used to Unity editor interface.
 date: 2020-07-22
+redirect_from:
+  - /tutorials/01-getting-started-with-unity-2d-game-development
 ---
 
 # Genoma Invaders - Getting Started in Unity 2D Game Development
