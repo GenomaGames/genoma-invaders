@@ -1,9 +1,9 @@
 module.exports = async ({ github, context, core, io }) => {
   const owner = context.repo.owner;
-  const repo = context.repo.repo;
+  const repositoryName = context.repo.repo;
   const { data: headBranch } = await github.repos.getBranch({
     owner,
-    repo,
+    repo: repositoryName,
     branch: context.ref,
   });
   let headBranchName = headBranch.name;
@@ -29,7 +29,7 @@ module.exports = async ({ github, context, core, io }) => {
     try {
       const response = await github.repos.getBranch({
         owner,
-        repo,
+        repo: repositoryName,
         branch: baseBranchName,
       });
 
@@ -46,9 +46,10 @@ module.exports = async ({ github, context, core, io }) => {
 
     if (baseBranch) {
       console.log(`Merging ${headBranchName} into ${baseBranchName}`);
+
       await github.repos.merge({
         owner,
-        repo,
+        repo: repositoryName,
         base: baseBranchName,
         head: headBranchName,
       });
@@ -56,6 +57,25 @@ module.exports = async ({ github, context, core, io }) => {
       headBranchName = baseBranchName;
     }
   } while (baseBranch);
+
+  const { data: repository } = await github.repos.get({
+    owner: owner,
+    repo: repositoryName,
+  });
+
+  const defaultBranchName = repository.default_branch;
+
+  console.log(
+    `Creating PR to merge ${headBranchName} into ${defaultBranchName}`
+  );
+
+  await github.pulls.create({
+    owner: owner,
+    repo: defaultBranchName,
+    title: `Accumulative from "${headBranch.name}"`,
+    head: headBranchName,
+    base: defaultBranchName,
+  });
 
   return `All branches after "${headBranch.name}" are up to date`;
 };
