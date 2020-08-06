@@ -3,6 +3,11 @@ lesson: 2
 name: How to Move 2D Objects in Unity
 excerpt: This tutorial shows basics for Unity 2D Game Development concepts like adding custom components to Game Object, fundamental Unity scripting with C#, 2D Game Object movement in Unity, how to handle inputs in Unity and how to instantiate Game Object in Unity.
 date: 2020-08-01
+tagline: Adding custom components to Game Object, fundamental Unity scripting with C#, 2D Game Object movement in Unity, how to handle inputs in Unity, and how to instantiate Game Object in Unity
+header:
+  overlay_image: /assets/lesson-02/cover_image.gif
+  overlay_filter: rgba(0, 0, 0,.8)
+  caption: "[see full image](../assets/lesson-02/cover_image.gif)"
 ---
 
 # Genoma Invaders - How to Move 2D Objects in Unity
@@ -222,7 +227,7 @@ Now the `2` we set for the `speed` property will be a default value when the Com
 
 ## Instantiate Game Objects
 
-Time to make our Player shoot some bullets. Download this Bullet sprite:
+Time to make our Player shoot some bullets. Download this [Bullet sprite](../assets/lesson-02/Bullet.png):
 
 ![Bullet](../assets/lesson-02/Bullet.png)
 
