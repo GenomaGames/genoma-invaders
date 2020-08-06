@@ -11,7 +11,13 @@ module.exports = async ({ github, context, core, io }) => {
   const indexPadding = branchSections[1].length;
 
   let baseBranch = null;
-  let branchIndex = Number.parseInt(branchSections[1])
+  let branchIndex = Number.parseInt(branchSections[1]);
+
+  if (Number.isNaN(branchIndex)) {
+    throw new Error(
+      `"${headBranchName}" can not be parsed to update branch series. Checkout you "on.push.branch" property to be sure it tracks only branches with names like "foo/01" -> "foo/**"`
+    );
+  }
 
   do {
     branchIndex++;
@@ -51,5 +57,5 @@ module.exports = async ({ github, context, core, io }) => {
     }
   } while (baseBranch);
 
-  return `All next "${branchSections[0]}" branches up to date`
+  return `All branches after "${headBranch.name}" are up to date`;
 };
