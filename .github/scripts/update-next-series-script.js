@@ -69,13 +69,15 @@ module.exports = async ({ github, context, core, io }) => {
     `Creating PR to merge ${headBranchName} into ${defaultBranchName}`
   );
 
-  await github.pulls.create({
+  const { date: pullRequest } = await github.pulls.create({
     owner: owner,
     repo: repositoryName,
     title: `Accumulative from "${headBranch.name}"`,
     head: headBranchName,
     base: defaultBranchName,
   });
+
+  console.log(pullRequest.url);
 
   return `All branches after "${headBranch.name}" are up to date`;
 };
