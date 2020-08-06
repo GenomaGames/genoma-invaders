@@ -71,7 +71,7 @@ module.exports = async ({ github, context, core, io }) => {
 
   await github.pulls.create({
     owner: owner,
-    repo: defaultBranchName,
+    repo: repositoryName,
     title: `Accumulative from "${headBranch.name}"`,
     head: headBranchName,
     base: defaultBranchName,
