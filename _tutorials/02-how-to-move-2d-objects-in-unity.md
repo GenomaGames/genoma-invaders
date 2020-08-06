@@ -1,11 +1,11 @@
 ---
 lesson: 2
-name: How to Move 2D Object in Unity
+name: How to Move 2D Objects in Unity
 excerpt: This tutorial shows basics for Unity 2D Game Development concepts like adding custom components to Game Object, fundamental Unity scripting with C#, 2D Game Object movement in Unity, how to handle inputs in Unity and how to instantiate Game Object in Unity.
 date: 2020-08-01
 ---
 
-# Genoma Invaders - How to Move 2D Object in Unity
+# Genoma Invaders - How to Move 2D Objects in Unity
 
 This tutorial shows **basics for Unity 2D Game Development concepts like adding custom components to Game Object, fundamental Unity scripting with C#, 2D Game Object movement in Unity, how to handle inputs in Unity, and how to instantiate Game Object in Unity**.
 
