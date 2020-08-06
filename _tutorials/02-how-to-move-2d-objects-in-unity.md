@@ -11,9 +11,6 @@ This tutorial shows **basics for Unity 2D Game Development concepts like adding 
 
 We are not going to go through details about the structure of code and Unity API in this tutorial as we want to see results as early as possible. To get more info about this topics, you can refer to [Unity's Manual section "Creating and Using Scripts"](https://docs.unity3d.com/2020.1/Documentation/Manual/CreatingAndUsingScripts.html), [Unity API Scripting Reference](https://docs.unity3d.com/2020.1/Documentation/ScriptReference/index.html) and [Unity Learn](https://learn.unity.com/)
 
-
-This time we will **learn to move 2D Object in Unity by scripting in C# using Game Components**.
-
 ## Requirements
 
 - To have completed ["**Getting Started in Unity 2D Game Development**"](../_tutorials/01-getting-started-with-unity-2d-game-development.md)
@@ -22,7 +19,9 @@ This time we will **learn to move 2D Object in Unity by scripting in C# using Ga
   <small>_**Note:** Due to this course's intention, we will not cover knowledge about programming in C# but rather provide info with complex terms in the language or Unity API. The link provided should give you enough experience to complete this lesson once you finish it._</small>
 - [**Visual Studio Editor**](https://visualstudio.microsoft.com/es/vs/) (you should have installed it when installing Unity) or another code editor of your preference.
 
-In the previous tutorial about "Getting Started in Unity 2D Game Development", we walk through basic concepts about developing 2D games in Unity, ending up with a scene with some still Game Objects. It's time to give them some movement logic starting by the Player.
+In the previous tutorial, ["Getting Started in Unity 2D Game Development"](../_tutorials/01-getting-started-with-unity-2d-game-development.md), we walk through basic concepts about developing 2D games in Unity, ending up with a scene with some still Game Objects. It's time to give them some movement logic starting by the Player.
+
+This time we will **learn to move 2D Object in Unity by scripting in C# using Game Components**.
 
 ## Custom Components
 
