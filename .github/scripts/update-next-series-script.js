@@ -56,13 +56,17 @@ module.exports = async ({ github, context, core, io }) => {
         });
       } catch (err) {
         if (err && err.status && err.status === 409) {
-          throw new Error(`Can not merge ${headBranchName} into ${baseBranchName} due to clonflicts`)
+          console.error(
+            `Can not merge ${headBranchName} into ${baseBranchName} due to clonflicts`
+          );
+
+          process.exit(1);
         } else {
-          throw err
+          throw err;
         }
       }
 
-      console.log(`${headBranchName} merged into ${baseBranchName}`)
+      console.log(`${headBranchName} merged into ${baseBranchName}`);
 
       headBranchName = baseBranchName;
     }
@@ -99,7 +103,9 @@ module.exports = async ({ github, context, core, io }) => {
 
     pullRequest = response.data;
   } else {
-    console.log(`PR to merge ${headBranchName} into ${defaultBranchName} already exists`)
+    console.log(
+      `PR to merge ${headBranchName} into ${defaultBranchName} already exists`
+    );
 
     pullRequest = pullRequests[0];
   }
