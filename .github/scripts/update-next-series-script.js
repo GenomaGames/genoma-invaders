@@ -89,7 +89,9 @@ module.exports = async ({ github, context, core, io }) => {
 
     pullRequest = response.data;
   } else {
-    console.log(`PR to merge ${headBranchName} into ${defaultBranchName} already exists`)
+    console.log(
+      `PR to merge ${headBranchName} into ${defaultBranchName} already exists`
+    );
 
     pullRequest = pullRequests[0];
   }
