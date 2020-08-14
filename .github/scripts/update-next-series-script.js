@@ -45,14 +45,24 @@ module.exports = async ({ github, context, core, io }) => {
     }
 
     if (baseBranch) {
-      console.log(`Merging ${headBranchName} into ${baseBranchName}`);
+      console.log(`Trying to merge ${headBranchName} into ${baseBranchName}`);
 
-      await github.repos.merge({
-        owner,
-        repo: repositoryName,
-        base: baseBranchName,
-        head: headBranchName,
-      });
+      try {
+        await github.repos.merge({
+          owner,
+          repo: repositoryName,
+          base: baseBranchName,
+          head: headBranchName,
+        });
+      } catch (err) {
+        if (err && err.status && err.status === 409) {
+          throw new Error(`Can not merge ${headBranchName} into ${baseBranchName} due to clonflicts`)
+        } else {
+          throw err
+        }
+      }
+
+      console.log(`${headBranchName} merged into ${baseBranchName}`)
 
       headBranchName = baseBranchName;
     }
