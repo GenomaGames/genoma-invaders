@@ -10,6 +10,14 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject bullet;
 
+    // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Rigidbody2D.html
+    private Rigidbody2D rb2D;
+
+    private void Awake()
+    {
+        rb2D = GetComponent<Rigidbody2D>();
+    }
+
     private void Update()
     {
         // https://docs.unity3d.com/ScriptReference/Input.GetAxisRaw.html
