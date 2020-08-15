@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 
+// https://docs.unity3d.com/2020.1/Documentation/ScriptReference/RequireComponent.html
+[RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
     [SerializeField]
