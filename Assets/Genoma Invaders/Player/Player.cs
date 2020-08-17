@@ -15,11 +15,14 @@ public class Player : MonoBehaviour
     // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Vector3-zero.html
     private Vector3 move = Vector3.zero;
 
+    // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/MonoBehaviour.Awake.html
     private void Awake()
     {
+        // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Component.GetComponent.html
         rb2D = GetComponent<Rigidbody2D>();
     }
 
+    // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/MonoBehaviour.Update.html
     private void Update()
     {
         // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Input.GetAxisRaw.html
