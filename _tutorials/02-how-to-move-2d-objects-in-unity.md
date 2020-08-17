@@ -30,7 +30,7 @@ To get more info and learn about these topics, you can refer to:
 
 - Complete ["**Getting Started in Unity 2D Game Development**"](../_tutorials/01-getting-started-with-unity-2d-game-development.md) or checkout the code from [Genoma Invaders' Github repository, branch `tutorial/01`](https://github.com/GenomaGames/genoma-invaders/tree/tutorial/01)
 - Have **basics knowledge in programming with [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language))**
-- [**Visual Studio Editor**](https://visualstudio.microsoft.com/es/vs/) (you should have installed it when installing Unity) or another code editor of your preference
+- [**Visual Studio Editor**](https://visualstudio.microsoft.com/vs/) (you should have installed it when installing Unity) or another code editor of your preference
 
 In the previous tutorial, ["Getting Started in Unity 2D Game Development"](../_tutorials/01-getting-started-with-unity-2d-game-development.md), we walk through basic concepts about developing 2D games in Unity, ending up with a scene with some still Game Objects. It's time to give them some movement logic starting by the Player.
 

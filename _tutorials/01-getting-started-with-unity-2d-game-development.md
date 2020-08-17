@@ -16,7 +16,7 @@ This tutorial covers some basic concepts about start developing 2D games in Unit
 
 To follow this Unity tutorial you will need to:
 
-- [Install UnityHub](https://unity3d.com/es/get-unity/download)
+- [Install UnityHub](https://unity3d.com/get-unity/download)
 - [Install Unity](/tutorials/unity/2020/07/02/how-to-install-unity-2020/)
 - [Create a new 2D Game Unity Project](/tutorials/unity/2020/07/16/how-to-create-a-unity-2d-project/)
 - [Have basic knowledge about Unity's interface](https://docs.unity3d.com/2020.1/Documentation/Manual/UsingTheEditor.html)

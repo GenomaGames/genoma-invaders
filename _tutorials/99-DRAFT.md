@@ -20,7 +20,7 @@ EXCERPT
 
 - Complete ["**PREVIOUS_TUTORIAL_TITLE**"](../_tutorials/PREVIOUS_TUTORIAL_MD) or checkout the code from [Genoma Invaders' Github repository, branch `PREVIOUS_TUTORIAL_BRANCH`](https://github.com/GenomaGames/genoma-invaders/tree/PREVIOUS_TUTORIAL_BRANCH)
 - [**Unity 2020.1**](https://store.unity.com/download?ref=personal)
-- [**Visual Studio Editor**](https://visualstudio.microsoft.com/es/vs/)
+- [**Visual Studio Editor**](https://visualstudio.microsoft.com/vs/)
 
 
 ## Intro
