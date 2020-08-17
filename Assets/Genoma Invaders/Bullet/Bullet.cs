@@ -6,6 +6,16 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     private float speed = 5;
 
+    // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Rigidbody2D.html
+    private Rigidbody2D rb2D;
+
+    // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/MonoBehaviour.Awake.html
+    private void Awake () {
+        // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Component.GetComponent.html
+        rb2D = GetComponent<Rigidbody2D>();
+    }
+
+    // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/MonoBehaviour.Update.html
     private void Update()
     {
         // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Vector3-up.html
