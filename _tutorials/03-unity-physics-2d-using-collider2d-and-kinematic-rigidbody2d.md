@@ -322,17 +322,17 @@ Yay! We have finished providing our Game Objects with physic properties and move
 
 ## Unity's Collider2D, Detecting Collisions
 
-Now that Game Objects has physical body representation the physics engine needs a way to detects collisions between these bodies this can be made using [2D Colliders](https://docs.unity3d.com/2020.1/Documentation/Manual/Collider2D.html). There are several types of Collider2D based in their shape, we will use [Box Collider 2D](https://docs.unity3d.com/2020.1/Documentation/Manual/class-BoxCollider2D.html) given its simplicity and that we do not need complicated shapes yet for the project.
+Now that Game Objects has physical body representation the physics engine needs a way to detects collisions between these bodies this can be made using [2D Colliders](https://docs.unity3d.com/2020.1/Documentation/Manual/Collider2D.html). There are several types of Collider2D based in their shape, we will use [Box Collider 2D](https://docs.unity3d.com/2020.1/Documentation/Manual/class-BoxCollider2D.html) Component given its simplicity and that we do not need complicated shapes yet for the project.
 
 To make a collision posible we need 2 Game Objects that have Colliders2D attached to them. We are going to make our Bullets collide with Enemies.
 
 ### Bullet to Enemy Collision
 
-Start by adding the Box Collider 2D to the Bullet Game Object Prefab. Now open the Bullet Prefab on the editor by making double click on it.
+Start with the Bullet Game Object Prefab. Open the Bullet Prefab on the editor by making double click on it.
 
+![03-unity-physics-2d-using-collider2d-and-kinematic-rigidbody2d](../assets/lesson-03/05-Unity_Bullet_Prefab_Editor.gif)
 
-
- and set its Size property to `X = 0.125` and `Y = 0.25` units, this is because our Bullet Sprites have a size of 2x4 pixels, that translated to game units (1 unit -> 16 pixel) is equal to `2 / 16 = 0.125` and `4 /16 = 0.25`.
+Add the Box Collider 2D Component and set its Size property to `X = 0.125` and `Y = 0.25` units. This size make the Collider area equal in size to the Sprite, the Bullet Sprite have a size of 2x4 pixels, that translated to game units (1 unit -> 16 pixel) is equal to `2 / 16 = 0.125` and `4 /16 = 0.25`.
 
 
 ## Unity's Static Rigidbody2D, Level Walls
