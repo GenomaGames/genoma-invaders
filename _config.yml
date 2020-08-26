@@ -243,7 +243,7 @@ teaser:
 logo: /assets/icon_156.png
 # https://mmistakes.github.io/minimal-mistakes/docs/navigation/#breadcrumbs-beta
 breadcrumbs: true
-words_per_minute: 300
+words_per_minute: 200
 
 # https://mmistakes.github.io/minimal-mistakes/docs/configuration/#comments
 comments:
