@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 
+// https://docs.unity3d.com/2020.1/Documentation/ScriptReference/RequireComponent.html
+[RequireComponent(typeof(Rigidbody2D))]
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    private void Start()
+    // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Rigidbody2D.html
+    private Rigidbody2D rb2D;
+
+    // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/MonoBehaviour.Awake.html
+    private void Awake()
     {
-
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-
+        // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Component.GetComponent.html
+        rb2D = GetComponent<Rigidbody2D>();
     }
 }
