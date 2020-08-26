@@ -3,7 +3,7 @@ lesson: 3
 name: Unity Physics 2D Using Collider2D and Kinematic Rigidbody2D
 excerpt: Learn how to handle 2D game objects collisions while making a space invaders 2D game using the Unity physics 2D engine with 2D colliders and kinematic 2D rigid bodies.
 date: 2020-08-26
-published: false
+published: true
 tagline: Handling Game Objects movement and collisions using Unity Physics 2D Engine.
 header:
   overlay_image: /assets/lesson-03/cover_image.gif
