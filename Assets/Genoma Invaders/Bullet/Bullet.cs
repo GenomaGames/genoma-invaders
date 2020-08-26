@@ -32,4 +32,15 @@ public class Bullet : MonoBehaviour
             rb2D.MovePosition(newPosition);
         }
     }
+
+    // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/MonoBehaviour.OnTriggerEnter2D.html
+    private void OnTriggerEnter2D(Collider2D collider2D)
+    {
+        // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Component.CompareTag.html
+        if (collider2D.CompareTag("Enemy"))
+        {
+            //https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Object.Destroy.html
+            Destroy(collider2D.gameObject);
+        }
+    }
 }
