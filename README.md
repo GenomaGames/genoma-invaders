@@ -7,7 +7,7 @@ Genoma Invaders is a [Fixed shooter](https://en.wikipedia.org/wiki/Category:Fixe
 | Lesson | Title                                                                    | Branch                              |
 | ------ | ------------------------------------------------------------------------ | ----------------------------------- |
 | 1      | [Getting Started in Unity 2D Game Development][lesson-01]                | [`tutorial/01`](./tree/tutorial/01) |
-| 2      | [Getting Started in Unity 2D Game Development][lesson-02]                | [`tutorial/02`](./tree/tutorial/02) |
+| 2      | [How to Move 2D Objects in Unity][lesson-02]                             | [`tutorial/02`](./tree/tutorial/02) |
 | 3      | [Unity Physics 2D Using Collider2D and Kinematic Rigidbody2D][lesson-03] | [`tutorial/03`](./tree/tutorial/03) |
 
 ## Author
