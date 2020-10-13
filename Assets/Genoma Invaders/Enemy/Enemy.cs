@@ -21,7 +21,6 @@ public class Enemy : MonoBehaviour
     // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/MonoBehaviour.OnDestroy.html
     private void OnDestroy()
     {
-        Debug.Log("OnDestroy1");
         score.AddScore(100); // Increment game score by 100
     }
 }
