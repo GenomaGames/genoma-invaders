@@ -46,7 +46,7 @@ Select the Player Game Object and press the "Add Component" button in the Inspec
 
 <small>_**Note:** checkout [Unity's Manual section "Creating components with scripting"](https://docs.unity3d.com/2020.1/Documentation/Manual/CreatingComponents.html) for more info._</small>
 
-This action will create a C# file under `/Assets/Player.cs` that defines a component named "Player", and then it will add this Component to the Player Game Object. Move the `Player.cs` file to `/Assets/Genoma Invaders/Player/` directory using the Project window to maintain the project's files organized.
+This action will create a C# file under `/Assets/Player.cs` that defines a component named "Player", and then it will add this Component to the Player Game Object. Move the `Player.cs` file to `/Assets/Genoma Invaders/Player/` folder using the Project window to maintain the project's files organized.
 
 ## Player Controller
 
@@ -239,7 +239,7 @@ Time to make our Player shoot some bullets. Download this [Bullet sprite](../ass
 
 ![Bullet](../assets/lesson-02/Bullet.png)
 
-And place it under `/Assets/Bullet/` (new directory). Remember to edit the Sprite settings as we did with the Player and Enemy sprites in the [previous tutorial](../_tutorials/01-getting-started-with-unity-2d-game-development.md). Then use it to create a new Game Object in the Scene called Bullet.
+And place it under `/Assets/Bullet/` (new folder). Remember to edit the Sprite settings as we did with the Player and Enemy sprites in the [previous tutorial](../_tutorials/01-getting-started-with-unity-2d-game-development.md). Then use it to create a new Game Object in the Scene called Bullet.
 
 ![08-Unity_Editor_create_bullet_game_object](../assets/lesson-02/08-Unity_Editor_create_bullet_game_object.gif)
 
