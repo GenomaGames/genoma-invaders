@@ -9,3 +9,7 @@ tutorial:
         url: /01-getting-started-with-unity-2d-game-development/
       - title: 2. How to Move 2D Object in Unity
         url: /02-how-to-move-2d-objects-in-unity/
+      - title: 3. Unity Physics 2D Using Collider2D and Kinematic Rigidbody2D
+        url: /03-unity-physics-2d-using-collider2d-and-kinematic-rigidbody2d/
+      - title: 4. Using Unity UI for in-game HUDs
+        url: /04-using-unity-ui-for-in-game-huds/

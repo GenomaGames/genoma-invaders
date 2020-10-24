@@ -2,7 +2,7 @@
 name: Using Unity UI for in-game HUDs
 excerpt: This article covers how to implement a basic User Interface on Unity using Unity UI to display info to players.
 date: 2020-10-15
-published: false
+published: true
 lesson: 4
 tagline: Implementing a Score UI for Unity 2D Games
 header:
