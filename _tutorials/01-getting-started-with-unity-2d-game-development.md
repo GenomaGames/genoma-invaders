@@ -33,7 +33,7 @@ To define this project and its scope a very simple [Game Design Document](https:
 
 ## Project File Structure
 
-It is not mandatory, but a way to keep things tidy is to create a new directory inside `/Assets` with the name of your game, in this case, `/Assets/Genoma Invaders`, and move the `Scenes` directory inside of it. This way, all the game-related assets are contained inside this directory so they do not get mixed with 3rd party assets or plugins.
+It is not mandatory, but a way to keep things tidy is to create a new folder inside `/Assets` with the name of your game, in this case, `/Assets/Genoma Invaders`, and move the `Scenes` folder inside of it. This way, all the game-related assets are contained inside this folder so they do not get mixed with 3rd party assets or plugins.
 
 ## Building the First Game Scene
 
@@ -69,7 +69,7 @@ Time to inject some graphics into the game. Take this [Player sprite](../assets/
 
 ![Player](../assets/lesson-01/Player.png)
 
-And put it into the project. You can do it by dragging it into the [**Project window**](https://docs.unity3d.com/2020.1/Documentation/Manual/ProjectView.html) or placing it with your operating system file explorer into the project `Assets` directory. Place it under `Assets/Genoma Invaders/Player/Player.png`.
+And put it into the project. You can do it by dragging it into the [**Project window**](https://docs.unity3d.com/2020.1/Documentation/Manual/ProjectView.html) or placing it with your operating system file explorer into the project `Assets` folder. Place it under `Assets/Genoma Invaders/Player/Player.png`.
 
 Let assign the Player sprite to the Player Game Object in the Scene:
 
