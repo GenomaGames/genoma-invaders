@@ -39,7 +39,7 @@ public class Bullet : MonoBehaviour
         // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Component.CompareTag.html
         if (collider2D.CompareTag("Enemy"))
         {
-            //https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Object.Destroy.html
+            // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Object.Destroy.html
             Destroy(collider2D.gameObject);
         }
     }
