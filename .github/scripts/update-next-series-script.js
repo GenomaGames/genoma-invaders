@@ -1,3 +1,5 @@
+const GITHUB_PULL_REQUEST_OPEN_STATUS = "open";
+
 module.exports = async ({ github, context, core, io }) => {
   const owner = context.repo.owner;
   const repositoryName = context.repo.repo;
@@ -69,6 +71,7 @@ module.exports = async ({ github, context, core, io }) => {
     repo: repositoryName,
     head: headBranchName,
     base: defaultBranchName,
+    state: GITHUB_PULL_REQUEST_OPEN_STATUS,
   });
 
   let pullRequest = null;
