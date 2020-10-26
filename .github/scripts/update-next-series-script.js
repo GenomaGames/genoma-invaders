@@ -10,7 +10,6 @@ module.exports = async ({ github, context, core, io }) => {
   const branchSections = headBranchName.split("/");
   const indexPadding = branchSections[1].length;
 
-  let baseBranch = null;
   let branchIndex = Number.parseInt(branchSections[1]);
 
   if (Number.isNaN(branchIndex)) {
