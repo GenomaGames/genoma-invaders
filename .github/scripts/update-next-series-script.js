@@ -1,3 +1,5 @@
+const GITHUB_PULL_REQUEST_OPEN_STATUS = "open";
+
 module.exports = async ({ github, context, core, io }) => {
   const owner = context.repo.owner;
   const repositoryName = context.repo.repo;
@@ -10,7 +12,6 @@ module.exports = async ({ github, context, core, io }) => {
   const branchSections = headBranchName.split("/");
   const indexPadding = branchSections[1].length;
 
-  let baseBranch = null;
   let branchIndex = Number.parseInt(branchSections[1]);
 
   if (Number.isNaN(branchIndex)) {
@@ -19,12 +20,12 @@ module.exports = async ({ github, context, core, io }) => {
     );
   }
 
+  let baseBranch = null;
+
   do {
     branchIndex++;
     const formattedIndex = branchIndex.toString().padStart(indexPadding, "0");
     const baseBranchName = `${branchSections[0]}/${formattedIndex}`;
-
-    let baseBranch;
 
     try {
       const response = await github.repos.getBranch({
@@ -56,7 +57,7 @@ module.exports = async ({ github, context, core, io }) => {
 
       headBranchName = baseBranchName;
     }
-  } while (baseBranch);
+  } while (baseBranch !== null);
 
   const { data: repository } = await github.repos.get({
     owner: owner,
@@ -70,6 +71,7 @@ module.exports = async ({ github, context, core, io }) => {
     repo: repositoryName,
     head: headBranchName,
     base: defaultBranchName,
+    state: GITHUB_PULL_REQUEST_OPEN_STATUS,
   });
 
   let pullRequest = null;
