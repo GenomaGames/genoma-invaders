@@ -26,7 +26,7 @@ This post explains **basic concepts about [Unity's Animation System (Mecanim)](h
 
 ## Intro
 
-INTRO_CONTENT
+Its time to provide enemies with some life and for that we are going to animate their movement using Unity's Animation System (sometimes called Mecanim). This animation system uses a [state machine system](https://en.wikipedia.org/wiki/Finite-state_machine) to control which animation it should be executing based on the conditions provided.
 
 
 ## SECTION
