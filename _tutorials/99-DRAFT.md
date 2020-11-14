@@ -1,9 +1,10 @@
 ---
 name: TITLE
 excerpt: EXCERPT
-# date: DATE
+date: 9999-01-01
 published: false
-# tagline: TAGLINE
+tagline: TAGLINE
+lesson: 0
 # header:
 #   overlay_image: /path/to/image.png
 #   overlay_filter: rgba(0, 0, 0,.8)
@@ -11,7 +12,7 @@ published: false
 ---
 
 
-# TITLE
+# Genoma Invaders - TITLE
 
 EXCERPT
 
