@@ -1,56 +1,170 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.UI;
 
-// https://docs.unity3d.com/2020.1/Documentation/ScriptReference/RequireComponent.html
-[RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
-    [SerializeField]
-    private float speed = 2;
+    public event Action<Player> OnDie;
 
     [SerializeField]
-    private GameObject bullet;
+    private float speed = 1;
+    [SerializeField]
+    private LayerMask boundsLayer;
+    [SerializeField]
+    private GameObject bulletPrefab;
+    [SerializeField]
+    private Transform bulletsParent;
+    [SerializeField]
+    private float shotCooldown = 0.5f;
 
-    // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Rigidbody2D.html
-    private Rigidbody2D rb2D;
-    // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Vector3-zero.html
-    private Vector3 move = Vector3.zero;
+    private Vector2 moveInput;
+    private new Rigidbody2D rigidbody2D;
+    private ContactFilter2D boundsContactFilter2D;
+    private PlayerInput playerInput;
+    private float currentShotCooldown = 0;
+    private bool isHoldingFireInput = false;
 
-    // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/MonoBehaviour.Awake.html
+    public void Damage()
+    {
+        Die();
+    }
+
+    public void OnMoveInput(InputAction.CallbackContext context)
+    {
+        //Debug.Log($"Move: {context.phase} {context.ReadValue<Vector2>()}");
+
+        moveInput = context.ReadValue<Vector2>();
+    }
+
+    public void OnFireInput(InputAction.CallbackContext context)
+    {
+        //Debug.Log($"Fire: {context.phase} {context.ReadValue<float>()}");
+
+        if (context.started)
+        {
+            isHoldingFireInput = true;
+        }
+
+        if (context.performed)
+        {
+            Shoot();
+        }
+
+        if (context.canceled)
+        {
+            isHoldingFireInput = false;
+        }
+    }
+
+    public void OnMenuInput(InputAction.CallbackContext context)
+    {
+        //Debug.Log($"Menu: {context.phase} {context.ReadValue<float>()}");
+
+        if (context.performed)
+        {
+            GameManager.Instance.GoToMainMenu();
+        }
+    }
+
     private void Awake()
     {
-        // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Component.GetComponent.html
-        rb2D = GetComponent<Rigidbody2D>();
+        rigidbody2D = GetComponent<Rigidbody2D>();
+        playerInput = GetComponent<PlayerInput>();
+
+        boundsContactFilter2D = new ContactFilter2D();
+        boundsContactFilter2D.SetLayerMask(boundsLayer);
     }
 
-    // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/MonoBehaviour.Update.html
+    private void Start()
+    {
+        if (EventSystem.current != null)
+        {
+            InputSystemUIInputModule inputSystemUIInputModule = EventSystem.current.GetComponent<InputSystemUIInputModule>();
+            playerInput.uiInputModule = inputSystemUIInputModule;
+
+            //inputSystemUIInputModule.enabled = false;
+        }
+
+        playerInput.camera = Camera.main;
+    }
+
     private void Update()
     {
-        // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Input.GetAxisRaw.html
-        float rawHorizontalAxis = Input.GetAxisRaw("Horizontal");
-
-        move.x = rawHorizontalAxis;
-
-        // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Input.GetButtonDown.html
-        if (Input.GetButtonDown("Fire1"))
+        if (currentShotCooldown > 0)
         {
-            Vector3 playerPosition = transform.position;
+            currentShotCooldown = Mathf.Clamp(currentShotCooldown - Time.deltaTime, 0, shotCooldown);
+        }
 
-            // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Quaternion-identity.html
-            Instantiate(bullet, playerPosition, Quaternion.identity);
+        if (isHoldingFireInput)
+        {
+            Shoot();
         }
     }
 
-    // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/MonoBehaviour.FixedUpdate.html
     private void FixedUpdate()
     {
-        if (move != Vector3.zero)
+        if (moveInput != Vector2.zero)
         {
-            // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Time-fixedDeltaTime.html
-            Vector3 translation = move * speed * Time.fixedDeltaTime;
-            Vector3 newPosition = transform.position + translation;
-
-            // https://docs.unity3d.com/2020.1/Documentation/ScriptReference/Rigidbody2D.MovePosition.html
-            rb2D.MovePosition(newPosition);
+            Move(moveInput);
         }
+    }
+
+    private void Move(Vector2 direction)
+    {
+        Vector2 currentPosition = transform.position;
+        Vector2 newPosition = currentPosition + direction * Time.fixedDeltaTime * speed;
+
+        if (!CanMoveTo(newPosition))
+        {
+            Vector2 horizontalMoveDirection = new Vector2(direction.x, 0);
+            newPosition = currentPosition + horizontalMoveDirection * Time.fixedDeltaTime * speed;
+        }
+
+        if (!CanMoveTo(newPosition))
+        {
+            Vector2 verticalMoveDirection = new Vector2(0, direction.y);
+            newPosition = currentPosition + verticalMoveDirection * Time.fixedDeltaTime * speed;
+        }
+
+        if (CanMoveTo(newPosition))
+        {
+            rigidbody2D.MovePosition(newPosition);
+        }
+    }
+
+    private bool CanMoveTo(Vector2 targetPosition)
+    {
+        Vector2 currentPosition = transform.position;
+        Vector2 direction = targetPosition - currentPosition;
+        float distance = Vector2.Distance(currentPosition, targetPosition);
+
+        RaycastHit2D[] hits = new RaycastHit2D[1];
+
+        int hitCount = rigidbody2D.Cast(direction, boundsContactFilter2D, hits, distance);
+
+        bool canMove = hitCount == 0;
+
+        return canMove;
+    }
+
+    private void Shoot()
+    {
+        //Debug.Log("Shoot");
+
+        if (currentShotCooldown <= 0)
+        {
+            Instantiate(bulletPrefab, transform.position, Quaternion.identity, bulletsParent);
+
+            currentShotCooldown = shotCooldown;
+        }
+    }
+
+    private void Die()
+    {
+        OnDie.Invoke(this);
+
+        Destroy(gameObject);
     }
 }

@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Bullet Bounds
+  - Player Spawn
+  - Enemy Finish Line
+  - Enemies Pool
   layers:
   - Default
   - TransparentFX
@@ -12,9 +16,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - Player Bounds
+  - Enemy
   - 
   - 
   - 
@@ -39,6 +43,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3265719827
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
