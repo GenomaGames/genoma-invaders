@@ -80,3 +80,6 @@ InitTestScene*.unity
 
 
 # End of https://www.toptal.com/developers/gitignore/api/code,unity
+
+# Odin Inspector
+/[Aa]ssets/Plugins/Sirenix*
