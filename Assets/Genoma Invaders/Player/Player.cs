@@ -7,6 +7,23 @@ using UnityEngine.InputSystem.UI;
 public class Player : MonoBehaviour
 {
     public event Action<Player> OnDie;
+    public event Action OnShot;
+
+    public Transform BulletsParent
+    {
+        get => bulletsParent;
+    }
+
+    public GameObject BulletPrefab
+    {
+        get => bulletPrefab;
+    }
+
+    public float FireRate
+    {
+        get => fireRate;
+        set => fireRate = value;
+    }
 
     [SerializeField]
     private float speed = 1;
@@ -17,7 +34,16 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Transform bulletsParent;
     [SerializeField]
-    private float shotCooldown = 0.5f;
+    private float fireRate = 2f;
+    private float initalFireRate;
+
+    private float ShotCooldown
+    {
+        get
+        {
+            return Mathf.Round((1 / fireRate) * 100) / 100;
+        }
+    }
 
     private Vector2 moveInput;
     private new Rigidbody2D rigidbody2D;
@@ -29,6 +55,11 @@ public class Player : MonoBehaviour
     public void Damage()
     {
         Die();
+    }
+
+    public void ResetFireRate()
+    {
+        fireRate = initalFireRate;
     }
 
     public void OnMoveInput(InputAction.CallbackContext context)
@@ -70,6 +101,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        initalFireRate = fireRate;
         rigidbody2D = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
 
@@ -83,8 +115,6 @@ public class Player : MonoBehaviour
         {
             InputSystemUIInputModule inputSystemUIInputModule = EventSystem.current.GetComponent<InputSystemUIInputModule>();
             playerInput.uiInputModule = inputSystemUIInputModule;
-
-            //inputSystemUIInputModule.enabled = false;
         }
 
         playerInput.camera = Camera.main;
@@ -94,7 +124,7 @@ public class Player : MonoBehaviour
     {
         if (currentShotCooldown > 0)
         {
-            currentShotCooldown = Mathf.Clamp(currentShotCooldown - Time.deltaTime, 0, shotCooldown);
+            currentShotCooldown = Mathf.Clamp(currentShotCooldown - Time.deltaTime, 0, ShotCooldown);
         }
 
         if (isHoldingFireInput)
@@ -108,6 +138,16 @@ public class Player : MonoBehaviour
         if (moveInput != Vector2.zero)
         {
             Move(moveInput);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D otherCollider2D)
+    {
+        if (otherCollider2D.CompareTag("Power Up"))
+        {
+            PowerUp powerUp = otherCollider2D.GetComponent<PowerUp>();
+
+            powerUp.Apply(this);
         }
     }
 
@@ -157,7 +197,12 @@ public class Player : MonoBehaviour
         {
             Instantiate(bulletPrefab, transform.position, Quaternion.identity, bulletsParent);
 
-            currentShotCooldown = shotCooldown;
+            if (OnShot != null)
+            {
+                OnShot();
+            }
+
+            currentShotCooldown = ShotCooldown;
         }
     }
 

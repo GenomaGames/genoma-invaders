@@ -2,11 +2,17 @@
 
 public class Bullet : MonoBehaviour
 {
+    public Vector2 Direction
+    {
+        get => direction;
+        set => direction = value;
+    }
+
     [SerializeField]
     private float speed = 5;
 
     private new Rigidbody2D rigidbody2D;
-    private Vector3 move = Vector3.up;
+    private Vector2 direction = Vector2.up;
 
     private void Awake()
     {
@@ -15,13 +21,7 @@ public class Bullet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (move != Vector3.zero)
-        {
-            Vector3 translation = move * speed * Time.fixedDeltaTime;
-            Vector3 newPosition = transform.position + translation;
-
-            rigidbody2D.MovePosition(newPosition);
-        }
+        Move();
     }
 
     private void OnTriggerEnter2D(Collider2D collider2D)
@@ -37,6 +37,18 @@ public class Bullet : MonoBehaviour
         else if (collider2D.CompareTag("Bullet Bounds"))
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void Move()
+    {
+        if (direction != Vector2.zero)
+        {
+            Vector3 rotatedDirection = transform.rotation * direction;
+            Vector3 translation = rotatedDirection * speed * Time.fixedDeltaTime;
+            Vector3 newPosition = transform.position + translation;
+
+            rigidbody2D.MovePosition(newPosition);
         }
     }
 }

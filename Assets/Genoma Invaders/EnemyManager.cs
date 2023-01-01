@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    private Transform enemiesPool;
+    private Transform enemiesParent;
     private int totalEnemies;
 
     private void Start()
     {
-        enemiesPool = GameObject.FindGameObjectWithTag("Enemies Pool").transform;
+        enemiesParent = GameObject.FindGameObjectWithTag("Enemies Parent").transform;
 
-        if (enemiesPool != null)
+        if (enemiesParent != null)
         {
-            Enemy[] enemies = enemiesPool.GetComponentsInChildren<Enemy>();
+            Enemy[] enemies = enemiesParent.GetComponentsInChildren<Enemy>();
 
             totalEnemies = enemies.Length;
 

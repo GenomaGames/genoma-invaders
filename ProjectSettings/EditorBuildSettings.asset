@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Genoma Invaders/Scenes/Main Menu.unity
     guid: 46b72ce0854044c4f8c82d4decb73a4b
   - enabled: 1
-    path: Assets/Genoma Invaders/Scenes/Game.unity
+    path: Assets/Genoma Invaders/Scenes/Level_001.unity
     guid: ee4f14c45484bde418161202e1083cfc
   - enabled: 1
     path: Assets/Genoma Invaders/Scenes/Game Over.unity

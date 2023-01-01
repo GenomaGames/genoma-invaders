@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float diseaseLevel = 10;
 
+    private PowerUpDropper powerUpDropper;
     private new Rigidbody2D rigidbody2D;
 
     public void Damage()
@@ -24,6 +25,7 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
+        powerUpDropper = GetComponent<PowerUpDropper>();
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
@@ -60,6 +62,8 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
+        powerUpDropper.TryDrop();
+
         if (OnDie != null)
         {
             OnDie(this);

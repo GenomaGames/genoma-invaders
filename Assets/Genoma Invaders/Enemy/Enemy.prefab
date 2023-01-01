@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 3639402886056519071}
   - component: {fileID: 3639402886056519068}
   - component: {fileID: 3639402886056519069}
-  m_Layer: 0
+  - component: {fileID: 172700800463416240}
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -138,3 +139,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   diseaseLevel: 2
+--- !u!114 &172700800463416240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639402886056519074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1d4fbbc9d20de5459f340d7931c3aaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropRatio: 5
+  dropAmmount: 1
+  drops:
+  - powerUp: {fileID: 5934482820973331676, guid: 4f8c99d3ca66cb54aa5c5bd0981ff1bc, type: 3}
+    probability: 75
+  - powerUp: {fileID: 8620159833947397188, guid: 158760787ca49fb4e9be77916d8294cd, type: 3}
+    probability: 25

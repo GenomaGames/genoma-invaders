@@ -8,7 +8,10 @@ TagManager:
   - Bullet Bounds
   - Player Spawn
   - Enemy Finish Line
-  - Enemies Pool
+  - Power Up
+  - Bullet
+  - Enemies Parent
+  - Power Ups Parent
   layers:
   - Default
   - TransparentFX
@@ -19,9 +22,9 @@ TagManager:
   - Player
   - Player Bounds
   - Enemy
-  - 
-  - 
-  - 
+  - Power Up
+  - Bullet
+  - Level Bounds
   - 
   - 
   - 

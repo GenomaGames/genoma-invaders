@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
 public class GameManager : MonoBehaviour
@@ -28,6 +29,16 @@ public class GameManager : MonoBehaviour
         private set;
     } = false;
 
+    public string Seed
+    {
+        get => seed;
+    }
+
+    public int SeedHash
+    {
+        get => seed.GetHashCode();
+    }
+
     [SerializeField]
     private int initialPlayerLives = 3;
     [SerializeField]
@@ -39,6 +50,8 @@ public class GameManager : MonoBehaviour
     private float initialDiseaseLevel = 50;
     [SerializeField]
     private float diseaseLevelRiseSpeed = 1;
+    [SerializeField]
+    private string seed = "Genoma Games";
 
     private Transform playerSpawn;
     private int playerLives;
@@ -48,7 +61,7 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Level_001");
     }
 
     public void UpdateDiseaseLevel(float diseaseLevelChange)
@@ -89,8 +102,12 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
+        if (!EnhancedTouchSupport.enabled)
+        {
+            EnhancedTouchSupport.Enable();
+        }
+
         SceneManager.activeSceneChanged += OnActiveSceneChanged;
-        EnhancedTouchSupport.Enable();
     }
 
     private void Awake()
@@ -99,6 +116,8 @@ public class GameManager : MonoBehaviour
         {
             DontDestroyOnLoad(this);
             Instance = this;
+
+            Random.InitState(SeedHash);
         }
         else
         {
@@ -170,7 +189,12 @@ public class GameManager : MonoBehaviour
 
     private void OnActiveSceneChanged(Scene oldScene, Scene newScene)
     {
-        isInGameScene = newScene.name == "Game";
+        if (!EnhancedTouchSupport.enabled)
+        {
+            EnhancedTouchSupport.Enable();
+        }
+
+        isInGameScene = newScene.name.StartsWith("Level");
 
         if (isInGameScene)
         {
@@ -184,7 +208,18 @@ public class GameManager : MonoBehaviour
         DiseaseLevel = initialDiseaseLevel;
         playerSpawn = GameObject.FindGameObjectWithTag("Player Spawn").transform;
 
-        SpawnPlayer();
+        GameObject playerGameObject = GameObject.FindGameObjectWithTag("Player");
+
+        if (playerGameObject == null)
+        {
+            SpawnPlayer();
+        }
+        else
+        {
+            Player player = playerGameObject.GetComponent<Player>();
+
+            player.OnDie += OnPlayerDie;
+        } 
     }
 
     private void OnPlayerDie(Player player)
