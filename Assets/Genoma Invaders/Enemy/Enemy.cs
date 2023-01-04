@@ -15,8 +15,12 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float diseaseLevel = 10;
 
+    private bool isDead = false;
     private PowerUpDropper powerUpDropper;
     private new Rigidbody2D rigidbody2D;
+    private new Collider2D collider2D;
+    private Animator animator;
+    private int animatorDieParam = Animator.StringToHash("Die");
 
     public void Damage()
     {
@@ -25,13 +29,18 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
+        animator = GetComponent<Animator>();
+        collider2D = GetComponent<Collider2D>();
         powerUpDropper = GetComponent<PowerUpDropper>();
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
     {
-        Move(Vector2.down);
+        if (!isDead)
+        {
+            Move(Vector2.down);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D otherCollider2D)
@@ -63,12 +72,17 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         powerUpDropper.TryDrop();
+        collider2D.enabled = false;
+
+        isDead = true;
 
         if (OnDie != null)
         {
             OnDie(this);
         }
 
-        Destroy(gameObject);
+        animator.SetTrigger(animatorDieParam);
+
+        Destroy(gameObject, 1);
     }
 }
