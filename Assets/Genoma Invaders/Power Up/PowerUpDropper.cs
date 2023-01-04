@@ -31,7 +31,7 @@ public class PowerUpDropper : MonoBehaviour
         {
             int roll = Random.Range(0, 100);
 
-            Debug.Log($"Roll: {roll}");
+            //Debug.Log($"Roll: {roll}");
 
             bool canDrop = dropRatio > roll;
 
