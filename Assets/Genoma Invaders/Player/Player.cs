@@ -47,10 +47,16 @@ public class Player : MonoBehaviour
 
     private Vector2 moveInput;
     private new Rigidbody2D rigidbody2D;
+    private new Collider2D collider2D;
+    private Animator animator;
     private ContactFilter2D boundsContactFilter2D;
     private PlayerInput playerInput;
     private float currentShotCooldown = 0;
     private bool isHoldingFireInput = false;
+    private bool isDead = false;
+
+    private int animatorDieParam = Animator.StringToHash("Die");
+    private int animatorMoveXParam = Animator.StringToHash("Move X");
 
     public void Damage()
     {
@@ -102,8 +108,10 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         initalFireRate = fireRate;
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        collider2D = GetComponent<Collider2D>();
         playerInput = GetComponent<PlayerInput>();
+        rigidbody2D = GetComponent<Rigidbody2D>();
 
         boundsContactFilter2D = new ContactFilter2D();
         boundsContactFilter2D.SetLayerMask(boundsLayer);
@@ -127,17 +135,25 @@ public class Player : MonoBehaviour
             currentShotCooldown = Mathf.Clamp(currentShotCooldown - Time.deltaTime, 0, ShotCooldown);
         }
 
-        if (isHoldingFireInput)
+        if (!isDead)
         {
-            Shoot();
+            if (isHoldingFireInput)
+            {
+                Shoot();
+            }
         }
     }
 
     private void FixedUpdate()
     {
-        if (moveInput != Vector2.zero)
+        if (!isDead)
         {
-            Move(moveInput);
+            if (moveInput != Vector2.zero)
+            {
+                Move(moveInput);
+            }
+
+            animator.SetFloat(animatorMoveXParam, moveInput.x);
         }
     }
 
@@ -208,8 +224,13 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
+        isDead = true;
+        collider2D.enabled = false;
+
+        animator.SetTrigger(animatorDieParam);
+
         OnDie.Invoke(this);
 
-        Destroy(gameObject);
+        Destroy(gameObject, 1);
     }
 }
