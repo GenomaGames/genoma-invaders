@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9ebbe68934eb5e44990e19e6ca2025c7
+guid: aec18d65c1b48664aa8336b0417f5f70
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -63,7 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -82,7 +82,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -94,7 +94,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,7 +106,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -118,7 +118,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Enemy #Idle_0
+      name: Enemy.Die_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +143,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35ea306eaedff7a4cb98b5ed9f80701a
-      internalID: -2027715400
+      spriteID: 43842aad4f8f04f48a26799d7e0314f0
+      internalID: 1883804607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy #Idle_1
+      name: Enemy.Die_1
       rect:
         serializedVersion: 2
         x: 56
@@ -164,14 +164,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f835d32ba81c8448a0fec5ca3eaaedc
-      internalID: 2045425582
+      spriteID: fc7da4e40b77f674a83145b5bbe96206
+      internalID: -2107852478
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy #Idle_2
+      name: Enemy.Die_2
       rect:
         serializedVersion: 2
         x: 112
@@ -185,14 +185,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8911f77e9822afd4f843e5cf42b85dfe
-      internalID: 1369341678
+      spriteID: ff1c9971f8866154faaefebc3dbc071d
+      internalID: -1042526636
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy #Idle_3
+      name: Enemy.Die_3
       rect:
         serializedVersion: 2
         x: 168
@@ -206,14 +206,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b80fe1ae9bdad67418aa0328a2fad5e9
-      internalID: -151446631
+      spriteID: 2bcc80ffb74040d4889a617f2ee6a8fa
+      internalID: 325870675
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy #Idle_4
+      name: Enemy.Die_4
       rect:
         serializedVersion: 2
         x: 224
@@ -227,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90cf446876ff6d949b015f0f84cd88c5
-      internalID: 1531829119
+      spriteID: 1a77f1c2a9c39204a90ed70d27ba6e40
+      internalID: 481887855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy #Idle_5
+      name: Enemy.Die_5
       rect:
         serializedVersion: 2
         x: 280
@@ -248,50 +248,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 694ddd82b688c604aa97af1575628611
-      internalID: 552430920
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy #Idle_6
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 0
-        width: 56
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 53d7af7e771553743a03f06110c28d07
-      internalID: 1318533064
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy #Idle_7
-      rect:
-        serializedVersion: 2
-        x: 392
-        y: 0
-        width: 56
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 365fc8a3ccc411a40b83646fad988fe0
-      internalID: 1305441449
+      spriteID: 97bc6133c3a9eb6438f64a888dec303b
+      internalID: -730524714
       vertices: []
       indices: 
       edges: []
@@ -307,14 +265,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Enemy #Idle_2: 1369341678
-      Enemy #Idle_7: 1305441449
-      Enemy #Idle_3: -151446631
-      Enemy #Idle_6: 1318533064
-      Enemy #Idle_1: 2045425582
-      Enemy #Idle_0: -2027715400
-      Enemy #Idle_4: 1531829119
-      Enemy #Idle_5: 552430920
+      Enemy.Die_3: 325870675
+      Enemy.Die_2: -1042526636
+      Enemy.Die_4: 481887855
+      Enemy.Die_5: -730524714
+      Enemy.Die_0: 1883804607
+      Enemy.Die_1: -2107852478
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
