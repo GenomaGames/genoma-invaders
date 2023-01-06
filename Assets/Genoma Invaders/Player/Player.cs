@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
     private ContactFilter2D boundsContactFilter2D;
     private PlayerInput playerInput;
     private float currentShotCooldown = 0;
-    private bool isHoldingFireInput = false;
+    private bool isHoldingShootInput = false;
     private bool isDead = false;
 
     private int animatorDieParam = Animator.StringToHash("Die");
@@ -75,13 +75,13 @@ public class Player : MonoBehaviour
         moveInput = context.ReadValue<Vector2>();
     }
 
-    public void OnFireInput(InputAction.CallbackContext context)
+    public void OnShootInput(InputAction.CallbackContext context)
     {
-        //Debug.Log($"Fire: {context.phase} {context.ReadValue<float>()}");
+        //Debug.Log($"Shoot: {context.phase} {context.ReadValue<float>()}");
 
         if (context.started)
         {
-            isHoldingFireInput = true;
+            isHoldingShootInput = true;
         }
 
         if (context.performed)
@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
 
         if (context.canceled)
         {
-            isHoldingFireInput = false;
+            isHoldingShootInput = false;
         }
     }
 
@@ -102,6 +102,16 @@ public class Player : MonoBehaviour
         if (context.performed)
         {
             GameManager.Instance.GoToMainMenu();
+        }
+    }
+
+    public void OnTapInput(InputAction.CallbackContext context)
+    {
+        Debug.Log($"Tap!");
+
+        if (!GameManager.Instance.IsTouchUIEnabled && (context.started || context.performed))
+        {
+            GameManager.Instance.EnableTouchUI();
         }
     }
 
@@ -137,7 +147,7 @@ public class Player : MonoBehaviour
 
         if (!isDead)
         {
-            if (isHoldingFireInput)
+            if (isHoldingShootInput)
             {
                 Shoot();
             }

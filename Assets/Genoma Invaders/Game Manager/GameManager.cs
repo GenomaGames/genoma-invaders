@@ -59,6 +59,16 @@ public class GameManager : MonoBehaviour
     private float timeUntilPlayerSpawns;
     private bool isPlayerSpawning = false;
 
+    public void EnableTouchUI()
+    {
+        IsTouchUIEnabled = true;
+
+        if (OnTouchUIEnabled != null)
+        {
+            OnTouchUIEnabled();
+        }
+    }
+
     public void Restart()
     {
         SceneManager.LoadScene("Level_001");
@@ -102,11 +112,6 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        if (!EnhancedTouchSupport.enabled)
-        {
-            EnhancedTouchSupport.Enable();
-        }
-
         SceneManager.activeSceneChanged += OnActiveSceneChanged;
     }
 
@@ -127,11 +132,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Touch.activeTouches.Count > 0 && !IsTouchUIEnabled)
-        {
-            EnableTouchUI();
-        }
-
         if (isInGameScene)
         {
             float diseaseLevelChange = Time.deltaTime * diseaseLevelRiseSpeed;
@@ -154,16 +154,6 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.activeSceneChanged -= OnActiveSceneChanged;
         EnhancedTouchSupport.Disable();
-    }
-
-    private void EnableTouchUI()
-    {
-        IsTouchUIEnabled = true;
-
-        if (OnTouchUIEnabled != null)
-        {
-            OnTouchUIEnabled();
-        }
     }
 
     private void SpawnPlayer()
@@ -189,11 +179,6 @@ public class GameManager : MonoBehaviour
 
     private void OnActiveSceneChanged(Scene oldScene, Scene newScene)
     {
-        if (!EnhancedTouchSupport.enabled)
-        {
-            EnhancedTouchSupport.Enable();
-        }
-
         isInGameScene = newScene.name.StartsWith("Level");
 
         if (isInGameScene)
