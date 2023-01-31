@@ -61,7 +61,6 @@ public static class GameBuilder
             {
                 throw new UnityException("The current commit does not have a version tag.");
             }
-
         }
 
         Debug.Log($"Building version {buildVersion}");
@@ -99,7 +98,10 @@ public static class GameBuilder
             Debug.LogError("Build failed");
         }
 
-        PlayerSettings.bundleVersion = currentVersion;
+        if (isDevelopment)
+        {
+            PlayerSettings.bundleVersion = currentVersion;
+        }
     }
 }
 #endif
