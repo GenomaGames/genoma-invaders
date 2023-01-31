@@ -52,10 +52,6 @@ public static class GameBuilder
         }
         else
         {
-            Debug.Log(match.Groups["ExtraCommits"].Value);
-            Debug.Log(match.Groups["Dirty"].Value);
-            Debug.Log(match.Groups["Dirty"].Success);
-
             if (match.Groups["Dirty"].Success)
             {
                 throw new UnityException("There are uncommitted changes.");
