@@ -11,33 +11,66 @@ public static class GameBuilder
 {
     private static string buildsDirectory = "Builds";
 
-    [MenuItem("Tools/Genoma Games/Build Game")]
-    public static void Build()
+    [MenuItem("Tools/Genoma Games/Build Game (Development)")]
+    public static void BuildDevelopment()
+    {
+        Build(isDevelopment: true);
+    }
+
+    [MenuItem("Tools/Genoma Games/Build Game (Production)")]
+    public static void BuildProduction()
+    {
+        Build(isDevelopment: false);
+    }
+
+    private static void Build(bool isDevelopment)
     {
         if (BuildPipeline.isBuildingPlayer)
         {
             throw new UnityException("A build is already in progress.");
         }
 
+        string currentVersion = PlayerSettings.bundleVersion;
+
         string gitCommitDescription = Git.Describe();
 
-        string pattern = @"v(\d+\.\d+\.\d+)-(\d+)-(g[a-f0-9]{4,})(?:-(dirty))?";
-        Regex regex = new Regex(pattern);
+        string parseGitCommitDescriptionPattern = @"v(?'Version'\d+\.\d+\.\d+)-(?'ExtraCommits'\d+)-(?'Hash'g[a-f0-9]{4,})(?:-(?'Dirty'dirty))?";
 
+        Match match = Regex.Match(gitCommitDescription, parseGitCommitDescriptionPattern);
 
-        if (!regex.IsMatch(gitCommitDescription))
+        if (!match.Success)
         {
-            throw new UnityException($"Can not parse version from git describe: {gitCommitDescription}");
+            throw new UnityException($"Can not parse version from Git.Describe(): {gitCommitDescription}");
         }
 
-        long timestamp = DateTimeOffset.Now.ToUnixTimeSeconds();
-        string substitution = $@"$1.$2.{timestamp}";
+        string buildVersion = $"{match.Groups["Version"].Value}";
 
-        string version = regex.Replace(gitCommitDescription, substitution);
+        if (isDevelopment)
+        {
+            long timestamp = DateTimeOffset.Now.ToUnixTimeSeconds();
+            buildVersion += $".{timestamp}";
+        }
+        else
+        {
+            Debug.Log(match.Groups["ExtraCommits"].Value);
+            Debug.Log(match.Groups["Dirty"].Value);
+            Debug.Log(match.Groups["Dirty"].Success);
 
-        Debug.Log($"Building version {version}");
+            if (match.Groups["Dirty"].Success)
+            {
+                throw new UnityException("There are uncommitted changes.");
+            }
+            
+            if (int.Parse(match.Groups["ExtraCommits"].Value) != 0)
+            {
+                throw new UnityException("The current commit does not have a version tag.");
+            }
 
-        PlayerSettings.bundleVersion = version;
+        }
+
+        Debug.Log($"Building version {buildVersion}");
+
+        PlayerSettings.bundleVersion = buildVersion;
 
         string projectPath = Directory.GetCurrentDirectory();
 
@@ -48,12 +81,13 @@ public static class GameBuilder
                 .Select(scene => scene.path)
                 .ToArray();
 
-        BuildPlayerOptions options = new BuildPlayerOptions();
-
-        options.scenes = scenePaths;
-        options.target = BuildTarget.WebGL;
-        options.locationPathName = Path.Combine(buildsPath, options.target.ToString(), $"{PlayerSettings.productName} v{version} ({options.target})");
-        options.options = BuildOptions.None;
+        BuildPlayerOptions options = new BuildPlayerOptions
+        {
+            scenes = scenePaths,
+            target = BuildTarget.WebGL,
+            locationPathName = Path.Combine(buildsPath, BuildTarget.WebGL.ToString(), $"{PlayerSettings.productName} v{buildVersion} ({BuildTarget.WebGL})"),
+            options = BuildOptions.None,
+        };
 
         BuildReport report = BuildPipeline.BuildPlayer(options);
         BuildSummary summary = report.summary;
@@ -66,8 +100,10 @@ public static class GameBuilder
 
         if (summary.result == BuildResult.Failed)
         {
-            Debug.Log("Build failed");
+            Debug.LogError("Build failed");
         }
+
+        PlayerSettings.bundleVersion = currentVersion;
     }
 }
 #endif
