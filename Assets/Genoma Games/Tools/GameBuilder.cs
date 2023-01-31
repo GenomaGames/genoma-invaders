@@ -1,5 +1,6 @@
 #if UNITY_EDITOR
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -31,22 +32,32 @@ public static class GameBuilder
 
         PlayerSettings.bundleVersion = GetBuildVersion(isDevelopment);
 
-        BuildReport report = BuildPlayers();
-        BuildSummary summary = report.summary;
+        Dictionary<BuildTarget, BuildReport> reports = BuildPlayers();
 
-        if (summary.result == BuildResult.Succeeded)
+        if (reports.TryGetValue(BuildTarget.WebGL, out BuildReport webGLReport))
         {
-            if (isProduction)
-            {
-                string zipPath = $@"{summary.outputPath}.zip";
+            BuildSummary summary = webGLReport.summary;
 
-                ZipFile.CreateFromDirectory(summary.outputPath, zipPath);
+            if (summary.result == BuildResult.Succeeded)
+            {
+                if (isProduction)
+                {
+                    string zipPath = $@"{summary.outputPath}.zip";
+
+                    ZipFile.CreateFromDirectory(summary.outputPath, zipPath);
+                }
+            }
+
+            if (isDevelopment || summary.result != BuildResult.Succeeded)
+            {
+                PlayerSettings.bundleVersion = currentVersion;
             }
         }
-
-        if (isDevelopment || summary.result != BuildResult.Succeeded)
+        else
         {
             PlayerSettings.bundleVersion = currentVersion;
+
+            throw new UnityException("Unable to obtain WebGL build report");
         }
     }
 
@@ -86,10 +97,8 @@ public static class GameBuilder
         return buildVersion;
     }
 
-    private static BuildReport BuildPlayers()
+    private static Dictionary<BuildTarget, BuildReport> BuildPlayers()
     {
-        Debug.Log($"Building version {PlayerSettings.bundleVersion}");
-
         string projectPath = Directory.GetCurrentDirectory();
 
         string buildsPath = Path.Combine(projectPath, buildsDirectory);
@@ -99,25 +108,68 @@ public static class GameBuilder
                 .Select(scene => scene.path)
                 .ToArray();
 
-        BuildPlayerOptions webGLBuildOptions = new BuildPlayerOptions
+        BuildTarget[] buildTargets = new BuildTarget[]
         {
-            scenes = scenePaths,
-            target = BuildTarget.WebGL,
-            locationPathName = Path.Combine(buildsPath, BuildTarget.WebGL.ToString(), $"{PlayerSettings.productName} v{PlayerSettings.bundleVersion} ({BuildTarget.WebGL})"),
-            options = BuildOptions.None,
+            BuildTarget.Android,
+            BuildTarget.WebGL,
         };
 
-        BuildReport report = BuildPipeline.BuildPlayer(webGLBuildOptions);
+        Dictionary<BuildTarget, BuildReport> reports = new Dictionary<BuildTarget, BuildReport>();
+
+        foreach (BuildTarget buildTarget in buildTargets)
+        {
+            BuildReport report = BuildPlayer(buildTarget, scenePaths, buildsPath);
+
+            reports.Add(buildTarget, report);
+        }
+
+        return reports;
+    }
+
+    private static BuildReport BuildPlayer(BuildTarget target, string[] scenePaths, string buildsPath)
+    {
+        BuildReport report;
+
+        Debug.Log($"Building version {PlayerSettings.bundleVersion} for {target}");
+
+        switch (target)
+        {
+            case BuildTarget.Android:
+                BuildPlayerOptions androidBuildOptions = new BuildPlayerOptions
+                {
+                    scenes = scenePaths,
+                    target = BuildTarget.Android,
+                    locationPathName = Path.Combine(buildsPath, BuildTarget.Android.ToString(), $"{PlayerSettings.productName} v{PlayerSettings.bundleVersion} ({BuildTarget.Android}).apk"),
+                    options = BuildOptions.None,
+                };
+
+                report = BuildPipeline.BuildPlayer(androidBuildOptions);
+                break;
+            case BuildTarget.WebGL:
+                BuildPlayerOptions webGLBuildOptions = new BuildPlayerOptions
+                {
+                    scenes = scenePaths,
+                    target = BuildTarget.WebGL,
+                    locationPathName = Path.Combine(buildsPath, BuildTarget.WebGL.ToString(), $"{PlayerSettings.productName} v{PlayerSettings.bundleVersion} ({BuildTarget.WebGL})"),
+                    options = BuildOptions.None,
+                };
+
+                report = BuildPipeline.BuildPlayer(webGLBuildOptions);
+                break;
+            default:
+                throw new UnityException($"{target} is not supported.");
+        }
+
         BuildSummary summary = report.summary;
 
         if (summary.result == BuildResult.Succeeded)
         {
             decimal sizeInMb = Math.Round((decimal)summary.totalSize / 1024 / 1024, 2);
-            Debug.Log($"Build succeeded: {sizeInMb}MB");
+            Debug.Log($"{target} build succeeded: {sizeInMb}MB");
         }
         else
         {
-            Debug.LogError($"Build {summary.result}");
+            throw new UnityException($"{target} build {summary.result}");
         }
 
         return report;
