@@ -24,11 +24,14 @@ public class EnemyManager : MonoBehaviour
 
     private void OnDisable()
     {
-        Enemy[] enemies = enemiesParent.GetComponentsInChildren<Enemy>();
-
-        foreach (Enemy enemy in enemies)
+        if (enemiesParent != null)
         {
-            enemy.OnDie -= OnEnemyDie;
+            Enemy[] enemies = enemiesParent.GetComponentsInChildren<Enemy>();
+
+            foreach (Enemy enemy in enemies)
+            {
+                enemy.OnDie -= OnEnemyDie;
+            }
         }
     }
 
