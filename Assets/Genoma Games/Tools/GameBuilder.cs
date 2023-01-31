@@ -1,6 +1,7 @@
 #if UNITY_EDITOR
 using System;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEditor;
@@ -9,22 +10,18 @@ using UnityEngine;
 
 public static class GameBuilder
 {
-    private static string buildsDirectory = "Builds";
+    private static readonly string buildsDirectory = "Builds";
 
     [MenuItem("Tools/Genoma Games/Build Game (Development)")]
-    public static void BuildDevelopment()
-    {
-        Build(isDevelopment: true);
-    }
+    public static void BuildDevelopment() => Build(isDevelopment: true);
 
     [MenuItem("Tools/Genoma Games/Build Game (Production)")]
-    public static void BuildProduction()
-    {
-        Build(isDevelopment: false);
-    }
+    public static void BuildProduction() => Build(isDevelopment: false);
 
     private static void Build(bool isDevelopment)
     {
+        bool isProduction = !isDevelopment;
+
         if (BuildPipeline.isBuildingPlayer)
         {
             throw new UnityException("A build is already in progress.");
@@ -32,6 +29,29 @@ public static class GameBuilder
 
         string currentVersion = PlayerSettings.bundleVersion;
 
+        PlayerSettings.bundleVersion = GetBuildVersion(isDevelopment);
+
+        BuildReport report = BuildPlayers();
+        BuildSummary summary = report.summary;
+
+        if (summary.result == BuildResult.Succeeded)
+        {
+            if (isProduction)
+            {
+                string zipPath = $@"{summary.outputPath}.zip";
+
+                ZipFile.CreateFromDirectory(summary.outputPath, zipPath);
+            }
+        }
+
+        if (isDevelopment || summary.result != BuildResult.Succeeded)
+        {
+            PlayerSettings.bundleVersion = currentVersion;
+        }
+    }
+
+    private static string GetBuildVersion(bool isDevelopment)
+    {
         string gitCommitDescription = Git.Describe();
 
         string parseGitCommitDescriptionPattern = @"v(?'Version'\d+\.\d+\.\d+)-(?'ExtraCommits'\d+)-(?'Hash'g[a-f0-9]{4,})(?:-(?'Dirty'dirty))?";
@@ -56,16 +76,19 @@ public static class GameBuilder
             {
                 throw new UnityException("There are uncommitted changes.");
             }
-            
+
             if (int.Parse(match.Groups["ExtraCommits"].Value) != 0)
             {
                 throw new UnityException("The current commit does not have a version tag.");
             }
         }
 
-        Debug.Log($"Building version {buildVersion}");
+        return buildVersion;
+    }
 
-        PlayerSettings.bundleVersion = buildVersion;
+    private static BuildReport BuildPlayers()
+    {
+        Debug.Log($"Building version {PlayerSettings.bundleVersion}");
 
         string projectPath = Directory.GetCurrentDirectory();
 
@@ -76,15 +99,15 @@ public static class GameBuilder
                 .Select(scene => scene.path)
                 .ToArray();
 
-        BuildPlayerOptions options = new BuildPlayerOptions
+        BuildPlayerOptions webGLBuildOptions = new BuildPlayerOptions
         {
             scenes = scenePaths,
             target = BuildTarget.WebGL,
-            locationPathName = Path.Combine(buildsPath, BuildTarget.WebGL.ToString(), $"{PlayerSettings.productName} v{buildVersion} ({BuildTarget.WebGL})"),
+            locationPathName = Path.Combine(buildsPath, BuildTarget.WebGL.ToString(), $"{PlayerSettings.productName} v{PlayerSettings.bundleVersion} ({BuildTarget.WebGL})"),
             options = BuildOptions.None,
         };
 
-        BuildReport report = BuildPipeline.BuildPlayer(options);
+        BuildReport report = BuildPipeline.BuildPlayer(webGLBuildOptions);
         BuildSummary summary = report.summary;
 
         if (summary.result == BuildResult.Succeeded)
@@ -92,16 +115,12 @@ public static class GameBuilder
             decimal sizeInMb = Math.Round((decimal)summary.totalSize / 1024 / 1024, 2);
             Debug.Log($"Build succeeded: {sizeInMb}MB");
         }
-
-        if (summary.result == BuildResult.Failed)
+        else
         {
-            Debug.LogError("Build failed");
+            Debug.LogError($"Build {summary.result}");
         }
 
-        if (isDevelopment)
-        {
-            PlayerSettings.bundleVersion = currentVersion;
-        }
+        return report;
     }
 }
 #endif
