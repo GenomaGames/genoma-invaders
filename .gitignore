@@ -83,3 +83,6 @@ InitTestScene*.unity
 
 # Odin Inspector
 /[Aa]ssets/Plugins/Sirenix*
+
+# Logs
+/Editor.log
