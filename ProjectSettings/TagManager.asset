@@ -12,6 +12,7 @@ TagManager:
   - Bullet
   - Enemies Parent
   - Power Ups Parent
+  - Player Bullets Parent
   layers:
   - Default
   - TransparentFX

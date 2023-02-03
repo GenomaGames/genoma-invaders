@@ -297,5 +297,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   bulletPrefab: {fileID: 2306097921210885030, guid: 1fe83e698a81f074a8eaa9487d8d033c, type: 3}
-  bulletsParent: {fileID: 0}
   fireRate: 2
+  dieAnimation: {fileID: 7400000, guid: 89c2c152d2884d448a48b3cbb9446ed5, type: 2}

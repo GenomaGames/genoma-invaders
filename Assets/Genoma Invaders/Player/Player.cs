@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -25,18 +26,6 @@ public class Player : MonoBehaviour
         set => fireRate = value;
     }
 
-    [SerializeField]
-    private float speed = 1;
-    [SerializeField]
-    private LayerMask boundsLayer;
-    [SerializeField]
-    private GameObject bulletPrefab;
-    [SerializeField]
-    private float fireRate = 2f;
-
-    private Transform bulletsParent;
-    private float initalFireRate;
-
     private float ShotCooldown
     {
         get
@@ -45,6 +34,20 @@ public class Player : MonoBehaviour
         }
     }
 
+    [SerializeField]
+    private float speed = 1;
+    [SerializeField]
+    private LayerMask boundsLayer;
+    [SerializeField]
+    private GameObject bulletPrefab;
+    [SerializeField]
+    private float fireRate = 2f;
+    [SerializeField]
+    [Tooltip("Required to destroy de GO when it ends")]
+    private AnimationClip dieAnimation;
+
+    private Transform bulletsParent;
+    private float initalFireRate;
     private Vector2 moveInput;
     private new Rigidbody2D rigidbody2D;
     private new Collider2D collider2D;
@@ -54,9 +57,9 @@ public class Player : MonoBehaviour
     private float currentShotCooldown = 0;
     private bool isHoldingShootInput = false;
     private bool isDead = false;
-
-    private int animatorDieParam = Animator.StringToHash("Die");
-    private int animatorMoveXParam = Animator.StringToHash("Move X");
+    private float dieAnimationLength;
+    private readonly int animatorDieParam = Animator.StringToHash("Die");
+    private readonly int animatorMoveXParam = Animator.StringToHash("Move X");
 
     public void Damage()
     {
@@ -66,6 +69,11 @@ public class Player : MonoBehaviour
     public void ResetFireRate()
     {
         fireRate = initalFireRate;
+    }
+
+    public void OnDieAnimationEnded()
+    {
+    
     }
 
     public void OnMoveInput(InputAction.CallbackContext context)
@@ -118,6 +126,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         initalFireRate = fireRate;
+
         animator = GetComponent<Animator>();
         collider2D = GetComponent<Collider2D>();
         playerInput = GetComponent<PlayerInput>();
@@ -125,6 +134,20 @@ public class Player : MonoBehaviour
 
         boundsContactFilter2D = new ContactFilter2D();
         boundsContactFilter2D.SetLayerMask(boundsLayer);
+
+        if (dieAnimation == null)
+        {
+            throw new UnityException("Die Animation needs to be set.");
+        }
+
+        AnimationClip dieAnimationClipFromAnimator = animator.runtimeAnimatorController.animationClips.Where(clip => clip.name == dieAnimation.name).First();
+
+        if (dieAnimationClipFromAnimator == null)
+        {
+            throw new UnityException("Provided Die Animation not found in the attached animator controller.");
+        }
+
+        dieAnimationLength = dieAnimationClipFromAnimator.length;
     }
 
     private void Start()
@@ -242,6 +265,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    [ContextMenu("Kill")]
     private void Die()
     {
         isDead = true;
@@ -251,6 +275,6 @@ public class Player : MonoBehaviour
 
         OnDie.Invoke(this);
 
-        Destroy(gameObject, 1);
+        Destroy(gameObject, dieAnimationLength);
     }
 }
