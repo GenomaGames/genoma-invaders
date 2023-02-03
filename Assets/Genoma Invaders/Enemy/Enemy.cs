@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
         }
         else if (otherCollider2D.CompareTag("Enemy Finish Line"))
         {
-            GameManager.Instance.UpdateDiseaseLevel(diseaseLevel);
+            DiseaseManager.Instance.UpdateDiseaseLevel(diseaseLevel);
 
             transform.position = new Vector3(transform.position.x, 40, transform.position.z);
             speed += 1;

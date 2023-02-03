@@ -39,7 +39,7 @@ public class EnemyManager : MonoBehaviour
     {
         enemy.OnDie -= OnEnemyDie;
 
-        GameManager.Instance.UpdateDiseaseLevel(-enemy.DiseaseLevel);
+        DiseaseManager.Instance.UpdateDiseaseLevel(-enemy.DiseaseLevel);
 
         totalEnemies--;
 

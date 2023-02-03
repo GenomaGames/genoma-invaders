@@ -7,7 +7,6 @@ public class UIDiseaseMeter : MonoBehaviour
 
     private RectTransform meterRectTransform;
     private float maxWidth;
-    private GameManager gameManager;
 
     private void Awake()
     {
@@ -17,12 +16,23 @@ public class UIDiseaseMeter : MonoBehaviour
     private void Start()
     {
         maxWidth = meterRectTransform.sizeDelta.x;
-        gameManager = GameManager.Instance;
+
+        UpdateLevel(DiseaseManager.Instance.DiseaseLevel);
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        float newWidth = gameManager.DiseaseLevel * .01f * maxWidth;
+        DiseaseManager.Instance.OnLevelUpdated += UpdateLevel;
+    }
+
+    private void OnDisable()
+    {
+        DiseaseManager.Instance.OnLevelUpdated += UpdateLevel;
+    }
+
+    private void UpdateLevel(float level)
+    {
+        float newWidth = level * .01f * maxWidth;
         Vector2 newSize = new Vector2(newWidth, progressRectTransform.sizeDelta.y);
 
         progressRectTransform.sizeDelta = newSize;

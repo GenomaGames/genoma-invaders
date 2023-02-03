@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
-using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,12 +15,6 @@ public class GameManager : MonoBehaviour
         get;
         private set;
     }
-
-    public float DiseaseLevel
-    {
-        get;
-        private set;
-    } = 0;
 
     public bool IsTouchUIEnabled
     {
@@ -55,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     private Transform playerSpawn;
     private int playerLives;
-    private bool isInGameScene = false;
+    private bool isInGameplayScene = false;
     private float timeUntilPlayerSpawns;
     private bool isPlayerSpawning = false;
 
@@ -63,10 +56,7 @@ public class GameManager : MonoBehaviour
     {
         IsTouchUIEnabled = true;
 
-        if (OnTouchUIEnabled != null)
-        {
-            OnTouchUIEnabled();
-        }
+        OnTouchUIEnabled?.Invoke();
     }
 
     public void Restart()
@@ -74,27 +64,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Level_001");
     }
 
-    public void UpdateDiseaseLevel(float diseaseLevelChange)
-    {
-        DiseaseLevel = Mathf.Clamp(DiseaseLevel + diseaseLevelChange, 0, 100);
-
-        //Debug.Log($"Disease Level Updated to {DiseaseLevel}");
-
-        if (DiseaseLevel == 100)
-        {
-            Lose();
-        }
-        else if (DiseaseLevel == 0)
-        {
-            Win();
-        }
-    }
-
     public void OnTotalEnemiesChanged(int totalEnemies)
     {
         if (totalEnemies <= 0)
         {
-            if (DiseaseLevel < 50)
+            if (DiseaseManager.Instance.DiseaseLevel < 50)
             {
                 Win();
             }
@@ -132,12 +106,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (isInGameScene)
+        if (isInGameplayScene)
         {
-            float diseaseLevelChange = Time.deltaTime * diseaseLevelRiseSpeed;
-
-            UpdateDiseaseLevel(diseaseLevelChange);
-
             if (isPlayerSpawning)
             {
                 timeUntilPlayerSpawns = Mathf.Clamp(timeUntilPlayerSpawns - Time.deltaTime, 0, playerSpawnCooldown);
@@ -153,6 +123,13 @@ public class GameManager : MonoBehaviour
     private void OnDisable()
     {
         SceneManager.activeSceneChanged -= OnActiveSceneChanged;
+
+        if (DiseaseManager.Instance != null)
+        {
+            DiseaseManager.Instance.OnLevelEmptied -= Win;
+            DiseaseManager.Instance.OnLevelFilled -= Lose;
+        }
+
         EnhancedTouchSupport.Disable();
     }
 
@@ -179,9 +156,9 @@ public class GameManager : MonoBehaviour
 
     private void OnActiveSceneChanged(Scene oldScene, Scene newScene)
     {
-        isInGameScene = newScene.name.StartsWith("Level");
+        isInGameplayScene = newScene.name.StartsWith("Level");
 
-        if (isInGameScene)
+        if (isInGameplayScene)
         {
             StartGame();
         }
@@ -189,22 +166,35 @@ public class GameManager : MonoBehaviour
 
     private void StartGame()
     {
+        if (DiseaseManager.Instance != null)
+        {
+            DiseaseManager.Instance.OnLevelEmptied += Win;
+            DiseaseManager.Instance.OnLevelFilled += Lose;
+        }
+
         playerLives = initialPlayerLives;
-        DiseaseLevel = initialDiseaseLevel;
-        playerSpawn = GameObject.FindGameObjectWithTag("Player Spawn").transform;
 
-        GameObject playerGameObject = GameObject.FindGameObjectWithTag("Player");
+        GameObject playerSpawnGO = GameObject.FindGameObjectWithTag("Player Spawn");
 
-        if (playerGameObject == null)
+        if (playerSpawnGO == null)
+        {
+            throw new UnityException("No player spawn found in the scene");
+        }
+
+        playerSpawn = playerSpawnGO.transform;
+
+        GameObject playerGO = GameObject.FindGameObjectWithTag("Player");
+
+        if (playerGO == null)
         {
             SpawnPlayer();
         }
         else
         {
-            Player player = playerGameObject.GetComponent<Player>();
+            Player player = playerGO.GetComponent<Player>();
 
             player.OnDie += OnPlayerDie;
-        } 
+        }
     }
 
     private void OnPlayerDie(Player player)
@@ -215,10 +205,7 @@ public class GameManager : MonoBehaviour
         {
             playerLives--;
 
-            if (OnPlayerLivesChanged != null)
-            {
-                OnPlayerLivesChanged(playerLives);
-            }
+            OnPlayerLivesChanged?.Invoke(playerLives);
 
             timeUntilPlayerSpawns = playerSpawnCooldown;
             isPlayerSpawning = true;

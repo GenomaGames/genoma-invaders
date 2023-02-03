@@ -256,10 +256,7 @@ public class Player : MonoBehaviour
         {
             Instantiate(bulletPrefab, transform.position, Quaternion.identity, bulletsParent);
 
-            if (OnShot != null)
-            {
-                OnShot();
-            }
+            OnShot?.Invoke();
 
             currentShotCooldown = ShotCooldown;
         }
@@ -273,7 +270,7 @@ public class Player : MonoBehaviour
 
         animator.SetTrigger(animatorDieParam);
 
-        OnDie.Invoke(this);
+        OnDie?.Invoke(this);
 
         Destroy(gameObject, dieAnimationLength);
     }
