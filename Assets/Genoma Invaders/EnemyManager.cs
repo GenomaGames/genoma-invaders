@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    private Transform enemiesParent;
+    private GameObject enemiesParent;
     private int totalEnemies;
 
     private void Start()
     {
-        enemiesParent = GameObject.FindGameObjectWithTag("Enemies Parent").transform;
+        enemiesParent = GameObject.FindGameObjectWithTag("Enemies Parent");
 
         if (enemiesParent != null)
         {
