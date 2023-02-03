@@ -109,7 +109,14 @@ public class Player : MonoBehaviour
 
         if (context.performed)
         {
-            GameManager.Instance.GoToMainMenu();
+            if (!GameManager.Instance.IsGamePaused)
+            {
+                GameManager.Instance.Pause();
+            }
+            else
+            {
+                GameManager.Instance.Unpause();
+            }
         }
     }
 

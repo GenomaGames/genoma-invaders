@@ -9,12 +9,20 @@ public class GameManager : MonoBehaviour
     public static Action<int> OnPlayerLivesChanged;
     public static Action OnTouchUIEnabled;
     public static Action OnTouchUIDisabled;
+    public static Action OnGamePaused;
+    public static Action OnGameUnpaused;
 
     public static GameManager Instance
     {
         get;
         private set;
     }
+
+    public bool IsGamePaused
+    {
+        get;
+        private set;
+    } = false;
 
     public bool IsTouchUIEnabled
     {
@@ -39,11 +47,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float playerSpawnCooldown = 2;
     [SerializeField]
-    [Range(0f, 100f)]
-    private float initialDiseaseLevel = 50;
-    [SerializeField]
-    private float diseaseLevelRiseSpeed = 1;
-    [SerializeField]
     private string seed = "Genoma Games";
 
     private Transform playerSpawn;
@@ -57,11 +60,6 @@ public class GameManager : MonoBehaviour
         IsTouchUIEnabled = true;
 
         OnTouchUIEnabled?.Invoke();
-    }
-
-    public void Restart()
-    {
-        SceneManager.LoadScene("Level_001");
     }
 
     public void OnTotalEnemiesChanged(int totalEnemies)
@@ -79,6 +77,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Restart()
+    {
+        SceneManager.LoadScene("Level.Stomach");
+    }
+
     public void GoToMainMenu()
     {
         SceneManager.LoadScene("Main Menu");
@@ -87,6 +90,51 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         SceneManager.activeSceneChanged += OnActiveSceneChanged;
+    }
+
+    public void GoToMap()
+    {
+        SceneManager.LoadScene("Map");
+    }
+
+    public void Pause()
+    {
+        if (isInGameplayScene)
+        {
+            if (!IsGamePaused)
+            {
+                IsGamePaused = true;
+                OnGamePaused?.Invoke();
+            }
+            else
+            {
+                throw new UnityException("Game is already paused");
+            }
+        }
+        else
+        {
+            throw new UnityException("Can not pause in non gameplay scenes");
+        }
+    }
+
+    public void Unpause()
+    {
+        if (isInGameplayScene)
+        {
+            if (IsGamePaused)
+            {
+                IsGamePaused = false;
+                OnGameUnpaused?.Invoke();
+            }
+            else
+            {
+                throw new UnityException("Game is already playing");
+            }
+        }
+        else
+        {
+            throw new UnityException("Can not unpause in non gameplay scenes");
+        }
     }
 
     private void Awake()
@@ -156,6 +204,8 @@ public class GameManager : MonoBehaviour
 
     private void OnActiveSceneChanged(Scene oldScene, Scene newScene)
     {
+        IsGamePaused = false;
+
         isInGameplayScene = newScene.name.StartsWith("Level");
 
         if (isInGameplayScene)

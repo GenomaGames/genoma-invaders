@@ -18,16 +18,13 @@ public class UIDiseaseMeter : MonoBehaviour
         maxWidth = meterRectTransform.sizeDelta.x;
 
         UpdateLevel(DiseaseManager.Instance.DiseaseLevel);
-    }
 
-    private void OnEnable()
-    {
         DiseaseManager.Instance.OnLevelUpdated += UpdateLevel;
     }
 
     private void OnDisable()
     {
-        DiseaseManager.Instance.OnLevelUpdated += UpdateLevel;
+        DiseaseManager.Instance.OnLevelUpdated -= UpdateLevel;
     }
 
     private void UpdateLevel(float level)

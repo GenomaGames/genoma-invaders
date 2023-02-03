@@ -38,7 +38,7 @@ public class DiseaseManager : MonoBehaviour
         }
         else if (DiseaseLevel == 0)
         {
-            OnLevelFilled?.Invoke();
+            OnLevelEmptied?.Invoke();
         }
     }
 
