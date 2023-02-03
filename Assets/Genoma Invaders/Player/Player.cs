@@ -32,9 +32,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject bulletPrefab;
     [SerializeField]
-    private Transform bulletsParent;
-    [SerializeField]
     private float fireRate = 2f;
+
+    private Transform bulletsParent;
     private float initalFireRate;
 
     private float ShotCooldown
@@ -136,6 +136,16 @@ public class Player : MonoBehaviour
         }
 
         playerInput.camera = Camera.main;
+
+        GameObject bulletsParentGO = GameObject.FindGameObjectWithTag("Player Bullets Parent");
+
+        if (bulletsParentGO == null)
+        {
+            bulletsParentGO = new GameObject("Player Bullets");
+            bulletsParentGO.tag = "Player Bullets Parent";
+
+            bulletsParent = bulletsParentGO.transform;
+        }
     }
 
     private void Update()
