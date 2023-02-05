@@ -120,7 +120,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -160,6 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   diseaseLevel: 2
+  dieAnimation: {fileID: 7400000, guid: 29152f16d46cf6f449d58041f64f6438, type: 2}
 --- !u!114 &4766897469214489356
 MonoBehaviour:
   m_ObjectHideFlags: 0

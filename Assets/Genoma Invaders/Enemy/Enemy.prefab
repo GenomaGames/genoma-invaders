@@ -160,6 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   diseaseLevel: 2
+  dieAnimation: {fileID: 7400000, guid: 2f731535f2f0e9345b47ae962eac2506, type: 2}
 --- !u!114 &172700800463416240
 MonoBehaviour:
   m_ObjectHideFlags: 0

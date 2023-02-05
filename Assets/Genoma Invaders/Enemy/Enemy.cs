@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -14,12 +15,16 @@ public class Enemy : MonoBehaviour
     private float speed = 1;
     [SerializeField]
     private float diseaseLevel = 10;
+    [SerializeField]
+    [Tooltip("Required to destroy de GO when it ends")]
+    private AnimationClip dieAnimation;
 
     private bool isDead = false;
     private PowerUpDropper powerUpDropper;
     private new Rigidbody2D rigidbody2D;
     private new Collider2D collider2D;
     private Animator animator;
+    private float dieAnimationLength;
     private int animatorDieParam = Animator.StringToHash("Die");
 
     public void Damage()
@@ -33,6 +38,20 @@ public class Enemy : MonoBehaviour
         collider2D = GetComponent<Collider2D>();
         powerUpDropper = GetComponent<PowerUpDropper>();
         rigidbody2D = GetComponent<Rigidbody2D>();
+
+        if (dieAnimation == null)
+        {
+            throw new UnityException("Die Animation needs to be set.");
+        }
+
+        AnimationClip dieAnimationClipFromAnimator = animator.runtimeAnimatorController.animationClips.Where(clip => clip.name == dieAnimation.name).First();
+
+        if (dieAnimationClipFromAnimator == null)
+        {
+            throw new UnityException("Provided Die Animation not found in the attached animator controller.");
+        }
+
+        dieAnimationLength = dieAnimationClipFromAnimator.length;
     }
 
     private void FixedUpdate()
@@ -69,20 +88,18 @@ public class Enemy : MonoBehaviour
         rigidbody2D.MovePosition(newPosition);
     }
 
+    [ContextMenu("Kill")]
     private void Die()
     {
-        powerUpDropper.TryDrop();
+        isDead = true;
         collider2D.enabled = false;
 
-        isDead = true;
-
-        if (OnDie != null)
-        {
-            OnDie(this);
-        }
+        powerUpDropper.TryDrop();
 
         animator.SetTrigger(animatorDieParam);
 
-        Destroy(gameObject, 1);
+        OnDie?.Invoke(this);
+
+        Destroy(gameObject, dieAnimationLength);
     }
 }
