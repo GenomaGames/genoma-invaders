@@ -1,14 +1,18 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UIPauseMenu : MonoBehaviour
 {
-    private CanvasGroup canvasGroud;
+    [SerializeField]
+    private GameObject firstSelected;
+
+    private CanvasGroup canvasGroup;
 
     public void Hide()
     {
-        canvasGroud.blocksRaycasts = false;
-        canvasGroud.interactable = false;
-        canvasGroud.alpha = 0;
+        canvasGroup.blocksRaycasts = false;
+        canvasGroup.interactable = false;
+        canvasGroup.alpha = 0;
     }
 
     public void Quit()
@@ -18,14 +22,16 @@ public class UIPauseMenu : MonoBehaviour
 
     public void Show()
     {
-        canvasGroud.blocksRaycasts = true;
-        canvasGroud.interactable = true;
-        canvasGroud.alpha = 1;
+        canvasGroup.blocksRaycasts = true;
+        canvasGroup.interactable = true;
+        canvasGroup.alpha = 1;
+
+        EventSystem.current.SetSelectedGameObject(firstSelected);
     }
 
     private void Awake()
     {
-        canvasGroud = GetComponent<CanvasGroup>();
+        canvasGroup = GetComponent<CanvasGroup>();
     }
 
     private void Start()

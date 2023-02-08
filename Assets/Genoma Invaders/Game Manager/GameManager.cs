@@ -1,8 +1,17 @@
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
+
+public struct Patient
+{
+    public string name;
+}
 
 public class GameManager : MonoBehaviour
 {
@@ -30,6 +39,17 @@ public class GameManager : MonoBehaviour
         private set;
     } = false;
 
+    public Patient[] Patients
+    {
+        get => patients;
+    } 
+
+    public Patient CurrentPatient
+    {
+        get;
+        private set;
+    }
+
     public string Seed
     {
         get => seed;
@@ -54,12 +74,40 @@ public class GameManager : MonoBehaviour
     private bool isInGameplayScene = false;
     private float timeUntilPlayerSpawns;
     private bool isPlayerSpawning = false;
+    private Patient[] patients;
+    private System.Random random;
+
+    private string[] patientNames =
+    {
+        "John Doe",
+        "Joe Bloggs",
+        "Mister X",
+        "Joe Schmoe",
+        "Jane Smith",
+        "Hans Meier",
+    };
 
     public void EnableTouchUI()
     {
         IsTouchUIEnabled = true;
 
         OnTouchUIEnabled?.Invoke();
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+
+
+    public void GoToMap()
+    {
+        SceneManager.LoadScene("Map");
+    }
+
+    public void NewGame()
+    {
+        SceneManager.LoadScene("Patient Selection");
     }
 
     public void OnTotalEnemiesChanged(int totalEnemies)
@@ -75,26 +123,6 @@ public class GameManager : MonoBehaviour
                 Lose();
             }
         }
-    }
-
-    public void Restart()
-    {
-        SceneManager.LoadScene("Level.Stomach");
-    }
-
-    public void GoToMainMenu()
-    {
-        SceneManager.LoadScene("Main Menu");
-    }
-
-    private void OnEnable()
-    {
-        SceneManager.activeSceneChanged += OnActiveSceneChanged;
-    }
-
-    public void GoToMap()
-    {
-        SceneManager.LoadScene("Map");
     }
 
     public void Pause()
@@ -117,6 +145,44 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Quit()
+    {
+#if UNITY_EDITOR
+        EditorApplication.ExitPlaymode();
+#else
+        Application.Quit();
+#endif
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("Level.Stomach");
+    }
+
+    public void SelectDosageForm(DosageForm dosageForm)
+    {
+        Debug.Log($"Dosage form {dosageForm} selected");
+
+        switch (dosageForm)
+        {
+            case DosageForm.None:
+            case DosageForm.Pills:
+            case DosageForm.Injection:
+            case DosageForm.Suppositories:
+            default:
+                SceneLoader.LoadScene("Level_Circulatory");
+                break;
+        }
+    }
+
+    public void SelectPatient(Patient patient)
+    {
+        CurrentPatient = patient;
+
+        Debug.Log($"Patient {patient.name} selected");
+        SceneLoader.LoadScene("Administration Selection");
+    }
+
     public void Unpause()
     {
         if (isInGameplayScene)
@@ -137,6 +203,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        SceneManager.activeSceneChanged += OnActiveSceneChanged;
+    }
+
     private void Awake()
     {
         if (Instance == null)
@@ -145,6 +216,9 @@ public class GameManager : MonoBehaviour
             Instance = this;
 
             Random.InitState(SeedHash);
+            random = new System.Random(SeedHash);
+
+            patients = new Patient[3];
         }
         else
         {
@@ -181,6 +255,20 @@ public class GameManager : MonoBehaviour
         EnhancedTouchSupport.Disable();
     }
 
+    private void GeneratePatients()
+    {
+        for (int i = 0; i < patients.Length; i++)
+        {
+            Patient patient = new Patient
+            {
+
+                name = patientNames[random.Next(patientNames.Length)],
+            };
+
+            patients[i] = patient;
+        }
+    }
+
     private void SpawnPlayer()
     {
         GameObject playerGameObject = Instantiate(playerPrefab, playerSpawn.position, playerSpawn.rotation);
@@ -202,7 +290,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("You Win");
     }
 
-    private void OnActiveSceneChanged(Scene oldScene, Scene newScene)
+    private void OnActiveSceneChanged(Scene previousScene, Scene newScene)
     {
         IsGamePaused = false;
 
@@ -211,6 +299,10 @@ public class GameManager : MonoBehaviour
         if (isInGameplayScene)
         {
             StartGame();
+        }
+        else if (newScene.name == "Patient Selection")
+        {
+            GeneratePatients();
         }
     }
 
