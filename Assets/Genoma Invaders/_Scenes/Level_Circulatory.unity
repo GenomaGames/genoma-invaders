@@ -3083,11 +3083,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &1646295339 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 312572720824143902, guid: e9d0274b0c976264c8e57acc585f91bf, type: 3}
-  m_PrefabInstance: {fileID: 312572720054216925}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1670325229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4177,6 +4172,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8072112043773441659, guid: 3a1445c1af7124c4da2c434fc2e13fd3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072112043773441659, guid: 3a1445c1af7124c4da2c434fc2e13fd3, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072112043773441659, guid: 3a1445c1af7124c4da2c434fc2e13fd3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072112043773441659, guid: 3a1445c1af7124c4da2c434fc2e13fd3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8803119228187697921, guid: 3a1445c1af7124c4da2c434fc2e13fd3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4309,10 +4320,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8803119229519689289, guid: 3a1445c1af7124c4da2c434fc2e13fd3, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1646295339}
     - target: {fileID: 8803119229519689292, guid: 3a1445c1af7124c4da2c434fc2e13fd3, type: 3}
       propertyPath: m_Name
       value: HUD Canvas

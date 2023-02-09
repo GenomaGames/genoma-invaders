@@ -48,7 +48,9 @@ MonoBehaviour:
   playerPrefab: {fileID: 8726417171850910323, guid: f4bb7548105cf8440a25c1fe4fba3dee, type: 3}
   playerSpawnCooldown: 2
   seed: Genoma Games
-  currentBodyPart: {fileID: 0}
+  currentBodyPart: {fileID: 11400000, guid: 5829b70b7cad8ef408cba410ac91d7e9, type: 2}
   dosageForms:
   - {fileID: 11400000, guid: 8af05e64a52705c42a264021c9c94449, type: 2}
   - {fileID: 11400000, guid: fd15ef980ac9ecd4c8baeeaf9a45e733, type: 2}
+  diseases:
+  - {fileID: 11400000, guid: 7c07df5efdff48f4abd4a8a3a421d4e5, type: 2}

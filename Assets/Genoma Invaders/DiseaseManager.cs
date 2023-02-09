@@ -26,6 +26,11 @@ public class DiseaseManager : MonoBehaviour
     [Range(0f, 20f)]
     private float diseaseLevelRiseSpeed = 1;
 
+    public void ResetLevel()
+    {
+        SetDiseaseLevel(initialDiseaseLevel);
+    }
+
     public void UpdateDiseaseLevel(float diseaseLevelChange)
     {
         DiseaseLevel = Mathf.Clamp(DiseaseLevel + diseaseLevelChange, 0, 100);
@@ -47,14 +52,15 @@ public class DiseaseManager : MonoBehaviour
     {
         if (Instance == null)
         {
+            DontDestroyOnLoad(this);
             Instance = this;
+
+            ResetLevel();
         }
         else
         {
-            throw new UnityException("There is more than one Disease Manager");
+            Destroy(gameObject);
         }
-
-        UpdateDiseaseLevel(initialDiseaseLevel);
     }
 
     private void Update()
@@ -62,5 +68,22 @@ public class DiseaseManager : MonoBehaviour
         float diseaseLevelChange = Time.deltaTime * diseaseLevelRiseSpeed;
 
         UpdateDiseaseLevel(diseaseLevelChange);
+    }
+
+    private void SetDiseaseLevel(float newLevel)
+    {
+        DiseaseLevel = Mathf.Clamp(newLevel, 0, 100);
+
+        //Debug.Log($"Disease Level Updated to {DiseaseLevel}");
+        OnLevelUpdated?.Invoke(DiseaseLevel);
+
+        if (DiseaseLevel == 100)
+        {
+            OnLevelFilled?.Invoke();
+        }
+        else if (DiseaseLevel == 0)
+        {
+            OnLevelEmptied?.Invoke();
+        }
     }
 }

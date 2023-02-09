@@ -11,6 +11,7 @@ using Random = UnityEngine.Random;
 public struct Patient
 {
     public string name;
+    public DiseaseConfig disease;
 }
 
 public class GameManager : MonoBehaviour
@@ -83,6 +84,8 @@ public class GameManager : MonoBehaviour
     private BodyPartConfig currentBodyPart;
     [SerializeField]
     private DosageFormConfig[] dosageForms;
+    [SerializeField]
+    private DiseaseConfig[] diseases;
 
     private Transform playerSpawn;
     private int playerLives;
@@ -129,14 +132,7 @@ public class GameManager : MonoBehaviour
     {
         if (totalEnemies <= 0)
         {
-            if (DiseaseManager.Instance.DiseaseLevel < 50)
-            {
-                Win();
-            }
-            else
-            {
-                Lose();
-            }
+            FinishLevel();
         }
     }
 
@@ -290,6 +286,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void EndGame()
+    {
+        if (DiseaseManager.Instance != null)
+        {
+            DiseaseManager.Instance.OnLevelEmptied -= Win;
+            DiseaseManager.Instance.OnLevelFilled -= Lose;
+        }
+    }
+
     private void FinishLevel()
     {
         Debug.Log($"Level {SceneManager.GetActiveScene().name} Finished");
@@ -304,6 +309,7 @@ public class GameManager : MonoBehaviour
             Patient patient = new()
             {
                 name = patientNames[random.Next(patientNames.Length)],
+                disease = diseases[random.Next(diseases.Length)],
             };
 
             patients[i] = patient;
@@ -323,11 +329,15 @@ public class GameManager : MonoBehaviour
 
     private void Lose()
     {
+        Debug.Log("LOSE");
+        EndGame();
         SceneManager.LoadScene("Game Over");
     }
 
     private void Win()
     {
+        Debug.Log("WIN");
+        EndGame();
         SceneManager.LoadScene("You Win");
     }
 
@@ -351,6 +361,8 @@ public class GameManager : MonoBehaviour
     {
         if (DiseaseManager.Instance != null)
         {
+            DiseaseManager.Instance.ResetLevel();
+
             DiseaseManager.Instance.OnLevelEmptied += Win;
             DiseaseManager.Instance.OnLevelFilled += Lose;
         }
