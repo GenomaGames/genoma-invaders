@@ -7,21 +7,31 @@ using UnityEngine.UI;
 
 public class UIBodySystem : MonoBehaviour
 {
+    public BodySystemConfig BodySystem
+    {
+        set => bodySystem = value;
+    }
+
+    [SerializeField]
+    private BodySystemConfig bodySystem;
     [SerializeField]
     [AssetsOnly]
     private GameObject bodyPartPrefab;
 
-    private RectTransform rectTransform;
+    private Image image;
     private RectTransform bodyPartsParent;
+    private RectTransform rectTransform;
+
+    public void Setup()
+    {
+        UpdateImage();
+        SetupBodyParts();
+    }
 
     private void Awake()
     {
+        image = GetComponent<Image>();
         rectTransform = GetComponent<RectTransform>();
-    }
-
-    private void Start()
-    {
-        SetupBodyParts();
     }
 
     private GameObject InstantiateBodyPart(BodyPartConfig config)
@@ -40,7 +50,7 @@ public class UIBodySystem : MonoBehaviour
 
         RectTransform bodyPartsParent = bodyPartsParentGO.GetComponent<RectTransform>();
 
-        bodyPartsParent.SetParent(rectTransform.parent, false);
+        bodyPartsParent.SetParent(rectTransform, false);
         bodyPartsParent.sizeDelta = rectTransform.sizeDelta;
 
         return bodyPartsParent;
@@ -64,7 +74,7 @@ public class UIBodySystem : MonoBehaviour
 
             Navigation navigation = new()
             {
-                mode = Navigation.Mode.Explicit,
+                mode = Navigation.Mode.Automatic,
             };
 
             foreach (ConnectionDirection otherDirection in otherDirections)
@@ -132,5 +142,16 @@ public class UIBodySystem : MonoBehaviour
         }
 
         SetupBodyPartsNavigation(buttonsByDirection);
+    }
+
+    private void UpdateImage()
+    {
+        if (image == null)
+        {
+            image = GetComponent<Image>();
+        }
+        
+        image.sprite = bodySystem.sprite;
+        image.color = bodySystem.color;
     }
 }

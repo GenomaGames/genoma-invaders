@@ -14,7 +14,7 @@ public enum ConnectionDirection
 public class BodyPartConfig : SerializedScriptableObject
 {
     public string partName;
-    public BodySystem bodySystem;
+    public BodySystemConfig bodySystem;
     public Vector2 position;
     [Required]
     public Dictionary<ConnectionDirection, BodyPartConfig> connectedParts = new();

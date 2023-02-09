@@ -10,13 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9edc2a098221ddc4ebdc6650cd6930b0, type: 3}
-  m_Name: Circulatory
+  m_Name: Digestive
   m_EditorClassIdentifier: 
-  systemName: Circulatory
+  systemName: Digestive
   sprite: {fileID: 21300000, guid: 8616e01657063134eb131df953926269, type: 3}
-  color: {r: 0.9019608, g: 0.18039216, b: 0.18039216, a: 1}
+  color: {r: 0.9019608, g: 0.48057297, b: 0.345451, a: 1}
   parts:
-  - {fileID: 11400000, guid: 5bbd853735111284a8c7119e92cebbee, type: 2}
-  - {fileID: 11400000, guid: 5829b70b7cad8ef408cba410ac91d7e9, type: 2}
-  - {fileID: 11400000, guid: f0107c38a5e48a144b87d8d0960a932f, type: 2}
-  - {fileID: 11400000, guid: 4401514e6cc20bc4fbcbd4a4e2b9ea2d, type: 2}
+  - {fileID: 11400000, guid: 7330b0457ee237742b28160ebeea27b6, type: 2}

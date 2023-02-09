@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem.EnhancedTouch;
+using UnityEngine.SceneManagement;
 
 public class DiseaseManager : MonoBehaviour
 {
@@ -47,6 +49,15 @@ public class DiseaseManager : MonoBehaviour
             OnLevelEmptied?.Invoke();
         }
     }
+    private void OnEnable()
+    {
+        SceneManager.activeSceneChanged += OnActiveSceneChanged;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.activeSceneChanged -= OnActiveSceneChanged;
+    }
 
     private void Awake()
     {
@@ -68,6 +79,10 @@ public class DiseaseManager : MonoBehaviour
         float diseaseLevelChange = Time.deltaTime * diseaseLevelRiseSpeed;
 
         UpdateDiseaseLevel(diseaseLevelChange);
+    }
+
+    private void OnActiveSceneChanged(Scene previousScene, Scene newScene)
+    {
     }
 
     private void SetDiseaseLevel(float newLevel)

@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
+using Sirenix.OdinInspector;
 
 public struct Patient
 {
@@ -14,7 +15,7 @@ public struct Patient
     public DiseaseConfig disease;
 }
 
-public class GameManager : MonoBehaviour
+public class GameManager : SerializedMonoBehaviour
 {
     public static Action<int> OnPlayerLivesChanged;
     public static Action OnTouchUIEnabled;
@@ -175,18 +176,7 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Dosage form {bodyPart.partName} selected");
         currentBodyPart = bodyPart;
 
-        switch (bodyPart.bodySystem)
-        {
-            case BodySystem.Circulatory:
-                SceneLoader.LoadScene("Level_Circulatory");
-                break;
-            case BodySystem.Digestive:
-                SceneLoader.LoadScene("Level_Digestive");
-                break;
-            case BodySystem.None:
-            default:
-                throw new UnityException($"Body Part {bodyPart.partName} does not have a system assigned");
-        }
+        SceneLoader.LoadScene(bodyPart.bodySystem.scene.name);
     }
 
     public void SelectDosageForm(DosageFormConfig dosageForm)
