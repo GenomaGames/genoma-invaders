@@ -21,6 +21,17 @@ public class GameManager : MonoBehaviour
     public static Action OnGamePaused;
     public static Action OnGameUnpaused;
 
+    public BodyPartConfig CurrentBodyPart
+    {
+        get => currentBodyPart;
+        private set => currentBodyPart = value;
+    }
+
+    public DosageFormConfig[] DosageForms
+    {
+        get => dosageForms;
+    }
+
     public static GameManager Instance
     {
         get;
@@ -42,7 +53,7 @@ public class GameManager : MonoBehaviour
     public Patient[] Patients
     {
         get => patients;
-    } 
+    }
 
     public Patient CurrentPatient
     {
@@ -68,6 +79,10 @@ public class GameManager : MonoBehaviour
     private float playerSpawnCooldown = 2;
     [SerializeField]
     private string seed = "Genoma Games";
+    [SerializeField]
+    private BodyPartConfig currentBodyPart;
+    [SerializeField]
+    private DosageFormConfig[] dosageForms;
 
     private Transform playerSpawn;
     private int playerLives;
@@ -77,7 +92,7 @@ public class GameManager : MonoBehaviour
     private Patient[] patients;
     private System.Random random;
 
-    private string[] patientNames =
+    private readonly string[] patientNames =
     {
         "John Doe",
         "Joe Bloggs",
@@ -159,20 +174,32 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Level.Stomach");
     }
 
-    public void SelectDosageForm(DosageForm dosageForm)
+    public void SelectBodyPart(BodyPartConfig bodyPart)
     {
-        Debug.Log($"Dosage form {dosageForm} selected");
+        Debug.Log($"Dosage form {bodyPart.partName} selected");
+        currentBodyPart = bodyPart;
 
-        switch (dosageForm)
+        switch (bodyPart.bodySystem)
         {
-            case DosageForm.None:
-            case DosageForm.Pills:
-            case DosageForm.Injection:
-            case DosageForm.Suppositories:
-            default:
+            case BodySystem.Circulatory:
                 SceneLoader.LoadScene("Level_Circulatory");
                 break;
+            case BodySystem.Digestive:
+                SceneLoader.LoadScene("Level_Digestive");
+                break;
+            case BodySystem.None:
+            default:
+                throw new UnityException($"Body Part {bodyPart.partName} does not have a system assigned");
         }
+    }
+
+    public void SelectDosageForm(DosageFormConfig dosageForm)
+    {
+        Debug.Log($"Dosage form {dosageForm.dosageFormName} selected");
+
+        BodyPartConfig bodyPart = dosageForm.bodyParts[random.Next(0, dosageForm.bodyParts.Length)];
+
+        SelectBodyPart(bodyPart);
     }
 
     public void SelectPatient(Patient patient)
@@ -206,6 +233,19 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         SceneManager.activeSceneChanged += OnActiveSceneChanged;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.activeSceneChanged -= OnActiveSceneChanged;
+
+        if (DiseaseManager.Instance != null)
+        {
+            DiseaseManager.Instance.OnLevelEmptied -= Win;
+            DiseaseManager.Instance.OnLevelFilled -= Lose;
+        }
+
+        EnhancedTouchSupport.Disable();
     }
 
     private void Awake()
@@ -242,26 +282,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void OnDisable()
+    private void OnGUI()
     {
-        SceneManager.activeSceneChanged -= OnActiveSceneChanged;
-
-        if (DiseaseManager.Instance != null)
+        if (GUILayout.Button("Finish Level"))
         {
-            DiseaseManager.Instance.OnLevelEmptied -= Win;
-            DiseaseManager.Instance.OnLevelFilled -= Lose;
+            FinishLevel();
         }
+    }
 
-        EnhancedTouchSupport.Disable();
+    private void FinishLevel()
+    {
+        Debug.Log($"Level {SceneManager.GetActiveScene().name} Finished");
+
+        SceneManager.LoadScene("Body Part Selection");
     }
 
     private void GeneratePatients()
     {
         for (int i = 0; i < patients.Length; i++)
         {
-            Patient patient = new Patient
+            Patient patient = new()
             {
-
                 name = patientNames[random.Next(patientNames.Length)],
             };
 

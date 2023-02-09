@@ -1,5 +1,3 @@
-using System;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -8,14 +6,13 @@ public class UIAdministrationSelector : MonoBehaviour
     [SerializeField]
     private TMP_Text dosageFormNameText;
 
-    private DosageForm[] dosageForms;
     private int currentDosageFormIndex = 0;
 
     public void NextDosageForm()
     {
         currentDosageFormIndex++;
 
-        if (currentDosageFormIndex >= dosageForms.Length)
+        if (currentDosageFormIndex >= GameManager.Instance.DosageForms.Length)
         {
             currentDosageFormIndex = 0;
         }
@@ -29,7 +26,7 @@ public class UIAdministrationSelector : MonoBehaviour
 
         if (currentDosageFormIndex < 0)
         {
-            currentDosageFormIndex = dosageForms.Length - 1;
+            currentDosageFormIndex = GameManager.Instance.DosageForms.Length - 1;
         }
 
         UpdateInfo();
@@ -37,15 +34,7 @@ public class UIAdministrationSelector : MonoBehaviour
 
     public void SelectDosageForm()
     {
-        GameManager.Instance.SelectDosageForm(dosageForms[currentDosageFormIndex]);
-    }
-
-    private void Awake()
-    {
-        dosageForms = Enum.GetValues(typeof(DosageForm))
-            .Cast<DosageForm>()
-            .Where(dosageForm => dosageForm != DosageForm.None)
-            .ToArray();
+        GameManager.Instance.SelectDosageForm(GameManager.Instance.DosageForms[currentDosageFormIndex]);
     }
 
     private void Start()
@@ -55,6 +44,6 @@ public class UIAdministrationSelector : MonoBehaviour
 
     private void UpdateInfo()
     {
-        dosageFormNameText.text = dosageForms[currentDosageFormIndex].ToString();
+        dosageFormNameText.text = GameManager.Instance.DosageForms[currentDosageFormIndex].dosageFormName;
     }
 }

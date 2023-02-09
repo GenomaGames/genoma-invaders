@@ -44,9 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14375975c060de5499739e8e1394646f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManagerPrefab: {fileID: 6049136929919050033}
   initialPlayerLives: 3
   playerPrefab: {fileID: 8726417171850910323, guid: f4bb7548105cf8440a25c1fe4fba3dee, type: 3}
   playerSpawnCooldown: 2
-  initialDiseaseLevel: 50
-  diseaseLevelRiseSpeed: 1
+  seed: Genoma Games
+  currentBodyPart: {fileID: 0}
+  dosageForms:
+  - {fileID: 11400000, guid: 8af05e64a52705c42a264021c9c94449, type: 2}
+  - {fileID: 11400000, guid: fd15ef980ac9ecd4c8baeeaf9a45e733, type: 2}

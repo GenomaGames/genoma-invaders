@@ -23,6 +23,7 @@ public class DiseaseManager : MonoBehaviour
     [Range(0f, 100f)]
     private float initialDiseaseLevel = 50;
     [SerializeField]
+    [Range(0f, 20f)]
     private float diseaseLevelRiseSpeed = 1;
 
     public void UpdateDiseaseLevel(float diseaseLevelChange)
