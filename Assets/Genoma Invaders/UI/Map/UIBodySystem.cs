@@ -7,11 +7,6 @@ using UnityEngine.UI;
 
 public class UIBodySystem : MonoBehaviour
 {
-    public BodySystemConfig BodySystem
-    {
-        set => bodySystem = value;
-    }
-
     [SerializeField]
     private BodySystemConfig bodySystem;
     [SerializeField]
@@ -22,8 +17,10 @@ public class UIBodySystem : MonoBehaviour
     private RectTransform bodyPartsParent;
     private RectTransform rectTransform;
 
-    public void Setup()
+    public void Setup(BodySystemConfig bodySystemConfig)
     {
+        bodySystem = bodySystemConfig;
+
         UpdateImage();
         SetupBodyParts();
     }
@@ -101,47 +98,68 @@ public class UIBodySystem : MonoBehaviour
             bodyPartButton.navigation = navigation;
         }
 
-        Button randomButton = buttonsByDirection.Values.ElementAt(Random.Range(0, buttonsByDirection.Values.Count - 1));
+        if (buttonsByDirection.Count > 0)
+        {
+            Button randomButton = buttonsByDirection.Values.ElementAt(Random.Range(0, buttonsByDirection.Values.Count - 1));
+            
+            EventSystem.current.SetSelectedGameObject(randomButton.gameObject);
+        }
 
-        EventSystem.current.SetSelectedGameObject(randomButton.gameObject);
     }
 
     private void SetupBodyParts()
     {
         bodyPartsParent = InstantiateBodyPartsParent();
 
-        BodyPartConfig currentPartConfig = GameManager.Instance.CurrentBodyPart;
+        BodyPartConfig currentBodyPart = GameManager.Instance.CurrentBodyPart;
 
-        Debug.Log($"Current part {currentPartConfig.partName}");
-
-        GameObject currentBodyPartGO = InstantiateBodyPart(currentPartConfig);
-
-        Button currentBodyPartButton = currentBodyPartGO.GetComponent<Button>();
-
-        currentBodyPartButton.interactable = false;
-
-        Dictionary<ConnectionDirection, BodyPartConfig> connectedBodyParts = currentPartConfig.connectedParts;
-        Dictionary<ConnectionDirection, Button> buttonsByDirection = new();
-
-        foreach (ConnectionDirection direction in connectedBodyParts.Keys)
+        if (currentBodyPart.bodySystem == bodySystem)
         {
-            BodyPartConfig bodyPart = currentPartConfig.connectedParts[direction];
+            Debug.Log($"Current part {currentBodyPart.partName}");
 
-            Debug.Log($"{currentPartConfig.partName} is connected to the {direction} with the {bodyPart.partName}");
+            GameObject currentBodyPartGO = InstantiateBodyPart(currentBodyPart);
 
-            GameObject bodyPartGO = InstantiateBodyPart(bodyPart);
+            Button currentBodyPartButton = currentBodyPartGO.GetComponent<Button>();
+
+            currentBodyPartButton.interactable = false;
+
+            Dictionary<ConnectionDirection, BodyPartConfig> connectedBodyParts = currentBodyPart.connectedParts;
+            Dictionary<ConnectionDirection, Button> buttonsByDirection = new();
+
+            foreach (ConnectionDirection direction in connectedBodyParts.Keys)
+            {
+                BodyPartConfig bodyPart = currentBodyPart.connectedParts[direction];
+
+                Debug.Log($"{currentBodyPart.partName} is connected to the {direction} with the {bodyPart.partName}");
+
+                GameObject bodyPartGO = InstantiateBodyPart(bodyPart);
+
+                Button bodyPartButton = bodyPartGO.GetComponent<Button>();
+
+                bodyPartButton.onClick.AddListener(() =>
+                {
+                    OnClickBodyPart(bodyPart);
+                });
+
+                buttonsByDirection.Add(direction, bodyPartButton);
+            }
+
+            SetupBodyPartsNavigation(buttonsByDirection);
+        }
+
+        if (currentBodyPart.connectedSystems.TryGetValue(bodySystem, out BodyPartConfig systemBodyPart))
+        {
+            Debug.Log($"{currentBodyPart.partName} is connected to by the {bodySystem.systemName} system with the {systemBodyPart.partName}");
+
+            GameObject bodyPartGO = InstantiateBodyPart(systemBodyPart);
 
             Button bodyPartButton = bodyPartGO.GetComponent<Button>();
 
             bodyPartButton.onClick.AddListener(() =>
             {
-                OnClickBodyPart(bodyPart);
+                OnClickBodyPart(systemBodyPart);
             });
-
-            buttonsByDirection.Add(direction, bodyPartButton);
         }
-
-        SetupBodyPartsNavigation(buttonsByDirection);
     }
 
     private void UpdateImage()

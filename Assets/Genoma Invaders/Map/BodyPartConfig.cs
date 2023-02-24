@@ -19,5 +19,5 @@ public class BodyPartConfig : SerializedScriptableObject
     [Required]
     public Dictionary<ConnectionDirection, BodyPartConfig> connectedParts = new();
     [Required]
-    public Dictionary<BodySystem, BodyPartConfig> connectedSystems = new();
+    public Dictionary<BodySystemConfig, BodyPartConfig> connectedSystems = new();
 }

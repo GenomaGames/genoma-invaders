@@ -17,3 +17,4 @@ MonoBehaviour:
   color: {r: 0.9019608, g: 0.48057297, b: 0.345451, a: 1}
   parts:
   - {fileID: 11400000, guid: 7330b0457ee237742b28160ebeea27b6, type: 2}
+  scene: {fileID: 102900000, guid: 96adb438270d1604987b339302c9382a, type: 3}

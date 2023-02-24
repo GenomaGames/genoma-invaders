@@ -24,13 +24,17 @@ public class DiseaseManager : MonoBehaviour
     [SerializeField]
     [Range(0f, 100f)]
     private float initialDiseaseLevel = 50;
-    [SerializeField]
-    [Range(0f, 20f)]
-    private float diseaseLevelRiseSpeed = 1;
+
+    private DiseaseConfig disease;
 
     public void ResetLevel()
     {
         SetDiseaseLevel(initialDiseaseLevel);
+    }
+
+    public void SetDisease(DiseaseConfig diseaseConfig)
+    {
+        disease = diseaseConfig;
     }
 
     public void UpdateDiseaseLevel(float diseaseLevelChange)
@@ -76,7 +80,7 @@ public class DiseaseManager : MonoBehaviour
 
     private void Update()
     {
-        float diseaseLevelChange = Time.deltaTime * diseaseLevelRiseSpeed;
+        float diseaseLevelChange = Time.deltaTime * disease.levelRiseSpeed;
 
         UpdateDiseaseLevel(diseaseLevelChange);
     }

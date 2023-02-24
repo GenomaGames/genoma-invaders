@@ -99,9 +99,7 @@ public class UISystemSelector : SerializedMonoBehaviour
 
         UIBodySystem uIBodySystem = bodySystemGO.GetComponent<UIBodySystem>();
 
-        uIBodySystem.BodySystem = bodySystem;
-
-        uIBodySystem.Setup();
+        uIBodySystem.Setup(bodySystem);
 
         GameObject buttonGO = Instantiate(bodySystemButtonPrefab, rectTransform);
 

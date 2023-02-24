@@ -5,5 +5,6 @@ using UnityEngine;
 public class DiseaseConfig : SerializedScriptableObject
 {
     public string diseaseName;
-    public float diseaseLevelRiseSpeed = 1;
+    [Range(0f, 20f)]
+    public float levelRiseSpeed = 1;
 }

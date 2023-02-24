@@ -52,5 +52,6 @@ MonoBehaviour:
   dosageForms:
   - {fileID: 11400000, guid: 8af05e64a52705c42a264021c9c94449, type: 2}
   - {fileID: 11400000, guid: fd15ef980ac9ecd4c8baeeaf9a45e733, type: 2}
+  - {fileID: 11400000, guid: 148031718d2bcd14b971b4814d18086f, type: 2}
   diseases:
   - {fileID: 11400000, guid: 7c07df5efdff48f4abd4a8a3a421d4e5, type: 2}

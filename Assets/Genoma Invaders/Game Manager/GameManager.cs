@@ -7,7 +7,6 @@ using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
-using Sirenix.OdinInspector;
 
 public struct Patient
 {
@@ -15,7 +14,7 @@ public struct Patient
     public DiseaseConfig disease;
 }
 
-public class GameManager : SerializedMonoBehaviour
+public class GameManager : MonoBehaviour
 {
     public static Action<int> OnPlayerLivesChanged;
     public static Action OnTouchUIEnabled;
@@ -349,12 +348,15 @@ public class GameManager : SerializedMonoBehaviour
 
     private void StartGame()
     {
-        if (DiseaseManager.Instance != null)
-        {
-            DiseaseManager.Instance.ResetLevel();
+        DiseaseManager diseaseManager = DiseaseManager.Instance;
 
-            DiseaseManager.Instance.OnLevelEmptied += Win;
-            DiseaseManager.Instance.OnLevelFilled += Lose;
+        if (diseaseManager != null)
+        {
+            diseaseManager.ResetLevel();
+            diseaseManager.SetDisease(CurrentPatient.disease);
+
+            diseaseManager.OnLevelEmptied += Win;
+            diseaseManager.OnLevelFilled += Lose;
         }
 
         playerLives = initialPlayerLives;

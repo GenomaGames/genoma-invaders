@@ -128,6 +128,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6078969384929421119, guid: 104a6b37a8f5ac541b1a6ac2b899a6d0, type: 3}
   m_PrefabInstance: {fileID: 6078969384912655437}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &16839539 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6078969384929421118, guid: 104a6b37a8f5ac541b1a6ac2b899a6d0, type: 3}
+  m_PrefabInstance: {fileID: 6078969384912655437}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &554291769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -234,6 +245,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6078969384929421119, guid: 104a6b37a8f5ac541b1a6ac2b899a6d0, type: 3}
   m_PrefabInstance: {fileID: 554291769}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &554291771 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6078969384929421118, guid: 104a6b37a8f5ac541b1a6ac2b899a6d0, type: 3}
+  m_PrefabInstance: {fileID: 554291769}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &702456723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -340,6 +362,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5614918894021482573, guid: 2da840055176c264cb6dd2d6f6bbcec0, type: 3}
   m_PrefabInstance: {fileID: 702456723}
   m_PrefabAsset: {fileID: 0}
+--- !u!225 &702456726 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 6467551995389405121, guid: 2da840055176c264cb6dd2d6f6bbcec0, type: 3}
+  m_PrefabInstance: {fileID: 702456723}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &789932934
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,9 +445,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7caff3badae112548befb6e7e24492a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAutoSetupEnabled: 0
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 16839539}
+    - {fileID: 702456726}
+    - {fileID: 554291771}
+    - {fileID: 1912069440}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: tabs
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[UnityEngine.UI.Button, UnityEngine.UI],[UnityEngine.CanvasGroup,
+        UnityEngine.UIModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[UnityEngine.UI.Button,
+        UnityEngine.UI]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 0
+    - Name: $v
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 2
+    - Name: $v
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  isAutoSetupEnabled: 1
   bodySystems:
   - {fileID: 11400000, guid: 423ddef86c8c8284c9d5fe04820edbdd, type: 2}
+  - {fileID: 11400000, guid: 147a2988bcfba5943a24f13e5d605bea, type: 2}
   bodySystemPrefab: {fileID: 5614918894021482572, guid: 2da840055176c264cb6dd2d6f6bbcec0, type: 3}
   bodySystemsParent: {fileID: 1847789984}
   bodySystemButtonPrefab: {fileID: 6078969384929421116, guid: 104a6b37a8f5ac541b1a6ac2b899a6d0, type: 3}
@@ -545,6 +630,10 @@ PrefabInstance:
       propertyPath: currentBodyPart
       value: 
       objectReference: {fileID: 11400000, guid: 5bbd853735111284a8c7119e92cebbee, type: 2}
+    - target: {fileID: 6049136929919050038, guid: 1d4a2f3a667786c42972172d8451b5ee, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 6049136929919050038, guid: 1d4a2f3a667786c42972172d8451b5ee, type: 3}
     - target: {fileID: 6049136929919050039, guid: 1d4a2f3a667786c42972172d8451b5ee, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -823,6 +912,14 @@ PrefabInstance:
       propertyPath: bodySystem
       value: 
       objectReference: {fileID: 11400000, guid: 147a2988bcfba5943a24f13e5d605bea, type: 2}
+    - target: {fileID: 5614918894021482570, guid: 2da840055176c264cb6dd2d6f6bbcec0, type: 3}
+      propertyPath: m_Color.b
+      value: 0.18039215
+      objectReference: {fileID: 0}
+    - target: {fileID: 5614918894021482570, guid: 2da840055176c264cb6dd2d6f6bbcec0, type: 3}
+      propertyPath: m_Color.g
+      value: 0.65107685
+      objectReference: {fileID: 0}
     - target: {fileID: 5614918894021482572, guid: 2da840055176c264cb6dd2d6f6bbcec0, type: 3}
       propertyPath: m_Name
       value: Digestive
@@ -916,6 +1013,11 @@ PrefabInstance:
 --- !u!224 &1912069438 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5614918894021482573, guid: 2da840055176c264cb6dd2d6f6bbcec0, type: 3}
+  m_PrefabInstance: {fileID: 1912069437}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &1912069440 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 6467551995389405121, guid: 2da840055176c264cb6dd2d6f6bbcec0, type: 3}
   m_PrefabInstance: {fileID: 1912069437}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6078969384912655437

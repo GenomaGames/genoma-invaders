@@ -17,6 +17,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 11400000, guid: 5829b70b7cad8ef408cba410ac91d7e9, type: 2}
+    - {fileID: 11400000, guid: 147a2988bcfba5943a24f13e5d605bea, type: 2}
     - {fileID: 11400000, guid: 7330b0457ee237742b28160ebeea27b6, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
@@ -63,18 +64,12 @@ MonoBehaviour:
       Data: 
     - Name: connectedSystems
       Entry: 7
-      Data: 2|System.Collections.Generic.Dictionary`2[[BodySystem, Assembly-CSharp],[BodyPartConfig,
+      Data: 2|System.Collections.Generic.Dictionary`2[[BodySystemConfig, Assembly-CSharp],[BodyPartConfig,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 3|System.Collections.Generic.EnumEqualityComparer`1[[BodySystem, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
+      Data: 3|System.Collections.Generic.ObjectEqualityComparer`1[[BodySystemConfig,
+        Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -85,11 +80,11 @@ MonoBehaviour:
       Entry: 7
       Data: 
     - Name: $k
-      Entry: 3
-      Data: 2
-    - Name: $v
       Entry: 10
       Data: 1
+    - Name: $v
+      Entry: 10
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -100,5 +95,5 @@ MonoBehaviour:
       Entry: 8
       Data: 
   partName: Descending Aorta
-  bodySystem: 1
+  bodySystem: {fileID: 11400000, guid: 423ddef86c8c8284c9d5fe04820edbdd, type: 2}
   position: {x: 2, y: 20}

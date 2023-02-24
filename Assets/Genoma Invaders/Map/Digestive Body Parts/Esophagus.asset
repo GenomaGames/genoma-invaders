@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90446ef582cd6004aa08da6d4e879f0b, type: 3}
-  m_Name: Right Arm
+  m_Name: Esophagus
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11400000, guid: f0107c38a5e48a144b87d8d0960a932f, type: 2}
-    - {fileID: 11400000, guid: 5829b70b7cad8ef408cba410ac91d7e9, type: 2}
+    - {fileID: 11400000, guid: 7330b0457ee237742b28160ebeea27b6, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -42,28 +41,16 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
       Data: 
     - Name: $k
       Entry: 3
-      Data: 1
+      Data: 2
     - Name: $v
       Entry: 10
       Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 3
-    - Name: $v
-      Entry: 10
-      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -93,6 +80,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  partName: Right Arm
-  bodySystem: {fileID: 11400000, guid: 423ddef86c8c8284c9d5fe04820edbdd, type: 2}
-  position: {x: 34, y: 56}
+  partName: Esophagus
+  bodySystem: {fileID: 11400000, guid: 147a2988bcfba5943a24f13e5d605bea, type: 2}
+  position: {x: 0, y: 43}

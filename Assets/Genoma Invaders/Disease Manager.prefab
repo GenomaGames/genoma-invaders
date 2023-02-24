@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialDiseaseLevel: 50
-  diseaseLevelRiseSpeed: 3
+  diseaseLevelRiseSpeed: 2
