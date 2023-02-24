@@ -269,9 +269,12 @@ public class GameManager : MonoBehaviour
 
     private void OnGUI()
     {
-        if (GUILayout.Button("Finish Level"))
+        if (SceneManager.GetActiveScene().name.StartsWith("Level"))
         {
-            FinishLevel();
+            if (GUILayout.Button("Finish Level"))
+            {
+                FinishLevel();
+            }
         }
     }
 
