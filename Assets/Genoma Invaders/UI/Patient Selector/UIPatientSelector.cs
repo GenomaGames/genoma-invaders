@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.EventSystems;
 
 public class UIPatientSelector : MonoBehaviour
 {

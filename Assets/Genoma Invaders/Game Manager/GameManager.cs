@@ -276,6 +276,14 @@ public class GameManager : MonoBehaviour
                 FinishLevel();
             }
         }
+
+        if (SceneManager.GetActiveScene().name == "Patient Selection")
+        {
+            if (GUILayout.Button("Regenerate Patients"))
+            {
+                GeneratePatients();
+            }
+        }
     }
 
     private void EndGame()
@@ -298,14 +306,21 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < patients.Length; i++)
         {
-            Patient patient = new()
-            {
-                name = patientNames[random.Next(patientNames.Length)],
-                disease = diseases[random.Next(diseases.Length)],
-            };
+            Patient patient = GeneratePatient();
 
             patients[i] = patient;
         }
+    }
+
+    private Patient GeneratePatient()
+    {
+        Patient patient = new()
+        {
+            name = patientNames[random.Next(patientNames.Length)],
+            disease = diseases[random.Next(diseases.Length)],
+        };
+
+        return patient;
     }
 
     private void SpawnPlayer()
