@@ -122,8 +122,6 @@ public class Player : MonoBehaviour
 
     public void OnTapInput(InputAction.CallbackContext context)
     {
-        Debug.Log($"Tap!");
-
         if (!GameManager.Instance.IsTouchUIEnabled && (context.started || context.performed))
         {
             GameManager.Instance.EnableTouchUI();
@@ -149,12 +147,14 @@ public class Player : MonoBehaviour
 
         AnimationClip dieAnimationClipFromAnimator = animator.runtimeAnimatorController.animationClips.Where(clip => clip.name == dieAnimation.name).First();
 
-        if (dieAnimationClipFromAnimator == null)
+        if (dieAnimationClipFromAnimator != null)
+        {
+            dieAnimationLength = dieAnimationClipFromAnimator.length;
+        }
+        else
         {
             throw new UnityException("Provided Die Animation not found in the attached animator controller.");
         }
-
-        dieAnimationLength = dieAnimationClipFromAnimator.length;
     }
 
     private void Start()
@@ -171,8 +171,11 @@ public class Player : MonoBehaviour
 
         if (bulletsParentGO == null)
         {
-            bulletsParentGO = new GameObject("Player Bullets");
-            bulletsParentGO.tag = "Player Bullets Parent";
+            bulletsParentGO = new()
+            {
+                name = "Player Bullets",
+                tag = "Player Bullets Parent"
+            };
 
             bulletsParent = bulletsParentGO.transform;
         }
@@ -220,18 +223,18 @@ public class Player : MonoBehaviour
     private void Move(Vector2 direction)
     {
         Vector2 currentPosition = transform.position;
-        Vector2 newPosition = currentPosition + direction * Time.fixedDeltaTime * speed;
+        Vector2 newPosition = currentPosition + speed * Time.fixedDeltaTime * direction;
 
         if (!CanMoveTo(newPosition))
         {
-            Vector2 horizontalMoveDirection = new Vector2(direction.x, 0);
-            newPosition = currentPosition + horizontalMoveDirection * Time.fixedDeltaTime * speed;
+            Vector2 horizontalMoveDirection = new(direction.x, 0);
+            newPosition = currentPosition + speed * Time.fixedDeltaTime * horizontalMoveDirection;
         }
 
         if (!CanMoveTo(newPosition))
         {
-            Vector2 verticalMoveDirection = new Vector2(0, direction.y);
-            newPosition = currentPosition + verticalMoveDirection * Time.fixedDeltaTime * speed;
+            Vector2 verticalMoveDirection = new(0, direction.y);
+            newPosition = currentPosition + speed * Time.fixedDeltaTime * verticalMoveDirection;
         }
 
         if (CanMoveTo(newPosition))

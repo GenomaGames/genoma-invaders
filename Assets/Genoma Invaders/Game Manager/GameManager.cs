@@ -7,8 +7,7 @@ using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
-using Unity.Services.Analytics;
-using System.Collections.Generic;
+using UnityEngine.InputSystem;
 
 public struct Patient
 {
@@ -231,8 +230,6 @@ public class GameManager : MonoBehaviour
             DiseaseManager.Instance.OnLevelEmptied -= Win;
             DiseaseManager.Instance.OnLevelFilled -= Lose;
         }
-
-        EnhancedTouchSupport.Disable();
     }
 
     private void Awake()
@@ -246,6 +243,11 @@ public class GameManager : MonoBehaviour
             random = new System.Random(SeedHash);
 
             patients = new Patient[3];
+
+            if (Touchscreen.current != null && Gamepad.current == null)
+            {
+                EnableTouchUI();
+            }
         }
         else
         {
@@ -383,24 +385,26 @@ public class GameManager : MonoBehaviour
 
         GameObject playerSpawnGO = GameObject.FindGameObjectWithTag("Player Spawn");
 
-        if (playerSpawnGO == null)
+        if (playerSpawnGO != null)
         {
-            throw new UnityException("No player spawn found in the scene");
-        }
+            playerSpawn = playerSpawnGO.transform;
 
-        playerSpawn = playerSpawnGO.transform;
+            GameObject playerGO = GameObject.FindGameObjectWithTag("Player");
 
-        GameObject playerGO = GameObject.FindGameObjectWithTag("Player");
+            if (playerGO == null)
+            {
+                SpawnPlayer();
+            }
+            else
+            {
+                Player player = playerGO.GetComponent<Player>();
 
-        if (playerGO == null)
-        {
-            SpawnPlayer();
+                player.OnDie += OnPlayerDie;
+            }
         }
         else
         {
-            Player player = playerGO.GetComponent<Player>();
-
-            player.OnDie += OnPlayerDie;
+            throw new UnityException("No player spawn found in the scene");
         }
     }
 
