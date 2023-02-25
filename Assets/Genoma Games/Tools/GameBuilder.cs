@@ -6,6 +6,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEditor;
+using UnityEditor.Build.Content;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
 
@@ -32,7 +33,17 @@ public static class GameBuilder
 
         PlayerSettings.bundleVersion = GetBuildVersion(isDevelopment);
 
-        Dictionary<BuildTarget, BuildReport> reports = BuildPlayers();
+        Dictionary<BuildTarget, BuildReport> reports;
+
+        try
+        {
+            reports = BuildPlayers();
+        }
+        catch (Exception exception)
+        {
+            PlayerSettings.bundleVersion = currentVersion;
+            throw exception;
+        }
 
         if (reports.TryGetValue(BuildTarget.WebGL, out BuildReport webGLReport))
         {
@@ -111,10 +122,11 @@ public static class GameBuilder
         BuildTarget[] buildTargets = new BuildTarget[]
         {
             BuildTarget.Android,
+            BuildTarget.StandaloneWindows64,
             BuildTarget.WebGL,
         };
 
-        Dictionary<BuildTarget, BuildReport> reports = new Dictionary<BuildTarget, BuildReport>();
+        Dictionary<BuildTarget, BuildReport> reports = new();
 
         foreach (BuildTarget buildTarget in buildTargets)
         {
@@ -135,7 +147,7 @@ public static class GameBuilder
         switch (target)
         {
             case BuildTarget.Android:
-                BuildPlayerOptions androidBuildOptions = new BuildPlayerOptions
+                BuildPlayerOptions androidBuildOptions = new()
                 {
                     scenes = scenePaths,
                     target = BuildTarget.Android,
@@ -145,8 +157,19 @@ public static class GameBuilder
 
                 report = BuildPipeline.BuildPlayer(androidBuildOptions);
                 break;
+            case BuildTarget.StandaloneWindows64:
+                BuildPlayerOptions windows64BuildOptions = new()
+                {
+                    scenes = scenePaths,
+                    target = BuildTarget.StandaloneWindows64,
+                    locationPathName = Path.Combine(buildsPath, "Windows 64-bit", $"{PlayerSettings.productName} v{PlayerSettings.bundleVersion} (Windows 64-bit)", $"{PlayerSettings.productName}.exe"),
+                    options = BuildOptions.None,
+                };
+
+                report = BuildPipeline.BuildPlayer(windows64BuildOptions);
+                break;
             case BuildTarget.WebGL:
-                BuildPlayerOptions webGLBuildOptions = new BuildPlayerOptions
+                BuildPlayerOptions webGLBuildOptions = new()
                 {
                     scenes = scenePaths,
                     target = BuildTarget.WebGL,
