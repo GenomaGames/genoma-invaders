@@ -7,6 +7,8 @@ using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
+using Unity.Services.Analytics;
+using System.Collections.Generic;
 
 public struct Patient
 {
@@ -414,6 +416,8 @@ public class GameManager : MonoBehaviour
 
             timeUntilPlayerSpawns = playerSpawnCooldown;
             isPlayerSpawning = true;
+
+            AnalyticsManager.SendPlayerKilled();
         }
         else
         {

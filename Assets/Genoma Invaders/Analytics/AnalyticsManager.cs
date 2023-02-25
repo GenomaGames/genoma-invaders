@@ -37,6 +37,15 @@ public class SingletonMonoBehaviour<T> : MonoBehaviour
 
 public class AnalyticsManager : SingletonMonoBehaviour<AnalyticsManager>
 {
+    public static void SendPlayerKilled()
+    {
+        if (Instance != null)
+        {
+            Debug.Log("Player Killed");
+            AnalyticsService.Instance.CustomData("playerKilled", new Dictionary<string, object>());
+        }
+    }
+
     private new void Awake()
     {
         base.Awake();
