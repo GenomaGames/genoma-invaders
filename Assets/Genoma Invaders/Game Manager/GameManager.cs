@@ -177,7 +177,7 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Dosage form {bodyPart.partName} selected");
         currentBodyPart = bodyPart;
 
-        SceneLoader.LoadScene(bodyPart.bodySystem.scene.name);
+        SceneLoader.LoadScene(bodyPart.bodySystem.sceneName);
     }
 
     public void SelectDosageForm(DosageFormConfig dosageForm)

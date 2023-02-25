@@ -10,7 +10,5 @@ public class BodySystemConfig : SerializedScriptableObject
     public Color color = Color.white;
     public BodyPartConfig[] parts;
     [Required]
-    [AssetSelector(Filter = "t:scene")]
-    [DisplayAsString]
-    public Object scene;
+    public string sceneName;
 }
