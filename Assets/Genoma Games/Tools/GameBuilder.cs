@@ -6,7 +6,6 @@ using System.IO.Compression;
 using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEditor;
-using UnityEditor.Build.Content;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
 
@@ -32,6 +31,10 @@ public static class GameBuilder
         string currentVersion = PlayerSettings.bundleVersion;
 
         PlayerSettings.bundleVersion = GetBuildVersion(isDevelopment);
+        
+        EditorUserBuildSettings.development = isDevelopment;
+
+        AssetDatabase.Refresh();
 
         Dictionary<BuildTarget, BuildReport> reports;
 
@@ -42,6 +45,8 @@ public static class GameBuilder
         catch (Exception exception)
         {
             PlayerSettings.bundleVersion = currentVersion;
+            AssetDatabase.Refresh();
+
             throw exception;
         }
 
@@ -62,11 +67,13 @@ public static class GameBuilder
             if (isDevelopment || summary.result != BuildResult.Succeeded)
             {
                 PlayerSettings.bundleVersion = currentVersion;
+                AssetDatabase.Refresh();
             }
         }
         else
         {
             PlayerSettings.bundleVersion = currentVersion;
+            AssetDatabase.Refresh();
 
             throw new UnityException("Unable to obtain WebGL build report");
         }
@@ -147,11 +154,15 @@ public static class GameBuilder
         switch (target)
         {
             case BuildTarget.Android:
+                EditorUserBuildSettings.buildAppBundle = !EditorUserBuildSettings.development;
+
+                string fileExtension = EditorUserBuildSettings.buildAppBundle ? "aab" : "apk";
+
                 BuildPlayerOptions androidBuildOptions = new()
                 {
                     scenes = scenePaths,
                     target = BuildTarget.Android,
-                    locationPathName = Path.Combine(buildsPath, BuildTarget.Android.ToString(), $"{PlayerSettings.productName} v{PlayerSettings.bundleVersion} ({BuildTarget.Android}).apk"),
+                    locationPathName = Path.Combine(buildsPath, BuildTarget.Android.ToString(), $"{PlayerSettings.productName} v{PlayerSettings.bundleVersion} ({BuildTarget.Android}).{fileExtension}"),
                     options = BuildOptions.None,
                 };
 
