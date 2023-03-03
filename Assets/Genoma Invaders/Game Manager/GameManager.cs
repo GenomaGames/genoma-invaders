@@ -4,7 +4,6 @@ using UnityEditor;
 
 using System;
 using UnityEngine;
-using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 using UnityEngine.InputSystem;
@@ -236,7 +235,7 @@ public class GameManager : MonoBehaviour
     {
         if (Instance == null)
         {
-            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(gameObject);
             Instance = this;
 
             Random.InitState(SeedHash);

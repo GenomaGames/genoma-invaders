@@ -22,7 +22,7 @@ public class SingletonMonoBehaviour<T> : MonoBehaviour
         {
             if (isPersistent)
             {
-                DontDestroyOnLoad(this);
+                DontDestroyOnLoad(gameObject);
             }
 
             Instance = this;

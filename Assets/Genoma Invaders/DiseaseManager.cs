@@ -66,7 +66,7 @@ public class DiseaseManager : MonoBehaviour
     {
         if (Instance == null)
         {
-            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(gameObject);
             Instance = this;
 
             ResetLevel();
