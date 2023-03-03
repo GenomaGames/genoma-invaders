@@ -161,6 +161,8 @@ MonoBehaviour:
   speed: 2
   diseaseLevel: 1
   dieAnimation: {fileID: 7400000, guid: 29152f16d46cf6f449d58041f64f6438, type: 2}
+  hurtSound: {fileID: 8300000, guid: adf512e91b235ca48b3890474b3087a5, type: 3}
+  explosionSound: {fileID: 8300000, guid: 9070966fb65cae6469ca49dfca51b228, type: 3}
 --- !u!114 &4766897469214489356
 MonoBehaviour:
   m_ObjectHideFlags: 0

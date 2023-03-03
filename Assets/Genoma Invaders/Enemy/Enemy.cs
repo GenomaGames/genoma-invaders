@@ -18,6 +18,12 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     [Tooltip("Required to destroy de GO when it ends")]
     private AnimationClip dieAnimation;
+    [SerializeField]
+    private AudioClip hurtSound;
+    [SerializeField]
+    private AudioClip explosionSound;
+
+    private readonly int animatorDieParam = Animator.StringToHash("Die");
 
     private bool isDead = false;
     private PowerUpDropper powerUpDropper;
@@ -25,10 +31,10 @@ public class Enemy : MonoBehaviour
     private new Collider2D collider2D;
     private Animator animator;
     private float dieAnimationLength;
-    private int animatorDieParam = Animator.StringToHash("Die");
 
     public void Damage()
     {
+        AudioManager.Instance.Play(hurtSound);
         Die();
     }
 
@@ -46,12 +52,14 @@ public class Enemy : MonoBehaviour
 
         AnimationClip dieAnimationClipFromAnimator = animator.runtimeAnimatorController.animationClips.Where(clip => clip.name == dieAnimation.name).First();
 
-        if (dieAnimationClipFromAnimator == null)
+        if (dieAnimationClipFromAnimator != null)
+        {
+            dieAnimationLength = dieAnimationClipFromAnimator.length;
+        }
+        else
         {
             throw new UnityException("Provided Die Animation not found in the attached animator controller.");
         }
-
-        dieAnimationLength = dieAnimationClipFromAnimator.length;
     }
 
     private void FixedUpdate()
@@ -83,7 +91,7 @@ public class Enemy : MonoBehaviour
     private void Move(Vector2 direction)
     {
         Vector2 currentPosition = transform.position;
-        Vector2 newPosition = currentPosition + direction * Time.fixedDeltaTime * speed;
+        Vector2 newPosition = currentPosition + speed * Time.fixedDeltaTime * direction;
 
         rigidbody2D.MovePosition(newPosition);
     }
@@ -97,6 +105,8 @@ public class Enemy : MonoBehaviour
         powerUpDropper.TryDrop();
 
         animator.SetTrigger(animatorDieParam);
+
+        AudioManager.Instance.Play(explosionSound);
 
         OnDie?.Invoke(this);
 

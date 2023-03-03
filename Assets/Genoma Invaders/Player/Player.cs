@@ -47,8 +47,11 @@ public class Player : MonoBehaviour
     private AnimationClip dieAnimation;
     [SerializeField]
     private AudioClip shootSound;
+    [SerializeField]
+    private AudioClip hurtSound;
+    [SerializeField]
+    private AudioClip explosionSound;
 
-    private AudioSource audioSource;
     private Transform bulletsParent;
     private float initalFireRate;
     private Vector2 moveInput;
@@ -66,6 +69,7 @@ public class Player : MonoBehaviour
 
     public void Damage()
     {
+        AudioManager.Instance.Play(hurtSound);
         Die();
     }
 
@@ -135,7 +139,6 @@ public class Player : MonoBehaviour
     {
         initalFireRate = fireRate;
 
-        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         collider2D = GetComponent<Collider2D>();
         playerInput = GetComponent<PlayerInput>();
@@ -270,8 +273,7 @@ public class Player : MonoBehaviour
         {
             Instantiate(bulletPrefab, transform.position, Quaternion.identity, bulletsParent);
 
-            audioSource.clip = shootSound;
-            audioSource.Play();
+            AudioManager.Instance.Play(shootSound);
 
             OnShot?.Invoke();
 
@@ -286,6 +288,8 @@ public class Player : MonoBehaviour
         collider2D.enabled = false;
 
         animator.SetTrigger(animatorDieParam);
+
+        AudioManager.Instance.Play(explosionSound);
 
         OnDie?.Invoke(this);
 

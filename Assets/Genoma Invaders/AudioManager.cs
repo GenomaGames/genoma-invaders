@@ -9,6 +9,8 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
     {
         if (config.sounds.TryGetValue(clip, out Sound sound))
         {
+            float pitch = Random.Range(0.75f, 1.25f);
+            sound.audioSource.pitch = pitch;
             sound.Play();
         }
         else
@@ -23,8 +25,11 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
 
         foreach (AudioClip clip in config.sounds.Keys)
         {
-            config.sounds[clip].audioSource = gameObject.AddComponent<AudioSource>();
-            config.sounds[clip].Clip = clip;
+            Sound sound = config.sounds[clip];
+
+            sound.audioSource = gameObject.AddComponent<AudioSource>();
+            sound.audioSource.volume = config.volume;
+            sound.Clip = clip;
         }
     }
 }

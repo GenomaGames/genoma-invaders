@@ -17,7 +17,11 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 8300000, guid: 1207d0cc533b0e04b81adf7f03e13480, type: 3}
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 082247a36730156448d337e457ddc042, type: 3}
+    - {fileID: 8300000, guid: 3782cbc2fe2665344891ee7b88833ba2, type: 3}
+    - {fileID: 8300000, guid: 9070966fb65cae6469ca49dfca51b228, type: 3}
+    - {fileID: 8300000, guid: adf512e91b235ca48b3890474b3087a5, type: 3}
+    - {fileID: 8300000, guid: 74238907b88ab62419543be2f24c9bdc, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -36,7 +40,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 6
     - Name: 
       Entry: 7
       Data: 
@@ -47,8 +51,98 @@ MonoBehaviour:
       Entry: 7
       Data: 2|Sound, Assembly-CSharp
     - Name: audioSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
       Entry: 10
       Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 3|Sound, Assembly-CSharp
+    - Name: audioSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: 4|Sound, Assembly-CSharp
+    - Name: audioSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: 5|Sound, Assembly-CSharp
+    - Name: audioSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 4
+    - Name: $v
+      Entry: 7
+      Data: 6|Sound, Assembly-CSharp
+    - Name: audioSource
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 5
+    - Name: $v
+      Entry: 7
+      Data: 7|Sound, Assembly-CSharp
+    - Name: audioSource
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -61,3 +155,4 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  volume: 0.5

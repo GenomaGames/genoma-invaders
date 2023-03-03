@@ -6,6 +6,8 @@ public class PowerUp : MonoBehaviour
     private float speed = 1;
     [SerializeField]
     private GameObject powerUpEffectPrefab;
+    [SerializeField]
+    private AudioClip applySound;
 
     private new Rigidbody2D rigidbody2D;
 
@@ -14,6 +16,8 @@ public class PowerUp : MonoBehaviour
         GameObject powerUpEffectGameObject = Instantiate(powerUpEffectPrefab, Vector2.zero, Quaternion.identity);
         PowerUpEffect powerUpEffect = powerUpEffectGameObject.GetComponent<PowerUpEffect>();
         powerUpEffect.Apply(player);
+
+        AudioManager.Instance.Play(applySound);
 
         Destroy(gameObject);
     }
