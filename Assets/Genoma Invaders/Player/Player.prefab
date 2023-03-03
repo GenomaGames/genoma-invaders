@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 8726417171850910319}
   - component: {fileID: 7634732349015714459}
   - component: {fileID: 8726417171850910314}
-  - component: {fileID: 8726417171850910317}
   - component: {fileID: 959242798743962799}
+  - component: {fileID: 8726417171850910317}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -281,25 +281,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &8726417171850910317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8726417171850910323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79e739f08324be84e829c07a440c6991, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
-  boundsLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  bulletPrefab: {fileID: 2306097921210885030, guid: 1fe83e698a81f074a8eaa9487d8d033c, type: 3}
-  fireRate: 2
-  dieAnimation: {fileID: 7400000, guid: 89c2c152d2884d448a48b3cbb9446ed5, type: 2}
 --- !u!82 &959242798743962799
 AudioSource:
   m_ObjectHideFlags: 0
@@ -312,7 +293,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -396,3 +377,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8726417171850910317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8726417171850910323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79e739f08324be84e829c07a440c6991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  boundsLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  bulletPrefab: {fileID: 2306097921210885030, guid: 1fe83e698a81f074a8eaa9487d8d033c, type: 3}
+  fireRate: 2
+  dieAnimation: {fileID: 7400000, guid: 89c2c152d2884d448a48b3cbb9446ed5, type: 2}
+  shootSound: {fileID: 8300000, guid: 3782cbc2fe2665344891ee7b88833ba2, type: 3}

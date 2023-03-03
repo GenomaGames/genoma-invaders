@@ -45,7 +45,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     [Tooltip("Required to destroy de GO when it ends")]
     private AnimationClip dieAnimation;
+    [SerializeField]
+    private AudioClip shootSound;
 
+    private AudioSource audioSource;
     private Transform bulletsParent;
     private float initalFireRate;
     private Vector2 moveInput;
@@ -132,6 +135,7 @@ public class Player : MonoBehaviour
     {
         initalFireRate = fireRate;
 
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         collider2D = GetComponent<Collider2D>();
         playerInput = GetComponent<PlayerInput>();
@@ -265,6 +269,9 @@ public class Player : MonoBehaviour
         if (currentShotCooldown <= 0)
         {
             Instantiate(bulletPrefab, transform.position, Quaternion.identity, bulletsParent);
+
+            audioSource.clip = shootSound;
+            audioSource.Play();
 
             OnShot?.Invoke();
 

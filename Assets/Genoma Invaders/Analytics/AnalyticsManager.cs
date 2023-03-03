@@ -1,8 +1,8 @@
+using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using Unity.Services.Analytics;
 using Unity.Services.Core;
 using Unity.Services.Core.Environments;
-using UnityEditor;
 using UnityEngine;
 
 public class SingletonMonoBehaviour<T> : MonoBehaviour
@@ -77,6 +77,36 @@ public class AnalyticsManager : SingletonMonoBehaviour<AnalyticsManager>
         catch (ConsentCheckException exception)
         {
             throw exception;
+        }
+    }
+}
+
+public class SerializedSingletonMonoBehaviour<T> : SerializedMonoBehaviour
+{
+    public static SerializedSingletonMonoBehaviour<T> Instance
+    {
+        get;
+        private set;
+    }
+
+    [SerializeField]
+    private bool isPersistent = false;
+
+    protected void Awake()
+    {
+        if (Instance == null)
+        {
+            if (isPersistent)
+            {
+                DontDestroyOnLoad(gameObject);
+            }
+
+            Instance = this;
+        }
+        else
+        {
+            Debug.Log($"{typeof(T)} already on scene, destroying conflicting {name}");
+            Destroy(gameObject);
         }
     }
 }
