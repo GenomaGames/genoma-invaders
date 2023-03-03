@@ -5,9 +5,9 @@ using Unity.Services.Core;
 using Unity.Services.Core.Environments;
 using UnityEngine;
 
-public class SingletonMonoBehaviour<T> : MonoBehaviour
+public class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
 {
-    public static SingletonMonoBehaviour<T> Instance
+    public static T Instance
     {
         get;
         private set;
@@ -25,7 +25,7 @@ public class SingletonMonoBehaviour<T> : MonoBehaviour
                 DontDestroyOnLoad(gameObject);
             }
 
-            Instance = this;
+            Instance = this as T;
         }
         else
         {
