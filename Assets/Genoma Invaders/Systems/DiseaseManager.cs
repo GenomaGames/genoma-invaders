@@ -10,9 +10,9 @@ public struct Patient
 
 public class DiseaseManager : SingletonMonoBehaviour<DiseaseManager>
 {
-    public event Action OnLevelFilled;
-    public event Action OnLevelEmptied;
-    public event Action<float> OnLevelUpdated;
+    public static event Action OnLevelFilled;
+    public static event Action OnLevelEmptied;
+    public static event Action<float> OnLevelUpdated;
 
     public BodyPartConfig BossLocation
     {
@@ -137,9 +137,12 @@ public class DiseaseManager : SingletonMonoBehaviour<DiseaseManager>
             return;
         }
 
-        random = new System.Random(GameManager.Instance.SeedHash);
         patients = new Patient[3];
+    }
 
+    private void Start()
+    {
+        random = new System.Random(GameManager.Instance.SeedHash);
         ResetLevel();
     }
 

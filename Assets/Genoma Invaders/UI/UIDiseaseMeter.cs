@@ -19,12 +19,12 @@ public class UIDiseaseMeter : MonoBehaviour
 
         UpdateLevel(DiseaseManager.Instance.DiseaseLevel);
 
-        DiseaseManager.Instance.OnLevelUpdated += UpdateLevel;
+        DiseaseManager.OnLevelUpdated += UpdateLevel;
     }
 
     private void OnDisable()
     {
-        DiseaseManager.Instance.OnLevelUpdated -= UpdateLevel;
+        DiseaseManager.OnLevelUpdated -= UpdateLevel;
     }
 
     private void UpdateLevel(float level)

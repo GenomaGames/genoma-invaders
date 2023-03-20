@@ -166,27 +166,19 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     private void OnEnable()
     {
         SceneManager.activeSceneChanged += OnActiveSceneChanged;
-        NavigationSystem.Instance.OnBodyPartChanged += OnBodyPartChanged;
+        NavigationSystem.OnBodyPartChanged += OnBodyPartChanged;
         Boss.OnStart += OnBossStart;
-
-        if (DiseaseManager.Instance != null)
-        {
-            DiseaseManager.Instance.OnLevelEmptied += Win;
-            DiseaseManager.Instance.OnLevelFilled += Lose;
-        }
+        DiseaseManager.OnLevelEmptied += Win;
+        DiseaseManager.OnLevelFilled += Lose;
     }
 
     private void OnDisable()
     {
         SceneManager.activeSceneChanged -= OnActiveSceneChanged;
-        NavigationSystem.Instance.OnBodyPartChanged -= OnBodyPartChanged;
+        NavigationSystem.OnBodyPartChanged -= OnBodyPartChanged;
         Boss.OnStart -= OnBossStart;
-
-        if (DiseaseManager.Instance != null)
-        {
-            DiseaseManager.Instance.OnLevelEmptied -= Win;
-            DiseaseManager.Instance.OnLevelFilled -= Lose;
-        }
+        DiseaseManager.OnLevelEmptied -= Win;
+        DiseaseManager.OnLevelFilled -= Lose;
     }
 
     private new void Awake()

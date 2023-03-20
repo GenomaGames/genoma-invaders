@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class NavigationSystem : SingletonMonoBehaviour<NavigationSystem>
 {
-    public event Action<BodyPartConfig, BodyPartConfig> OnBodyPartChanged;
+    public static event Action<BodyPartConfig, BodyPartConfig> OnBodyPartChanged;
 
     public BodyPartConfig CurrentBodyPart
     {
