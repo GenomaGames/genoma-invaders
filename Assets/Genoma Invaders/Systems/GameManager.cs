@@ -63,7 +63,6 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     private Transform playerSpawn;
     private int playerLives;
     private float timeUntilPlayerSpawns;
-    private bool isGameplayStarting = false;
     private bool isPlayerSpawning = false;
     private System.Random random;
 
@@ -273,7 +272,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
         IsInGameplayScene = newScene.name.StartsWith("Level");
 
-        if (IsInGameplayScene && isGameplayStarting)
+        if (IsInGameplayScene)
         {
             GameObject playerSpawnGO = GameObject.FindGameObjectWithTag("Player Spawn");
 
@@ -298,15 +297,11 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
             {
                 throw new UnityException("No player spawn found in the scene");
             }
-
-            isGameplayStarting = false;
         }
     }
 
     private void StartGame()
     {
-        isGameplayStarting = true;
-
         if (DiseaseManager.Instance != null)
         {
             DiseaseManager.Instance.ResetLevel();

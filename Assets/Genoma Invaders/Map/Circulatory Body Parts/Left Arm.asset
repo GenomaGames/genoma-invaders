@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7531a94500795d34286e89829c5fc80c, type: 3}
-  m_Name: Chickenpox
+  m_Script: {fileID: 11500000, guid: 90446ef582cd6004aa08da6d4e879f0b, type: 3}
+  m_Name: Left Arm
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -21,11 +21,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  diseaseName: Chickenpox
-  levelRiseSpeed: 1
-  bossBodyParts:
-  - {fileID: 11400000, guid: 4401514e6cc20bc4fbcbd4a4e2b9ea2d, type: 2}
+  partName: Left Arm
+  bodySystem: {fileID: 11400000, guid: 423ddef86c8c8284c9d5fe04820edbdd, type: 2}
+  position: {x: 34, y: 56}
+  connectedParts:
   - {fileID: 11400000, guid: 5829b70b7cad8ef408cba410ac91d7e9, type: 2}
-  - {fileID: 11400000, guid: f6919a691520c2946b6fe8defd0dc08c, type: 2}
-  - {fileID: 11400000, guid: 5bbd853735111284a8c7119e92cebbee, type: 2}
-  - {fileID: 11400000, guid: 05172d356789f834884e3ed4667c2845, type: 2}
