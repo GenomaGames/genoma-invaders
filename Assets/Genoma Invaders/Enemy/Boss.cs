@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Sirenix.OdinInspector;
+using System;
 using System.Linq;
 using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+    public static event Action<Boss> OnStart;
+
     public event Action<Boss> OnDie;
 
     public float DiseaseLevel
@@ -13,8 +16,8 @@ public class Boss : MonoBehaviour
 
     [SerializeField]
     private float diseaseLevel = 10;
+    [Required]
     [SerializeField]
-    [Tooltip("Required to destroy de GO when it ends")]
     private AnimationClip dieAnimation;
     [SerializeField]
     private AudioClip hurtSound;
@@ -25,7 +28,6 @@ public class Boss : MonoBehaviour
     private readonly int animatorHurtParam = Animator.StringToHash("Hurt");
 
     private bool isDead = false;
-    private PowerUpDropper powerUpDropper;
     private new Collider2D collider2D;
     private Animator animator;
     private float dieAnimationLength;
@@ -36,12 +38,6 @@ public class Boss : MonoBehaviour
         animator = GetComponent<Animator>();
         collider2D = GetComponent<Collider2D>();
         damageable = GetComponent<Damageable>();
-        powerUpDropper = GetComponent<PowerUpDropper>();
-
-        if (dieAnimation == null)
-        {
-            throw new UnityException("Die Animation needs to be set.");
-        }
 
         AnimationClip dieAnimationClipFromAnimator = animator.runtimeAnimatorController.animationClips.Where(clip => clip.name == dieAnimation.name).First();
 
@@ -60,28 +56,9 @@ public class Boss : MonoBehaviour
         damageable.OnDamaged += OnDamaged;
     }
 
-    private void FixedUpdate()
+    private void Start()
     {
-        if (!isDead)
-        {
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D otherCollider2D)
-    {
-        if (otherCollider2D.CompareTag("Player"))
-        {
-            Player player = otherCollider2D.GetComponent<Player>();
-
-            player.Damage();
-        }
-        else if (otherCollider2D.CompareTag("Enemy Finish Line"))
-        {
-            DiseaseManager.Instance.UpdateDiseaseLevel(diseaseLevel);
-
-            transform.position = new Vector3(transform.position.x, 40, transform.position.z);
-            diseaseLevel *= 2;
-        }
+        OnStart?.Invoke(this);
     }
 
     [ContextMenu("Kill")]
@@ -89,8 +66,6 @@ public class Boss : MonoBehaviour
     {
         isDead = true;
         collider2D.enabled = false;
-
-        //powerUpDropper.TryDrop();
 
         animator.SetTrigger(animatorDieParam);
 

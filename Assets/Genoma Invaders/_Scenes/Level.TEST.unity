@@ -2789,6 +2789,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7717481953202501395, guid: d750eb7c754990249b58162ca58c7e0c, type: 3}
+      propertyPath: currentHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8269493125280363806, guid: d750eb7c754990249b58162ca58c7e0c, type: 3}
       propertyPath: m_Name
       value: Boss Enemy Chickenpox

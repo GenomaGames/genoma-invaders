@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 public class NavigationSystem : SingletonMonoBehaviour<NavigationSystem>
 {
+    public event Action<BodyPartConfig, BodyPartConfig> OnBodyPartChanged;
+
     public BodyPartConfig CurrentBodyPart
     {
         get => currentBodyPart;
@@ -21,8 +24,11 @@ public class NavigationSystem : SingletonMonoBehaviour<NavigationSystem>
     public void GoToBodyPart(BodyPartConfig bodyPart)
     {
         Debug.Log($"Body part {bodyPart.partName} selected");
+
+        BodyPartConfig oldBodyPart = currentBodyPart;
+
         currentBodyPart = bodyPart;
 
-        SceneLoader.LoadScene(bodyPart.bodySystem.sceneName);
+        OnBodyPartChanged.Invoke(oldBodyPart, currentBodyPart);
     }
 }

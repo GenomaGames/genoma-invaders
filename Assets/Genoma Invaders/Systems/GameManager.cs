@@ -166,6 +166,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     private void OnEnable()
     {
         SceneManager.activeSceneChanged += OnActiveSceneChanged;
+        NavigationSystem.Instance.OnBodyPartChanged += OnBodyPartChanged;
+        Boss.OnStart += OnBossStart;
 
         if (DiseaseManager.Instance != null)
         {
@@ -177,6 +179,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     private void OnDisable()
     {
         SceneManager.activeSceneChanged -= OnActiveSceneChanged;
+        NavigationSystem.Instance.OnBodyPartChanged -= OnBodyPartChanged;
+        Boss.OnStart -= OnBossStart;
 
         if (DiseaseManager.Instance != null)
         {
@@ -300,15 +304,38 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         }
     }
 
+    private void OnBodyPartChanged(BodyPartConfig oldBodyPart, BodyPartConfig newBodyPart)
+    {
+        if (newBodyPart == DiseaseManager.Instance.BossLocation)
+        {
+            SceneLoader.LoadScene("Level_Boss");
+        }
+        else
+        {
+            SceneLoader.LoadScene(newBodyPart.bodySystem.sceneName);
+        }
+    }
+
     private void StartGame()
     {
         if (DiseaseManager.Instance != null)
         {
             DiseaseManager.Instance.ResetLevel();
-            DiseaseManager.Instance.SetDisease(DiseaseManager.Instance.CurrentPatient.disease);
         }
 
         playerLives = initialPlayerLives;
+    }
+
+    private void OnBossDie(Boss boss)
+    {
+        boss.OnDie -= OnBossDie;
+
+        Win();
+    }
+
+    private void OnBossStart(Boss boss)
+    {
+        boss.OnDie += OnBossDie;
     }
 
     private void OnPlayerDie(Player player)

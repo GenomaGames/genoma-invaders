@@ -14,6 +14,18 @@ public class DiseaseManager : SingletonMonoBehaviour<DiseaseManager>
     public event Action OnLevelEmptied;
     public event Action<float> OnLevelUpdated;
 
+    public BodyPartConfig BossLocation
+    {
+        get;
+        private set;
+    }
+
+    public DiseaseConfig CurrentDisease
+    {
+        get;
+        private set;
+    }
+
     public Patient CurrentPatient
     {
         get;
@@ -49,7 +61,6 @@ public class DiseaseManager : SingletonMonoBehaviour<DiseaseManager>
     };
 
     private System.Random random;
-    private DiseaseConfig currentDisease;
 
     public Patient[] GeneratePatients()
     {
@@ -67,23 +78,27 @@ public class DiseaseManager : SingletonMonoBehaviour<DiseaseManager>
     {
         CurrentPatient = patient;
 
-        Debug.Log($"Patient {patient.name} selected");
+        CurrentDisease = CurrentPatient.disease;
+
+        Debug.Log($"Patient {patient.name} selected, with the disease {CurrentDisease.diseaseName}");
+
+        BossLocation = ChooseBossLocation(CurrentDisease);
+
+        Debug.Log($"Boss located at {BossLocation.partName}");
+
         SceneLoader.LoadScene("Administration Selection");
     }
 
     public void SelectPatient(int patientIndex)
     {
-        SelectPatient(Patients[patientIndex]);
+        Patient patient = patients[patientIndex];
+
+        SelectPatient(patient);
     }
 
     public void ResetLevel()
     {
         SetDiseaseLevel(initialDiseaseLevel);
-    }
-
-    public void SetDisease(DiseaseConfig diseaseConfig)
-    {
-        currentDisease = diseaseConfig;
     }
 
     public void UpdateDiseaseLevel(float diseaseLevelChange)
@@ -130,9 +145,9 @@ public class DiseaseManager : SingletonMonoBehaviour<DiseaseManager>
 
     private void Update()
     {
-        if (GameManager.Instance.IsInGameplayScene && currentDisease != null)
+        if (GameManager.Instance.IsInGameplayScene && CurrentDisease != null)
         {
-            float diseaseLevelChange = Time.deltaTime * currentDisease.levelRiseSpeed;
+            float diseaseLevelChange = Time.deltaTime * CurrentDisease.levelRiseSpeed;
 
             UpdateDiseaseLevel(diseaseLevelChange);
         }
@@ -147,6 +162,13 @@ public class DiseaseManager : SingletonMonoBehaviour<DiseaseManager>
                 GeneratePatients();
             }
         }
+    }
+
+    private BodyPartConfig ChooseBossLocation(DiseaseConfig disease)
+    {
+        BossLocation = disease.bossBodyParts[random.Next(disease.bossBodyParts.Length)];
+
+        return BossLocation;
     }
 
     private void OnActiveSceneChanged(Scene previousScene, Scene newScene)
