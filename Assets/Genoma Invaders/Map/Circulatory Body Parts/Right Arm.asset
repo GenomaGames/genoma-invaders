@@ -15,84 +15,15 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 11400000, guid: f0107c38a5e48a144b87d8d0960a932f, type: 2}
-    - {fileID: 11400000, guid: 5829b70b7cad8ef408cba410ac91d7e9, type: 2}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes:
-    - Name: connectedParts
-      Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[ConnectionDirection, Assembly-CSharp],[BodyPartConfig,
-        Assembly-CSharp]], mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[ConnectionDirection,
-        Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 1
-    - Name: $v
-      Entry: 10
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 3
-    - Name: $v
-      Entry: 10
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: connectedSystems
-      Entry: 7
-      Data: 2|System.Collections.Generic.Dictionary`2[[BodySystemConfig, Assembly-CSharp],[BodyPartConfig,
-        Assembly-CSharp]], mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 3|System.Collections.Generic.ObjectEqualityComparer`1[[BodySystemConfig,
-        Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
+    SerializationNodes: []
   partName: Right Arm
   bodySystem: {fileID: 11400000, guid: 423ddef86c8c8284c9d5fe04820edbdd, type: 2}
   position: {x: 34, y: 56}
+  connectedParts:
+  - {fileID: 11400000, guid: f0107c38a5e48a144b87d8d0960a932f, type: 2}
+  - {fileID: 11400000, guid: 5829b70b7cad8ef408cba410ac91d7e9, type: 2}

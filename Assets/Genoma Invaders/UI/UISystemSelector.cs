@@ -117,7 +117,7 @@ public class UISystemSelector : SerializedMonoBehaviour
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
         
-        if (GameManager.Instance.CurrentBodyPart.bodySystem == bodySystem)
+        if (NavigationSystem.Instance.CurrentBodyPart.bodySystem == bodySystem)
         {
             SelectTab(canvasGroup);
         }

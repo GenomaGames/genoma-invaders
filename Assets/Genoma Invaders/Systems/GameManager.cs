@@ -8,38 +8,26 @@ using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 using UnityEngine.InputSystem;
 
-public struct Patient
-{
-    public string name;
-    public DiseaseConfig disease;
-}
-
-public class GameManager : MonoBehaviour
+public class GameManager : SingletonMonoBehaviour<GameManager>
 {
     public static Action<int> OnPlayerLivesChanged;
     public static Action OnTouchUIEnabled;
     public static Action OnTouchUIDisabled;
     public static Action OnGamePaused;
     public static Action OnGameUnpaused;
-
-    public BodyPartConfig CurrentBodyPart
-    {
-        get => currentBodyPart;
-        private set => currentBodyPart = value;
-    }
+    public static Action OnGameplayStarted;
 
     public DosageFormConfig[] DosageForms
     {
         get => dosageForms;
     }
 
-    public static GameManager Instance
+    public bool IsGamePaused
     {
         get;
         private set;
-    }
-
-    public bool IsGamePaused
+    } = false;
+    public bool IsInGameplayScene
     {
         get;
         private set;
@@ -50,17 +38,6 @@ public class GameManager : MonoBehaviour
         get;
         private set;
     } = false;
-
-    public Patient[] Patients
-    {
-        get => patients;
-    }
-
-    public Patient CurrentPatient
-    {
-        get;
-        private set;
-    }
 
     public string Seed
     {
@@ -81,29 +58,14 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private string seed = "Genoma Games";
     [SerializeField]
-    private BodyPartConfig currentBodyPart;
-    [SerializeField]
     private DosageFormConfig[] dosageForms;
-    [SerializeField]
-    private DiseaseConfig[] diseases;
 
     private Transform playerSpawn;
     private int playerLives;
-    private bool isInGameplayScene = false;
     private float timeUntilPlayerSpawns;
+    private bool isGameplayStarting = false;
     private bool isPlayerSpawning = false;
-    private Patient[] patients;
     private System.Random random;
-
-    private readonly string[] patientNames =
-    {
-        "John Doe",
-        "Joe Bloggs",
-        "Mister X",
-        "Joe Schmoe",
-        "Jane Smith",
-        "Hans Meier",
-    };
 
     public void EnableTouchUI()
     {
@@ -125,6 +87,7 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
+        DiseaseManager.Instance.GeneratePatients();
         SceneManager.LoadScene("Patient Selection");
     }
 
@@ -136,9 +99,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void Pause()
+    public void PauseGame()
     {
-        if (isInGameplayScene)
+        if (IsInGameplayScene)
         {
             if (!IsGamePaused)
             {
@@ -170,34 +133,20 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Level.Stomach");
     }
 
-    public void SelectBodyPart(BodyPartConfig bodyPart)
-    {
-        Debug.Log($"Dosage form {bodyPart.partName} selected");
-        currentBodyPart = bodyPart;
-
-        SceneLoader.LoadScene(bodyPart.bodySystem.sceneName);
-    }
-
     public void SelectDosageForm(DosageFormConfig dosageForm)
     {
         Debug.Log($"Dosage form {dosageForm.dosageFormName} selected");
 
         BodyPartConfig bodyPart = dosageForm.bodyParts[random.Next(0, dosageForm.bodyParts.Length)];
 
-        SelectBodyPart(bodyPart);
-    }
+        StartGame();
 
-    public void SelectPatient(Patient patient)
-    {
-        CurrentPatient = patient;
-
-        Debug.Log($"Patient {patient.name} selected");
-        SceneLoader.LoadScene("Administration Selection");
+        NavigationSystem.Instance.GoToBodyPart(bodyPart);
     }
 
     public void Unpause()
     {
-        if (isInGameplayScene)
+        if (IsInGameplayScene)
         {
             if (IsGamePaused)
             {
@@ -218,6 +167,12 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         SceneManager.activeSceneChanged += OnActiveSceneChanged;
+
+        if (DiseaseManager.Instance != null)
+        {
+            DiseaseManager.Instance.OnLevelEmptied += Win;
+            DiseaseManager.Instance.OnLevelFilled += Lose;
+        }
     }
 
     private void OnDisable()
@@ -231,32 +186,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Awake()
+    private new void Awake()
     {
-        if (Instance == null)
+        base.Awake();
+
+        if (Instance != this)
         {
-            DontDestroyOnLoad(gameObject);
-            Instance = this;
-
-            Random.InitState(SeedHash);
-            random = new System.Random(SeedHash);
-
-            patients = new Patient[3];
-
-            if (Touchscreen.current != null && Gamepad.current == null)
-            {
-                EnableTouchUI();
-            }
+            return;
         }
-        else
+
+        Random.InitState(SeedHash);
+        random = new System.Random(SeedHash);
+
+        if (Touchscreen.current != null && Gamepad.current == null)
         {
-            Destroy(gameObject);
+            EnableTouchUI();
         }
     }
 
     private void Update()
     {
-        if (isInGameplayScene)
+        if (IsInGameplayScene)
         {
             if (isPlayerSpawning)
             {
@@ -279,23 +229,10 @@ public class GameManager : MonoBehaviour
                 FinishLevel();
             }
         }
-
-        if (SceneManager.GetActiveScene().name == "Patient Selection")
-        {
-            if (GUILayout.Button("Regenerate Patients"))
-            {
-                GeneratePatients();
-            }
-        }
     }
 
     private void EndGame()
     {
-        if (DiseaseManager.Instance != null)
-        {
-            DiseaseManager.Instance.OnLevelEmptied -= Win;
-            DiseaseManager.Instance.OnLevelFilled -= Lose;
-        }
     }
 
     private void FinishLevel()
@@ -303,27 +240,6 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Level {SceneManager.GetActiveScene().name} Finished");
 
         SceneManager.LoadScene("Body Part Selection");
-    }
-
-    private void GeneratePatients()
-    {
-        for (int i = 0; i < patients.Length; i++)
-        {
-            Patient patient = GeneratePatient();
-
-            patients[i] = patient;
-        }
-    }
-
-    private Patient GeneratePatient()
-    {
-        Patient patient = new()
-        {
-            name = patientNames[random.Next(patientNames.Length)],
-            disease = diseases[random.Next(diseases.Length)],
-        };
-
-        return patient;
     }
 
     private void SpawnPlayer()
@@ -355,56 +271,49 @@ public class GameManager : MonoBehaviour
     {
         IsGamePaused = false;
 
-        isInGameplayScene = newScene.name.StartsWith("Level");
+        IsInGameplayScene = newScene.name.StartsWith("Level");
 
-        if (isInGameplayScene)
+        if (IsInGameplayScene && isGameplayStarting)
         {
-            StartGame();
-        }
-        else if (newScene.name == "Patient Selection")
-        {
-            GeneratePatients();
+            GameObject playerSpawnGO = GameObject.FindGameObjectWithTag("Player Spawn");
+
+            if (playerSpawnGO != null)
+            {
+                playerSpawn = playerSpawnGO.transform;
+
+                GameObject playerGO = GameObject.FindGameObjectWithTag("Player");
+
+                if (playerGO == null)
+                {
+                    SpawnPlayer();
+                }
+                else
+                {
+                    Player player = playerGO.GetComponent<Player>();
+
+                    player.OnDie += OnPlayerDie;
+                }
+            }
+            else
+            {
+                throw new UnityException("No player spawn found in the scene");
+            }
+
+            isGameplayStarting = false;
         }
     }
 
     private void StartGame()
     {
-        DiseaseManager diseaseManager = DiseaseManager.Instance;
+        isGameplayStarting = true;
 
-        if (diseaseManager != null)
+        if (DiseaseManager.Instance != null)
         {
-            diseaseManager.ResetLevel();
-            diseaseManager.SetDisease(CurrentPatient.disease);
-
-            diseaseManager.OnLevelEmptied += Win;
-            diseaseManager.OnLevelFilled += Lose;
+            DiseaseManager.Instance.ResetLevel();
+            DiseaseManager.Instance.SetDisease(DiseaseManager.Instance.CurrentPatient.disease);
         }
 
         playerLives = initialPlayerLives;
-
-        GameObject playerSpawnGO = GameObject.FindGameObjectWithTag("Player Spawn");
-
-        if (playerSpawnGO != null)
-        {
-            playerSpawn = playerSpawnGO.transform;
-
-            GameObject playerGO = GameObject.FindGameObjectWithTag("Player");
-
-            if (playerGO == null)
-            {
-                SpawnPlayer();
-            }
-            else
-            {
-                Player player = playerGO.GetComponent<Player>();
-
-                player.OnDie += OnPlayerDie;
-            }
-        }
-        else
-        {
-            throw new UnityException("No player spawn found in the scene");
-        }
     }
 
     private void OnPlayerDie(Player player)

@@ -46,11 +46,6 @@ public class AnalyticsManager : SingletonMonoBehaviour<AnalyticsManager>
         }
     }
 
-    private new void Awake()
-    {
-        base.Awake();
-    }
-
     private async void Start()
     {
         try

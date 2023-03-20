@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90446ef582cd6004aa08da6d4e879f0b, type: 3}
-  m_Name: Stomach
+  m_Name: Gallbladder
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -21,9 +21,10 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  partName: Stomach
+  partName: Gallbladder
   bodySystem: {fileID: 11400000, guid: 147a2988bcfba5943a24f13e5d605bea, type: 2}
-  position: {x: 3, y: 18}
+  position: {x: -10, y: 13}
   connectedParts:
-  - {fileID: 11400000, guid: b68e0a25e68f29f41b050d2910f93fe4, type: 2}
-  - {fileID: 11400000, guid: 1e9f333fb2b9aab4c97b8fdd174db406, type: 2}
+  - {fileID: 11400000, guid: 4401514e6cc20bc4fbcbd4a4e2b9ea2d, type: 2}
+  - {fileID: 11400000, guid: 7330b0457ee237742b28160ebeea27b6, type: 2}
+  - {fileID: 11400000, guid: 165e5d06e4a347749889b912a4a70cdc, type: 2}

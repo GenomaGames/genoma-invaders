@@ -12,6 +12,6 @@ public class UIBodyPartName : MonoBehaviour
 
     void Start()
     {
-        text.text = GameManager.Instance.CurrentBodyPart.partName;
+        text.text = NavigationSystem.Instance.CurrentBodyPart.partName;
     }
 }

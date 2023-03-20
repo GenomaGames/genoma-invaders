@@ -118,7 +118,7 @@ public class Player : MonoBehaviour
         {
             if (!GameManager.Instance.IsGamePaused)
             {
-                GameManager.Instance.Pause();
+                GameManager.Instance.PauseGame();
             }
             else
             {

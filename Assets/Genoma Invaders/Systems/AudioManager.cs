@@ -23,6 +23,11 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
     {
         base.Awake();
 
+        if (Instance != this)
+        {
+            return;
+        }
+
         foreach (AudioClip clip in config.sounds.Keys)
         {
             Sound sound = config.sounds[clip];
