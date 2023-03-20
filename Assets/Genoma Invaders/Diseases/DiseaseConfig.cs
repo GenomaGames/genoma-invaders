@@ -7,4 +7,5 @@ public class DiseaseConfig : SerializedScriptableObject
     public string diseaseName;
     [Range(0f, 20f)]
     public float levelRiseSpeed = 1;
+    public BodyPartConfig[] bossBodyParts;
 }
