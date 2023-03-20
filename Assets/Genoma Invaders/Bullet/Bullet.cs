@@ -9,6 +9,8 @@ public class Bullet : MonoBehaviour
     }
 
     [SerializeField]
+    private int damage = 1;
+    [SerializeField]
     private float speed = 5;
 
     private new Rigidbody2D rigidbody2D;
@@ -28,9 +30,16 @@ public class Bullet : MonoBehaviour
     {
         if (collider2D.CompareTag("Enemy"))
         {
-            Enemy enemy = collider2D.GetComponent<Enemy>();
+            if (collider2D.TryGetComponent<Enemy>(out var enemy))
+            {
+                enemy.Damage();
+            }
 
-            enemy.Damage();
+            
+            if (collider2D.TryGetComponent<Damageable>(out var damageable))
+            {
+                damageable.Damage(damage);
+            }
 
             Destroy(gameObject);
         }
@@ -45,7 +54,7 @@ public class Bullet : MonoBehaviour
         if (direction != Vector2.zero)
         {
             Vector3 rotatedDirection = transform.rotation * direction;
-            Vector3 translation = rotatedDirection * speed * Time.fixedDeltaTime;
+            Vector3 translation = speed * Time.fixedDeltaTime * rotatedDirection;
             Vector3 newPosition = transform.position + translation;
 
             rigidbody2D.MovePosition(newPosition);
