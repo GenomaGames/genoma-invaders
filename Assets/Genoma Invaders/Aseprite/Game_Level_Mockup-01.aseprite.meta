@@ -1,7 +1,463 @@
 fileFormatVersion: 2
 guid: b7041d1468646114e81be52bfa230b4f
-DefaultImporter:
+ScriptedImporter:
+  internalIDToNameTable: []
   externalObjects: {}
+  serializedVersion: 2
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMasterTextureLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  multiSpriteImportData:
+  - name: Game_Level_Mockup-01_Frame_0
+    originalName: 
+    pivot: {x: 1.5000002, y: -3.692308}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 94
+      y: 67
+      width: 10
+      height: 13
+    spriteID: df4a606e28046a04985c78420aab3e6b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 94, y: 67}
+  - name: Game_Level_Mockup-01_Frame_1
+    originalName: 
+    pivot: {x: 1.5000002, y: -2.4}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 102
+      width: 10
+      height: 20
+    spriteID: 7c0d1a00b15d02b479605f65dfd20823
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 102}
+  - name: Game_Level_Mockup-01_Frame_2
+    originalName: 
+    pivot: {x: 1.5000002, y: -1.7777778}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 22
+      y: 95
+      width: 10
+      height: 27
+    spriteID: 8218bff22eb6b144c9b147ff4ba29703
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 22, y: 95}
+  - name: Game_Level_Mockup-01_Frame_3
+    originalName: 
+    pivot: {x: 1.5000002, y: -1.4117647}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 40
+      y: 88
+      width: 10
+      height: 34
+    spriteID: 88589dad6f9997c4fb7918c64eff3d8e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 40, y: 88}
+  - name: Game_Level_Mockup-01_Frame_4
+    originalName: 
+    pivot: {x: 1.5000002, y: -1.1707317}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 58
+      y: 81
+      width: 10
+      height: 41
+    spriteID: bf0ca8645e5d77e4c8f579a0a3351f37
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 58, y: 81}
+  - name: Game_Level_Mockup-01_Frame_5
+    originalName: 
+    pivot: {x: 1.5000002, y: -1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 74
+      width: 10
+      height: 48
+    spriteID: 2c325cf3eaf4f9d47ac36cc8641f21c6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 74}
+  - name: Game_Level_Mockup-01_Frame_6
+    originalName: 
+    pivot: {x: 1.5000002, y: -0.8727273}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 94
+      y: 4
+      width: 10
+      height: 55
+    spriteID: a86a2f7080f008e42b396a899c023fdb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 94, y: 4}
+  - name: Game_Level_Mockup-01_Frame_7
+    originalName: 
+    pivot: {x: 1.5000002, y: -0.7741935}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 4
+      width: 10
+      height: 62
+    spriteID: 1f36a6f963f8c2e45b43d53a699ee708
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 4}
+  - name: Game_Level_Mockup-01_Frame_8
+    originalName: 
+    pivot: {x: 1.5000002, y: -0.6956522}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 58
+      y: 4
+      width: 10
+      height: 69
+    spriteID: 39f2a9ad51c556f4d9f7275090c8067c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 58, y: 4}
+  - name: Game_Level_Mockup-01_Frame_9
+    originalName: 
+    pivot: {x: 1.5000002, y: -0.6315789}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 40
+      y: 4
+      width: 10
+      height: 76
+    spriteID: 5f1768098a5c4da41871c4d631206ee3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 40, y: 4}
+  - name: Game_Level_Mockup-01_Frame_10
+    originalName: 
+    pivot: {x: 1.5000002, y: -0.57831323}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 22
+      y: 4
+      width: 10
+      height: 83
+    spriteID: 3dbd1bc2987601d4ca1350d393494d2e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 22, y: 4}
+  - name: Game_Level_Mockup-01_Frame_11
+    originalName: 
+    pivot: {x: 1.5000002, y: -0.53333336}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 10
+      height: 90
+    spriteID: a9553c5193305c2439bad05e6638463f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -1593218017
+    name: Game_Level_Mockup-01
+    layerFlags: 0
+    layerType: 0
+    cells:
+    - name: Game_Level_Mockup-01_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 97
+        y: 48
+        width: 10
+        height: 13
+      spriteId: df4a606e28046a04985c78420aab3e6b
+    - name: Game_Level_Mockup-01_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 97
+        y: 48
+        width: 10
+        height: 20
+      spriteId: 7c0d1a00b15d02b479605f65dfd20823
+    - name: Game_Level_Mockup-01_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 97
+        y: 48
+        width: 10
+        height: 27
+      spriteId: 8218bff22eb6b144c9b147ff4ba29703
+    - name: Game_Level_Mockup-01_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 97
+        y: 48
+        width: 10
+        height: 34
+      spriteId: 88589dad6f9997c4fb7918c64eff3d8e
+    - name: Game_Level_Mockup-01_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 97
+        y: 48
+        width: 10
+        height: 41
+      spriteId: bf0ca8645e5d77e4c8f579a0a3351f37
+    - name: Game_Level_Mockup-01_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 97
+        y: 48
+        width: 10
+        height: 48
+      spriteId: 2c325cf3eaf4f9d47ac36cc8641f21c6
+    - name: Game_Level_Mockup-01_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 97
+        y: 48
+        width: 10
+        height: 55
+      spriteId: a86a2f7080f008e42b396a899c023fdb
+    - name: Game_Level_Mockup-01_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 97
+        y: 48
+        width: 10
+        height: 62
+      spriteId: 1f36a6f963f8c2e45b43d53a699ee708
+    - name: Game_Level_Mockup-01_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 97
+        y: 48
+        width: 10
+        height: 69
+      spriteId: 39f2a9ad51c556f4d9f7275090c8067c
+    - name: Game_Level_Mockup-01_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 97
+        y: 48
+        width: 10
+        height: 76
+      spriteId: 5f1768098a5c4da41871c4d631206ee3
+    - name: Game_Level_Mockup-01_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 97
+        y: 48
+        width: 10
+        height: 83
+      spriteId: 3dbd1bc2987601d4ca1350d393494d2e
+    - name: Game_Level_Mockup-01_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 97
+        y: 48
+        width: 10
+        height: 90
+      spriteId: a9553c5193305c2439bad05e6638463f
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  secondarySpriteTextures: []
+  spritePackingTag: 

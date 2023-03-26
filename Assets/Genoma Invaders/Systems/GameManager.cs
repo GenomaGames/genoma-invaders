@@ -226,10 +226,6 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         }
     }
 
-    private void EndGame()
-    {
-    }
-
     private void FinishLevel()
     {
         Debug.Log($"Level {SceneManager.GetActiveScene().name} Finished");
@@ -251,14 +247,14 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     private void Lose()
     {
         Debug.Log("LOSE");
-        EndGame();
+
         SceneManager.LoadScene("Game Over");
     }
 
     private void Win()
     {
         Debug.Log("WIN");
-        EndGame();
+
         SceneManager.LoadScene("You Win");
     }
 

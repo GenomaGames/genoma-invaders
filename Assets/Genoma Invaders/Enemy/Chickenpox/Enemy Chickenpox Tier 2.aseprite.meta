@@ -1,7 +1,786 @@
 fileFormatVersion: 2
-guid: 1a99378a81b9ec44199929a2f63b4859
-DefaultImporter:
-  externalObjects: {}
+guid: 8d70d367b50de6e40a3a754698ab4685
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Die
+    second: {fileID: 7400000, guid: d8f9408213168fa4f98c097d51682cfd, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Hurt
+    second: {fileID: 7400000, guid: 4b83492f8c24d1e4a9cd96aeecaccbb2, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Idle
+    second: {fileID: 7400000, guid: fa8fe59b55e1ce348bf2d5ff953810f8, type: 2}
+  serializedVersion: 2
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMasterTextureLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 0
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 16
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 0
+    customPivotPosition: {x: 0.5, y: 0.5}
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 0
+    customPivotPosition: {x: 0.5, y: 0.5}
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  multiSpriteImportData:
+  - name: Enemy Chickenpox Tier 2_Frame_0
+    originalName: 
+    pivot: {x: 0.46938774, y: 0.4871795}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 268
+      width: 49
+      height: 39
+    spriteID: 4d1b2ef8614fa3f4baa5aab628e9c1a7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 268}
+  - name: Enemy Chickenpox Tier 2_Frame_5
+    originalName: 
+    pivot: {x: 0.46938774, y: 0.4871795}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 315
+      width: 49
+      height: 39
+    spriteID: c8b82ccab971d8e4da63cb8e26c9e1c4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 315}
+  - name: Enemy Chickenpox Tier 2_Frame_9
+    originalName: 
+    pivot: {x: 0.46938774, y: 0.4871795}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 362
+      width: 49
+      height: 39
+    spriteID: 73ef68f3e1a593241a2df9b7eea60abb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 362}
+  - name: Enemy Chickenpox Tier 2_Frame_10
+    originalName: 
+    pivot: {x: 0.46938774, y: 0.4871795}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 409
+      width: 49
+      height: 39
+    spriteID: 01bda2b4cb395f74ca6808ad6cdb84f4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 409}
+  - name: Enemy Chickenpox Tier 2_Frame_11
+    originalName: 
+    pivot: {x: 0.46938774, y: 0.4871795}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 456
+      width: 49
+      height: 39
+    spriteID: b0149f6872895d44fbf247cf36dedfff
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 456}
+  - name: Enemy Chickenpox Tier 2_Frame_12
+    originalName: 
+    pivot: {x: 0.46938774, y: 0.4871795}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 88
+      y: 4
+      width: 49
+      height: 39
+    spriteID: acbde7bf5038d7c449566ace00d4b119
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 88, y: 4}
+  - name: Enemy Chickenpox Tier 2_Frame_13
+    originalName: 
+    pivot: {x: 0.46938774, y: 0.4871795}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 88
+      y: 51
+      width: 49
+      height: 39
+    spriteID: c61e6cefd2af0a4419dc1a836e530b39
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 88, y: 51}
+  - name: Enemy Chickenpox Tier 2_Frame_14
+    originalName: 
+    pivot: {x: 0.46938774, y: 0.4871795}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 88
+      y: 98
+      width: 49
+      height: 39
+    spriteID: 3517d00f5755697429f59d9eb9178ff5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 88, y: 98}
+  - name: Enemy Chickenpox Tier 2_Frame_15
+    originalName: 
+    pivot: {x: 0.46938774, y: 0.4871795}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 88
+      y: 145
+      width: 49
+      height: 39
+    spriteID: 7de7e3a02d3d22d4884863041c953813
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 88, y: 145}
+  - name: Enemy Chickenpox Tier 2_Frame_17
+    originalName: 
+    pivot: {x: 0.46938774, y: 0.4871795}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 88
+      y: 192
+      width: 49
+      height: 39
+    spriteID: 2c598adf03e021c499d2580c1d1f3631
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 88, y: 192}
+  - name: Enemy Chickenpox Tier 2_Frame_18
+    originalName: 
+    pivot: {x: 0.46938774, y: 0.4871795}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 88
+      y: 239
+      width: 49
+      height: 39
+    spriteID: e2e54e82010da3241b95b76a0e6d3690
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 88, y: 239}
+  - name: Enemy Chickenpox Tier 2_Frame_19
+    originalName: 
+    pivot: {x: 0.5272727, y: 0.54545456}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 216
+      width: 55
+      height: 44
+    spriteID: 3935f6dcf6daa8c4ab4c46f15d040a9c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 216}
+  - name: Enemy Chickenpox Tier 2_Frame_1
+    originalName: 
+    pivot: {x: 0.46938774, y: 0.4871795}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 88
+      y: 286
+      width: 49
+      height: 39
+    spriteID: 22c85292c305857439be55b6a44ccf57
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 88, y: 286}
+  - name: Enemy Chickenpox Tier 2_Frame_2
+    originalName: 
+    pivot: {x: 0.46938774, y: 0.4871795}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 88
+      y: 333
+      width: 49
+      height: 39
+    spriteID: a4f3d27045d699948b99e367f294901e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 88, y: 333}
+  - name: Enemy Chickenpox Tier 2_Frame_3
+    originalName: 
+    pivot: {x: 0.46938774, y: 0.4871795}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 88
+      y: 380
+      width: 49
+      height: 39
+    spriteID: 74ad52df2243d414498df24630a1aa78
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 88, y: 380}
+  - name: Enemy Chickenpox Tier 2_Frame_4
+    originalName: 
+    pivot: {x: 0.46938774, y: 0.4871795}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 88
+      y: 427
+      width: 49
+      height: 39
+    spriteID: 09e2044fd31ee8f4e874cd6dab68d8e8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 88, y: 427}
+  - name: Enemy Chickenpox Tier 2_Frame_6
+    originalName: 
+    pivot: {x: 0.46938774, y: 0.4871795}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 4
+      width: 49
+      height: 39
+    spriteID: 3ad6d7e5ee1b51049bdd73c445ef2d20
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 145, y: 4}
+  - name: Enemy Chickenpox Tier 2_Frame_7
+    originalName: 
+    pivot: {x: 0.46938774, y: 0.4871795}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 51
+      width: 49
+      height: 39
+    spriteID: fc411c5023dd8c24f99d471d7e9d79a2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 145, y: 51}
+  - name: Enemy Chickenpox Tier 2_Frame_8
+    originalName: 
+    pivot: {x: 0.46938774, y: 0.4871795}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 98
+      width: 49
+      height: 39
+    spriteID: 9f77de82fdee6ed45a1467dad1614cc3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 145, y: 98}
+  - name: Enemy Chickenpox Tier 2_Frame_16
+    originalName: 
+    pivot: {x: 0.46938774, y: 0.4871795}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 145
+      width: 49
+      height: 39
+    spriteID: f9e46f9892ff4cd4ea404f064fa2a377
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 145, y: 145}
+  - name: Enemy Chickenpox Tier 2_Frame_20
+    originalName: 
+    pivot: {x: 0.5072464, y: 0.49122807}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 151
+      width: 69
+      height: 57
+    spriteID: c4d1878dd20040d4d88fef84d8991bb2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 151}
+  - name: Enemy Chickenpox Tier 2_Frame_21
+    originalName: 
+    pivot: {x: 0.46052632, y: 0.47692308}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 76
+      height: 65
+    spriteID: d1cc19b7c77644a4199642369fdac421
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Enemy Chickenpox Tier 2_Frame_22
+    originalName: 
+    pivot: {x: 0.3880597, y: 0.4848485}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 77
+      width: 67
+      height: 66
+    spriteID: a047e9f1db3f1f4458d2e741b1830fff
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 77}
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -2111563806
+    name: Enemy Chickenpox Tier 2
+    layerFlags: 0
+    layerType: 0
+    cells:
+    - name: Enemy Chickenpox Tier 2_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 41
+        y: 45
+        width: 49
+        height: 39
+      spriteId: 4d1b2ef8614fa3f4baa5aab628e9c1a7
+    - name: Enemy Chickenpox Tier 2_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 41
+        y: 45
+        width: 49
+        height: 39
+      spriteId: c8b82ccab971d8e4da63cb8e26c9e1c4
+    - name: Enemy Chickenpox Tier 2_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 41
+        y: 45
+        width: 49
+        height: 39
+      spriteId: 73ef68f3e1a593241a2df9b7eea60abb
+    - name: Enemy Chickenpox Tier 2_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 41
+        y: 45
+        width: 49
+        height: 39
+      spriteId: 01bda2b4cb395f74ca6808ad6cdb84f4
+    - name: Enemy Chickenpox Tier 2_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 41
+        y: 45
+        width: 49
+        height: 39
+      spriteId: b0149f6872895d44fbf247cf36dedfff
+    - name: Enemy Chickenpox Tier 2_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 41
+        y: 45
+        width: 49
+        height: 39
+      spriteId: acbde7bf5038d7c449566ace00d4b119
+    - name: Enemy Chickenpox Tier 2_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 41
+        y: 45
+        width: 49
+        height: 39
+      spriteId: c61e6cefd2af0a4419dc1a836e530b39
+    - name: Enemy Chickenpox Tier 2_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 41
+        y: 45
+        width: 49
+        height: 39
+      spriteId: 3517d00f5755697429f59d9eb9178ff5
+    - name: Enemy Chickenpox Tier 2_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 41
+        y: 45
+        width: 49
+        height: 39
+      spriteId: 7de7e3a02d3d22d4884863041c953813
+    - name: Enemy Chickenpox Tier 2_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 41
+        y: 45
+        width: 49
+        height: 39
+      spriteId: 2c598adf03e021c499d2580c1d1f3631
+    - name: Enemy Chickenpox Tier 2_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 41
+        y: 45
+        width: 49
+        height: 39
+      spriteId: e2e54e82010da3241b95b76a0e6d3690
+    - name: Enemy Chickenpox Tier 2_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 35
+        y: 40
+        width: 55
+        height: 44
+      spriteId: 3935f6dcf6daa8c4ab4c46f15d040a9c
+    - name: Enemy Chickenpox Tier 2_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 41
+        y: 45
+        width: 49
+        height: 39
+      spriteId: 22c85292c305857439be55b6a44ccf57
+    - name: Enemy Chickenpox Tier 2_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 41
+        y: 45
+        width: 49
+        height: 39
+      spriteId: a4f3d27045d699948b99e367f294901e
+    - name: Enemy Chickenpox Tier 2_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 41
+        y: 45
+        width: 49
+        height: 39
+      spriteId: 74ad52df2243d414498df24630a1aa78
+    - name: Enemy Chickenpox Tier 2_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 41
+        y: 45
+        width: 49
+        height: 39
+      spriteId: 09e2044fd31ee8f4e874cd6dab68d8e8
+    - name: Enemy Chickenpox Tier 2_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 41
+        y: 45
+        width: 49
+        height: 39
+      spriteId: 3ad6d7e5ee1b51049bdd73c445ef2d20
+    - name: Enemy Chickenpox Tier 2_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 41
+        y: 45
+        width: 49
+        height: 39
+      spriteId: fc411c5023dd8c24f99d471d7e9d79a2
+    - name: Enemy Chickenpox Tier 2_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 41
+        y: 45
+        width: 49
+        height: 39
+      spriteId: 9f77de82fdee6ed45a1467dad1614cc3
+    - name: Enemy Chickenpox Tier 2_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 41
+        y: 45
+        width: 49
+        height: 39
+      spriteId: f9e46f9892ff4cd4ea404f064fa2a377
+    - name: Enemy Chickenpox Tier 2_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 29
+        y: 36
+        width: 69
+        height: 57
+      spriteId: c4d1878dd20040d4d88fef84d8991bb2
+    - name: Enemy Chickenpox Tier 2_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 29
+        y: 33
+        width: 76
+        height: 65
+      spriteId: d1cc19b7c77644a4199642369fdac421
+    - name: Enemy Chickenpox Tier 2_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 38
+        y: 32
+        width: 67
+        height: 66
+      spriteId: a047e9f1db3f1f4458d2e741b1830fff
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  secondarySpriteTextures: []
+  spritePackingTag: 
