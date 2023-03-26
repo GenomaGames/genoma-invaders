@@ -86,3 +86,9 @@ InitTestScene*.unity
 
 # Logs
 /Editor.log
+
+# Behavior Designer
+/Assets/Behavior Designer
+/Assets/Gizmos
+/Assets/Gizmos.meta
+/Assets/Behavior Designer.meta
