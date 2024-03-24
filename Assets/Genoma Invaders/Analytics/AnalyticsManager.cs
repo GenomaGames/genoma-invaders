@@ -42,7 +42,7 @@ public class AnalyticsManager : SingletonMonoBehaviour<AnalyticsManager>
         if (Instance != null)
         {
             Debug.Log("Player Killed");
-            AnalyticsService.Instance.CustomData("playerKilled", new Dictionary<string, object>());
+            AnalyticsService.Instance.RecordEvent("playerKilled");
         }
     }
 
@@ -60,12 +60,9 @@ public class AnalyticsManager : SingletonMonoBehaviour<AnalyticsManager>
 
             await UnityServices.InitializeAsync(initOptions);
 
-            List<string> contentIdentifiers = await AnalyticsService.Instance.CheckForRequiredConsents();
-
-            foreach (string contentIdentifier in contentIdentifiers)
-            {
-                Debug.Log($"Consent Identifier: {contentIdentifier}");
-            }
+            // FIXME: We need to ask player for consent first
+            // https://docs.unity.com/ugs/en-us/manual/analytics/manual/sdk5-migration-guide
+            AnalyticsService.Instance.StartDataCollection();
 
             Debug.Log($"Analytics user ID: {AnalyticsService.Instance.GetAnalyticsUserID()}");
         }
