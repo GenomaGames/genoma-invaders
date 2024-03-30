@@ -62,7 +62,7 @@ public class AnalyticsManager : SingletonMonoBehaviour<AnalyticsManager>
 
             // FIXME: We need to ask player for consent first
             // https://docs.unity.com/ugs/en-us/manual/analytics/manual/sdk5-migration-guide
-            AnalyticsService.Instance.StartDataCollection();
+            // AnalyticsService.Instance.StartDataCollection();
 
             Debug.Log($"Analytics user ID: {AnalyticsService.Instance.GetAnalyticsUserID()}");
         }
