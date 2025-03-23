@@ -592,6 +592,7 @@ ScriptedImporter:
     cells:
     - name: Enemy Chickenpox_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 55
         y: 55
@@ -600,6 +601,7 @@ ScriptedImporter:
       spriteId: 93e51e469ba66654cb1ec5d9a8c67171
     - name: Enemy Chickenpox_Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 55
         y: 55
@@ -608,6 +610,7 @@ ScriptedImporter:
       spriteId: 3f03d7a9ab833054499a4297773d5403
     - name: Enemy Chickenpox_Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 56
         y: 56
@@ -616,6 +619,7 @@ ScriptedImporter:
       spriteId: 238169a60648542458573ebb9414d5cd
     - name: Enemy Chickenpox_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 55
         y: 55
@@ -624,6 +628,7 @@ ScriptedImporter:
       spriteId: 7155d7eac7c84d74385a8633b369e5c9
     - name: Enemy Chickenpox_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 55
         y: 55
@@ -632,6 +637,7 @@ ScriptedImporter:
       spriteId: b214032b3cf4695409dd8f765cfd7be2
     - name: Enemy Chickenpox_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 55
         y: 55
@@ -640,6 +646,7 @@ ScriptedImporter:
       spriteId: 25a363a719e0f074c872e225e9e7bc13
     - name: Enemy Chickenpox_Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 55
         y: 55
@@ -648,6 +655,7 @@ ScriptedImporter:
       spriteId: a59ce5fa64446ca419ff55b734d7b3f8
     - name: Enemy Chickenpox_Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 55
         y: 55
@@ -656,6 +664,7 @@ ScriptedImporter:
       spriteId: b5f1772352c99bb48923017614b9538c
     - name: Enemy Chickenpox_Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 55
         y: 55
@@ -664,6 +673,7 @@ ScriptedImporter:
       spriteId: 47a8ec6f2d0d98d45b3522ed357b2db7
     - name: Enemy Chickenpox_Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 55
         y: 55
@@ -672,6 +682,7 @@ ScriptedImporter:
       spriteId: 82afb728ddc550947afd79cd19bbe8b6
     - name: Enemy Chickenpox_Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 56
         y: 56
@@ -680,6 +691,7 @@ ScriptedImporter:
       spriteId: d4eec22001a40e347bed5365204ddcde
     - name: Enemy Chickenpox_Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 56
         y: 56
@@ -688,6 +700,7 @@ ScriptedImporter:
       spriteId: 4440441e92067614eba622a9e01ffeb2
     - name: Enemy Chickenpox_Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 56
         y: 56
@@ -696,6 +709,7 @@ ScriptedImporter:
       spriteId: cfa8ddbc5eb8c9549a6dec6cf2256890
     - name: Enemy Chickenpox_Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 56
         y: 56
@@ -704,6 +718,7 @@ ScriptedImporter:
       spriteId: 6c4f5b8a6935aa543b23dde9570f57d0
     - name: Enemy Chickenpox_Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 56
         y: 56
@@ -712,6 +727,7 @@ ScriptedImporter:
       spriteId: 75a6b27fec17d9b41ac5e74ab3019ed1
     - name: Enemy Chickenpox_Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 56
         y: 56
@@ -720,6 +736,7 @@ ScriptedImporter:
       spriteId: 22010246f53eaa442a64f35821694ade
     - name: Enemy Chickenpox_Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 55
         y: 55
@@ -728,6 +745,7 @@ ScriptedImporter:
       spriteId: ce871c2e5fb43f747a9ef7c67f00532b
     - name: Enemy Chickenpox_Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 56
         y: 56
@@ -736,6 +754,7 @@ ScriptedImporter:
       spriteId: eaab5b7a2ef95954d861dbdb2eabf9b1
     - name: Enemy Chickenpox_Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 56
         y: 56
@@ -744,6 +763,7 @@ ScriptedImporter:
       spriteId: a1a53b48c5c7b5d4382049cdf717d7c5
     - name: Enemy Chickenpox_Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 55
         y: 55
@@ -752,6 +772,7 @@ ScriptedImporter:
       spriteId: d663391790f0ae04d829c3256da26338
     - name: Enemy Chickenpox_Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 48
         y: 48
@@ -760,6 +781,7 @@ ScriptedImporter:
       spriteId: 6a61dab0554a6ba468de537bfb59752c
     - name: Enemy Chickenpox_Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 42
         y: 44
@@ -768,6 +790,7 @@ ScriptedImporter:
       spriteId: 17c3f3508cd9cb146883b547593f47ec
     - name: Enemy Chickenpox_Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 42
         y: 41

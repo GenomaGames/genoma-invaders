@@ -372,6 +372,7 @@ ScriptedImporter:
     cells:
     - name: Game_Level_Mockup-01_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 97
         y: 48
@@ -380,6 +381,7 @@ ScriptedImporter:
       spriteId: df4a606e28046a04985c78420aab3e6b
     - name: Game_Level_Mockup-01_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 97
         y: 48
@@ -388,6 +390,7 @@ ScriptedImporter:
       spriteId: 7c0d1a00b15d02b479605f65dfd20823
     - name: Game_Level_Mockup-01_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 97
         y: 48
@@ -396,6 +399,7 @@ ScriptedImporter:
       spriteId: 8218bff22eb6b144c9b147ff4ba29703
     - name: Game_Level_Mockup-01_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 97
         y: 48
@@ -404,6 +408,7 @@ ScriptedImporter:
       spriteId: 88589dad6f9997c4fb7918c64eff3d8e
     - name: Game_Level_Mockup-01_Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 97
         y: 48
@@ -412,6 +417,7 @@ ScriptedImporter:
       spriteId: bf0ca8645e5d77e4c8f579a0a3351f37
     - name: Game_Level_Mockup-01_Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 97
         y: 48
@@ -420,6 +426,7 @@ ScriptedImporter:
       spriteId: 2c325cf3eaf4f9d47ac36cc8641f21c6
     - name: Game_Level_Mockup-01_Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 97
         y: 48
@@ -428,6 +435,7 @@ ScriptedImporter:
       spriteId: a86a2f7080f008e42b396a899c023fdb
     - name: Game_Level_Mockup-01_Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 97
         y: 48
@@ -436,6 +444,7 @@ ScriptedImporter:
       spriteId: 1f36a6f963f8c2e45b43d53a699ee708
     - name: Game_Level_Mockup-01_Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 97
         y: 48
@@ -444,6 +453,7 @@ ScriptedImporter:
       spriteId: 39f2a9ad51c556f4d9f7275090c8067c
     - name: Game_Level_Mockup-01_Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 97
         y: 48
@@ -452,6 +462,7 @@ ScriptedImporter:
       spriteId: 5f1768098a5c4da41871c4d631206ee3
     - name: Game_Level_Mockup-01_Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 97
         y: 48
@@ -460,6 +471,7 @@ ScriptedImporter:
       spriteId: 3dbd1bc2987601d4ca1350d393494d2e
     - name: Game_Level_Mockup-01_Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 97
         y: 48

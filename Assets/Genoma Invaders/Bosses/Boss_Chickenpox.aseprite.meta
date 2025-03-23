@@ -512,6 +512,7 @@ ScriptedImporter:
     cells:
     - name: Boss_Chickenpox_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 17
@@ -520,6 +521,7 @@ ScriptedImporter:
       spriteId: 1482fa71fc2478c439cab1a8ccd4ab8b
     - name: Boss_Chickenpox_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 17
@@ -528,6 +530,7 @@ ScriptedImporter:
       spriteId: bfebf073cf6e11944a96de967d994340
     - name: Boss_Chickenpox_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 17
@@ -536,6 +539,7 @@ ScriptedImporter:
       spriteId: 2944226b6280c5244af91cd143421e7c
     - name: Boss_Chickenpox_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 17
@@ -544,6 +548,7 @@ ScriptedImporter:
       spriteId: 44bb9d96ba5f7234ea465b68146b38fb
     - name: Boss_Chickenpox_Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 17
@@ -552,6 +557,7 @@ ScriptedImporter:
       spriteId: 224e65ddf9cfc94468e64825e87585cd
     - name: Boss_Chickenpox_Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 17
@@ -560,6 +566,7 @@ ScriptedImporter:
       spriteId: 6d42a2c0c356c1d4085b42f6e90c6bd4
     - name: Boss_Chickenpox_Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 17
@@ -568,6 +575,7 @@ ScriptedImporter:
       spriteId: 594efbd642ef54748acd4f2f755eaec1
     - name: Boss_Chickenpox_Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 17
@@ -576,6 +584,7 @@ ScriptedImporter:
       spriteId: bbc9ef4e4057f494594a137005ac1284
     - name: Boss_Chickenpox_Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 17
@@ -584,6 +593,7 @@ ScriptedImporter:
       spriteId: 9016092488567b54f850c91e3c725ef0
     - name: Boss_Chickenpox_Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 17
@@ -592,6 +602,7 @@ ScriptedImporter:
       spriteId: 8ab35eafa2ebe1643834b8b6ee4de993
     - name: Boss_Chickenpox_Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 17
@@ -600,6 +611,7 @@ ScriptedImporter:
       spriteId: 9604e7982a16c504bbc37307c14b2c74
     - name: Boss_Chickenpox_Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 17
@@ -608,6 +620,7 @@ ScriptedImporter:
       spriteId: e0d7ed68094182946b55c0f0d4b58fb5
     - name: Boss_Chickenpox_Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 17
@@ -616,6 +629,7 @@ ScriptedImporter:
       spriteId: 852d49f3150d1a64abb60efd99e68c10
     - name: Boss_Chickenpox_Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 17
@@ -624,6 +638,7 @@ ScriptedImporter:
       spriteId: bd99997f4192c334d8520863002b3ca8
     - name: Boss_Chickenpox_Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 17
@@ -632,6 +647,7 @@ ScriptedImporter:
       spriteId: 43ae45ea21e607547b95bad3126fc585
     - name: Boss_Chickenpox_Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 17
         y: 13
@@ -640,6 +656,7 @@ ScriptedImporter:
       spriteId: 151e888a1439b5e469d1c480a5b78ef9
     - name: Boss_Chickenpox_Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 12
         y: 9
@@ -648,6 +665,7 @@ ScriptedImporter:
       spriteId: 3b4cbf3b4c4e1474ebe2a17f21d4d0e8
     - name: Boss_Chickenpox_Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 9
@@ -656,6 +674,7 @@ ScriptedImporter:
       spriteId: 7d7ca9bd118bd544998e7060aaf500e6
     - name: Boss_Chickenpox_Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 4
         y: 4

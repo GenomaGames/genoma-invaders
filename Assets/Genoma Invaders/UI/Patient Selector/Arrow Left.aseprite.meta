@@ -172,6 +172,7 @@ ScriptedImporter:
     cells:
     - name: Arrow Left_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -180,6 +181,7 @@ ScriptedImporter:
       spriteId: 84338c8b7e02283408116b58ae47dc4c
     - name: Arrow Left_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0

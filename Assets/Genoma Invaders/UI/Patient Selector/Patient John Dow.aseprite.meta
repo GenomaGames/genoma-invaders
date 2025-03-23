@@ -152,6 +152,7 @@ ScriptedImporter:
     cells:
     - name: Patient John Dow
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 42
         y: 32

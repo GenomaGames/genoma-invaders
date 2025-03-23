@@ -312,6 +312,7 @@ ScriptedImporter:
     cells:
     - name: Particle_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -320,6 +321,7 @@ ScriptedImporter:
       spriteId: aee8509ee87afc040b445d35317ebadf
     - name: Particle_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -328,6 +330,7 @@ ScriptedImporter:
       spriteId: df76c43c7954f2247b355e33934bdb3b
     - name: Particle_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -336,6 +339,7 @@ ScriptedImporter:
       spriteId: 82f91bf8c9f27da4e9cf32d66167e2a1
     - name: Particle_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -344,6 +348,7 @@ ScriptedImporter:
       spriteId: 511cef625dbd1a04790b28f655b1167d
     - name: Particle_Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -352,6 +357,7 @@ ScriptedImporter:
       spriteId: b3a7415b0b97f9c45b3062f832a7585f
     - name: Particle_Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -360,6 +366,7 @@ ScriptedImporter:
       spriteId: 85a0300a589821c489cc418d66451ef9
     - name: Particle_Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -368,6 +375,7 @@ ScriptedImporter:
       spriteId: 17cdf21c25c3d1c4f8624cd476f67321
     - name: Particle_Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -376,6 +384,7 @@ ScriptedImporter:
       spriteId: 432f777eecfd4384fbebc087775b59f0
     - name: Particle_Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0

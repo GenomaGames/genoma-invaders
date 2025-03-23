@@ -607,6 +607,7 @@ ScriptedImporter:
     cells:
     - name: Enemy Chickenpox Tier 2_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 45
@@ -615,6 +616,7 @@ ScriptedImporter:
       spriteId: 4d1b2ef8614fa3f4baa5aab628e9c1a7
     - name: Enemy Chickenpox Tier 2_Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 45
@@ -623,6 +625,7 @@ ScriptedImporter:
       spriteId: c8b82ccab971d8e4da63cb8e26c9e1c4
     - name: Enemy Chickenpox Tier 2_Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 45
@@ -631,6 +634,7 @@ ScriptedImporter:
       spriteId: 73ef68f3e1a593241a2df9b7eea60abb
     - name: Enemy Chickenpox Tier 2_Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 45
@@ -639,6 +643,7 @@ ScriptedImporter:
       spriteId: 01bda2b4cb395f74ca6808ad6cdb84f4
     - name: Enemy Chickenpox Tier 2_Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 45
@@ -647,6 +652,7 @@ ScriptedImporter:
       spriteId: b0149f6872895d44fbf247cf36dedfff
     - name: Enemy Chickenpox Tier 2_Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 45
@@ -655,6 +661,7 @@ ScriptedImporter:
       spriteId: acbde7bf5038d7c449566ace00d4b119
     - name: Enemy Chickenpox Tier 2_Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 45
@@ -663,6 +670,7 @@ ScriptedImporter:
       spriteId: c61e6cefd2af0a4419dc1a836e530b39
     - name: Enemy Chickenpox Tier 2_Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 45
@@ -671,6 +679,7 @@ ScriptedImporter:
       spriteId: 3517d00f5755697429f59d9eb9178ff5
     - name: Enemy Chickenpox Tier 2_Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 45
@@ -679,6 +688,7 @@ ScriptedImporter:
       spriteId: 7de7e3a02d3d22d4884863041c953813
     - name: Enemy Chickenpox Tier 2_Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 45
@@ -687,6 +697,7 @@ ScriptedImporter:
       spriteId: 2c598adf03e021c499d2580c1d1f3631
     - name: Enemy Chickenpox Tier 2_Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 45
@@ -695,6 +706,7 @@ ScriptedImporter:
       spriteId: e2e54e82010da3241b95b76a0e6d3690
     - name: Enemy Chickenpox Tier 2_Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 35
         y: 40
@@ -703,6 +715,7 @@ ScriptedImporter:
       spriteId: 3935f6dcf6daa8c4ab4c46f15d040a9c
     - name: Enemy Chickenpox Tier 2_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 45
@@ -711,6 +724,7 @@ ScriptedImporter:
       spriteId: 22c85292c305857439be55b6a44ccf57
     - name: Enemy Chickenpox Tier 2_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 45
@@ -719,6 +733,7 @@ ScriptedImporter:
       spriteId: a4f3d27045d699948b99e367f294901e
     - name: Enemy Chickenpox Tier 2_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 45
@@ -727,6 +742,7 @@ ScriptedImporter:
       spriteId: 74ad52df2243d414498df24630a1aa78
     - name: Enemy Chickenpox Tier 2_Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 45
@@ -735,6 +751,7 @@ ScriptedImporter:
       spriteId: 09e2044fd31ee8f4e874cd6dab68d8e8
     - name: Enemy Chickenpox Tier 2_Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 45
@@ -743,6 +760,7 @@ ScriptedImporter:
       spriteId: 3ad6d7e5ee1b51049bdd73c445ef2d20
     - name: Enemy Chickenpox Tier 2_Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 45
@@ -751,6 +769,7 @@ ScriptedImporter:
       spriteId: fc411c5023dd8c24f99d471d7e9d79a2
     - name: Enemy Chickenpox Tier 2_Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 45
@@ -759,6 +778,7 @@ ScriptedImporter:
       spriteId: 9f77de82fdee6ed45a1467dad1614cc3
     - name: Enemy Chickenpox Tier 2_Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 41
         y: 45
@@ -767,6 +787,7 @@ ScriptedImporter:
       spriteId: f9e46f9892ff4cd4ea404f064fa2a377
     - name: Enemy Chickenpox Tier 2_Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 29
         y: 36
@@ -775,6 +796,7 @@ ScriptedImporter:
       spriteId: c4d1878dd20040d4d88fef84d8991bb2
     - name: Enemy Chickenpox Tier 2_Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 29
         y: 33
@@ -783,6 +805,7 @@ ScriptedImporter:
       spriteId: d1cc19b7c77644a4199642369fdac421
     - name: Enemy Chickenpox Tier 2_Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 38
         y: 32

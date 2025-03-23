@@ -592,6 +592,7 @@ ScriptedImporter:
     cells:
     - name: Enemy Beta_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -600,6 +601,7 @@ ScriptedImporter:
       spriteId: c0ec0fbceb01c7c4b8d5c6171748052a
     - name: Enemy Beta_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -608,6 +610,7 @@ ScriptedImporter:
       spriteId: 5d2445ab178c55c4782729982b1712b5
     - name: Enemy Beta_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -616,6 +619,7 @@ ScriptedImporter:
       spriteId: 6954ab642b76fb14493d5028aa19ef8b
     - name: Enemy Beta_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -624,6 +628,7 @@ ScriptedImporter:
       spriteId: 3d56930cb3118b440b7df9f925f8ca3e
     - name: Enemy Beta_Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -632,6 +637,7 @@ ScriptedImporter:
       spriteId: 84812e7e7c870ab4abb012ca1a7f91bb
     - name: Enemy Beta_Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -640,6 +646,7 @@ ScriptedImporter:
       spriteId: ed2ad037a921f6e43910e4c057bc9f26
     - name: Enemy Beta_Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -648,6 +655,7 @@ ScriptedImporter:
       spriteId: df7e919dc7cdd9f4aa9f0466e9710406
     - name: Enemy Beta_Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -656,6 +664,7 @@ ScriptedImporter:
       spriteId: 5dac02fcb6f74e9498e0bc220670d912
     - name: Enemy Beta_Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -664,6 +673,7 @@ ScriptedImporter:
       spriteId: c9e05d0eea0b219458932f11da3451b7
     - name: Enemy Beta_Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -672,6 +682,7 @@ ScriptedImporter:
       spriteId: 9a161ec945c26b745a3d8a259778c286
     - name: Enemy Beta_Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -680,6 +691,7 @@ ScriptedImporter:
       spriteId: 944b77bf0b9291b41acd809bafc81b33
     - name: Enemy Beta_Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -688,6 +700,7 @@ ScriptedImporter:
       spriteId: cb7c6e66aba05bc4793982ce53b2db7b
     - name: Enemy Beta_Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -696,6 +709,7 @@ ScriptedImporter:
       spriteId: 79489075025538a4383985b97c9b0860
     - name: Enemy Beta_Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -704,6 +718,7 @@ ScriptedImporter:
       spriteId: 1a73c269b75defd49907807e8f7246d8
     - name: Enemy Beta_Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -712,6 +727,7 @@ ScriptedImporter:
       spriteId: a7d41fbeecd322f4e8f0de26598d0a82
     - name: Enemy Beta_Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -720,6 +736,7 @@ ScriptedImporter:
       spriteId: 87f157618bd29a84387d8a981d9000f0
     - name: Enemy Beta_Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -728,6 +745,7 @@ ScriptedImporter:
       spriteId: 7a1936a8684edf242a669eddc966cb1a
     - name: Enemy Beta_Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -736,6 +754,7 @@ ScriptedImporter:
       spriteId: bd4e244872bc03b4891d22c43b9eb9ab
     - name: Enemy Beta_Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -744,6 +763,7 @@ ScriptedImporter:
       spriteId: bf4fc7079468298458d74dd51b2f71ef
     - name: Enemy Beta_Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -752,6 +772,7 @@ ScriptedImporter:
       spriteId: 0e7127f16be7ca34cb7074c735f789c3
     - name: Enemy Beta_Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -760,6 +781,7 @@ ScriptedImporter:
       spriteId: 182c61625255783419f85dc9753fa326
     - name: Enemy Beta_Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -768,6 +790,7 @@ ScriptedImporter:
       spriteId: 65222164aed6fb440beb5f07ee1f4300
     - name: Enemy Beta_Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
