@@ -1,5 +1,4 @@
 using Sirenix.OdinInspector;
-using System.Collections.Generic;
 using Unity.Services.Analytics;
 using Unity.Services.Core;
 using Unity.Services.Core.Environments;
@@ -48,28 +47,33 @@ public class AnalyticsManager : SingletonMonoBehaviour<AnalyticsManager>
 
     private async void Start()
     {
-        try
-        {
-            InitializationOptions initOptions = new();
+        string environmentName = "development";
 
-#if DEVELOPMENT_BUILD || UNITY_EDITOR
-            initOptions.SetEnvironmentName("development");
-#else
-            initOptions.SetEnvironmentName("production");
+#if !DEVELOPMENT_BUILD && !UNITY_EDITOR
+        environment = "production";
 #endif
 
-            await UnityServices.InitializeAsync(initOptions);
+        InitializationOptions initOptions = new();
 
-            // FIXME: We need to ask player for consent first
-            // https://docs.unity.com/ugs/en-us/manual/analytics/manual/sdk5-migration-guide
-            // AnalyticsService.Instance.StartDataCollection();
+        initOptions.SetEnvironmentName(environmentName);
+
+        await UnityServices.InitializeAsync(initOptions);
+
+        // FIXME: We need to ask player for consent first
+        // https://docs.unity.com/ugs/en-us/manual/analytics/manual/sdk5-migration-guide
+        // AnalyticsService.Instance.StartDataCollection();
+
+        if (environmentName == "development")
+        {
+            AnalyticsService.Instance.StartDataCollection();
 
             Debug.Log($"Analytics user ID: {AnalyticsService.Instance.GetAnalyticsUserID()}");
         }
-        catch (ConsentCheckException exception)
+        else
         {
-            throw exception;
+            Debug.LogError("We don't have user consent for data collection");
         }
+
     }
 }
 
