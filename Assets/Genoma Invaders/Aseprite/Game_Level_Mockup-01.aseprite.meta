@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -105,6 +106,7 @@ ScriptedImporter:
     pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 0
@@ -126,6 +128,7 @@ ScriptedImporter:
     pivot: {x: 1.5000002, y: -3.692308}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 94
@@ -146,6 +149,7 @@ ScriptedImporter:
     pivot: {x: 1.5000002, y: -2.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -166,6 +170,7 @@ ScriptedImporter:
     pivot: {x: 1.5000002, y: -1.7777778}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 22
@@ -186,6 +191,7 @@ ScriptedImporter:
     pivot: {x: 1.5000002, y: -1.4117647}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 40
@@ -206,6 +212,7 @@ ScriptedImporter:
     pivot: {x: 1.5000002, y: -1.1707317}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 58
@@ -226,6 +233,7 @@ ScriptedImporter:
     pivot: {x: 1.5000002, y: -1}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 76
@@ -246,6 +254,7 @@ ScriptedImporter:
     pivot: {x: 1.5000002, y: -0.8727273}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 94
@@ -266,6 +275,7 @@ ScriptedImporter:
     pivot: {x: 1.5000002, y: -0.7741935}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 76
@@ -286,6 +296,7 @@ ScriptedImporter:
     pivot: {x: 1.5000002, y: -0.6956522}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 58
@@ -306,6 +317,7 @@ ScriptedImporter:
     pivot: {x: 1.5000002, y: -0.6315789}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 40
@@ -326,6 +338,7 @@ ScriptedImporter:
     pivot: {x: 1.5000002, y: -0.57831323}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 22
@@ -346,6 +359,7 @@ ScriptedImporter:
     pivot: {x: 1.5000002, y: -0.53333336}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -364,13 +378,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1593218017
+    guid: 320543579
     name: Game_Level_Mockup-01
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Game_Level_Mockup-01_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -379,7 +393,7 @@ ScriptedImporter:
         width: 10
         height: 13
       spriteId: df4a606e28046a04985c78420aab3e6b
-    - name: Game_Level_Mockup-01_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -388,7 +402,7 @@ ScriptedImporter:
         width: 10
         height: 20
       spriteId: 7c0d1a00b15d02b479605f65dfd20823
-    - name: Game_Level_Mockup-01_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -397,7 +411,7 @@ ScriptedImporter:
         width: 10
         height: 27
       spriteId: 8218bff22eb6b144c9b147ff4ba29703
-    - name: Game_Level_Mockup-01_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -406,7 +420,7 @@ ScriptedImporter:
         width: 10
         height: 34
       spriteId: 88589dad6f9997c4fb7918c64eff3d8e
-    - name: Game_Level_Mockup-01_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -415,7 +429,7 @@ ScriptedImporter:
         width: 10
         height: 41
       spriteId: bf0ca8645e5d77e4c8f579a0a3351f37
-    - name: Game_Level_Mockup-01_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -424,7 +438,7 @@ ScriptedImporter:
         width: 10
         height: 48
       spriteId: 2c325cf3eaf4f9d47ac36cc8641f21c6
-    - name: Game_Level_Mockup-01_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -433,7 +447,7 @@ ScriptedImporter:
         width: 10
         height: 55
       spriteId: a86a2f7080f008e42b396a899c023fdb
-    - name: Game_Level_Mockup-01_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -442,7 +456,7 @@ ScriptedImporter:
         width: 10
         height: 62
       spriteId: 1f36a6f963f8c2e45b43d53a699ee708
-    - name: Game_Level_Mockup-01_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -451,7 +465,7 @@ ScriptedImporter:
         width: 10
         height: 69
       spriteId: 39f2a9ad51c556f4d9f7275090c8067c
-    - name: Game_Level_Mockup-01_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -460,7 +474,7 @@ ScriptedImporter:
         width: 10
         height: 76
       spriteId: 5f1768098a5c4da41871c4d631206ee3
-    - name: Game_Level_Mockup-01_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -469,7 +483,7 @@ ScriptedImporter:
         width: 10
         height: 83
       spriteId: 3dbd1bc2987601d4ca1350d393494d2e
-    - name: Game_Level_Mockup-01_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -485,3 +499,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 224, y: 256}
+  previousTextureSize: {x: 128, y: 128}

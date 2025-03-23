@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -105,6 +106,7 @@ ScriptedImporter:
     pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 0
@@ -126,6 +128,7 @@ ScriptedImporter:
     pivot: {x: 0.486631, y: 0.521978}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 227
@@ -146,6 +149,7 @@ ScriptedImporter:
     pivot: {x: 0.486631, y: 0.521978}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 227
@@ -166,6 +170,7 @@ ScriptedImporter:
     pivot: {x: 0.486631, y: 0.521978}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 227
@@ -186,6 +191,7 @@ ScriptedImporter:
     pivot: {x: 0.486631, y: 0.521978}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 227
@@ -206,6 +212,7 @@ ScriptedImporter:
     pivot: {x: 0.486631, y: 0.521978}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 227
@@ -226,6 +233,7 @@ ScriptedImporter:
     pivot: {x: 0.486631, y: 0.521978}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 422
@@ -246,6 +254,7 @@ ScriptedImporter:
     pivot: {x: 0.486631, y: 0.521978}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 422
@@ -266,6 +275,7 @@ ScriptedImporter:
     pivot: {x: 0.486631, y: 0.521978}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 422
@@ -286,6 +296,7 @@ ScriptedImporter:
     pivot: {x: 0.486631, y: 0.521978}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 422
@@ -306,6 +317,7 @@ ScriptedImporter:
     pivot: {x: 0.486631, y: 0.521978}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 422
@@ -326,6 +338,7 @@ ScriptedImporter:
     pivot: {x: 0.486631, y: 0.521978}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 617
@@ -346,6 +359,7 @@ ScriptedImporter:
     pivot: {x: 0.486631, y: 0.521978}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 617
@@ -366,6 +380,7 @@ ScriptedImporter:
     pivot: {x: 0.486631, y: 0.521978}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 617
@@ -386,6 +401,7 @@ ScriptedImporter:
     pivot: {x: 0.486631, y: 0.521978}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 617
@@ -406,6 +422,7 @@ ScriptedImporter:
     pivot: {x: 0.486631, y: 0.521978}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 617
@@ -426,6 +443,7 @@ ScriptedImporter:
     pivot: {x: 0.4871795, y: 0.5183246}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -446,6 +464,7 @@ ScriptedImporter:
     pivot: {x: 0.4854369, y: 0.51243776}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -466,6 +485,7 @@ ScriptedImporter:
     pivot: {x: 0.49047622, y: 0.49758452}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -486,6 +506,7 @@ ScriptedImporter:
     pivot: {x: 0.5023256, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -504,13 +525,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1002129346
+    guid: -981964470
     name: Boss_Chickenpox
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Boss_Chickenpox_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -519,7 +540,7 @@ ScriptedImporter:
         width: 187
         height: 182
       spriteId: 1482fa71fc2478c439cab1a8ccd4ab8b
-    - name: Boss_Chickenpox_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -528,7 +549,7 @@ ScriptedImporter:
         width: 187
         height: 182
       spriteId: bfebf073cf6e11944a96de967d994340
-    - name: Boss_Chickenpox_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -537,7 +558,7 @@ ScriptedImporter:
         width: 187
         height: 182
       spriteId: 2944226b6280c5244af91cd143421e7c
-    - name: Boss_Chickenpox_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -546,7 +567,7 @@ ScriptedImporter:
         width: 187
         height: 182
       spriteId: 44bb9d96ba5f7234ea465b68146b38fb
-    - name: Boss_Chickenpox_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -555,7 +576,7 @@ ScriptedImporter:
         width: 187
         height: 182
       spriteId: 224e65ddf9cfc94468e64825e87585cd
-    - name: Boss_Chickenpox_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -564,7 +585,7 @@ ScriptedImporter:
         width: 187
         height: 182
       spriteId: 6d42a2c0c356c1d4085b42f6e90c6bd4
-    - name: Boss_Chickenpox_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -573,7 +594,7 @@ ScriptedImporter:
         width: 187
         height: 182
       spriteId: 594efbd642ef54748acd4f2f755eaec1
-    - name: Boss_Chickenpox_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -582,7 +603,7 @@ ScriptedImporter:
         width: 187
         height: 182
       spriteId: bbc9ef4e4057f494594a137005ac1284
-    - name: Boss_Chickenpox_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -591,7 +612,7 @@ ScriptedImporter:
         width: 187
         height: 182
       spriteId: 9016092488567b54f850c91e3c725ef0
-    - name: Boss_Chickenpox_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -600,7 +621,7 @@ ScriptedImporter:
         width: 187
         height: 182
       spriteId: 8ab35eafa2ebe1643834b8b6ee4de993
-    - name: Boss_Chickenpox_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -609,7 +630,7 @@ ScriptedImporter:
         width: 187
         height: 182
       spriteId: 9604e7982a16c504bbc37307c14b2c74
-    - name: Boss_Chickenpox_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -618,7 +639,7 @@ ScriptedImporter:
         width: 187
         height: 182
       spriteId: e0d7ed68094182946b55c0f0d4b58fb5
-    - name: Boss_Chickenpox_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -627,7 +648,7 @@ ScriptedImporter:
         width: 187
         height: 182
       spriteId: 852d49f3150d1a64abb60efd99e68c10
-    - name: Boss_Chickenpox_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -636,7 +657,7 @@ ScriptedImporter:
         width: 187
         height: 182
       spriteId: bd99997f4192c334d8520863002b3ca8
-    - name: Boss_Chickenpox_Frame_14
+    - name: Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -645,7 +666,7 @@ ScriptedImporter:
         width: 187
         height: 182
       spriteId: 43ae45ea21e607547b95bad3126fc585
-    - name: Boss_Chickenpox_Frame_15
+    - name: Frame_15
       frameIndex: 15
       additiveSortOrder: 0
       cellRect:
@@ -654,7 +675,7 @@ ScriptedImporter:
         width: 195
         height: 191
       spriteId: 151e888a1439b5e469d1c480a5b78ef9
-    - name: Boss_Chickenpox_Frame_16
+    - name: Frame_16
       frameIndex: 16
       additiveSortOrder: 0
       cellRect:
@@ -663,7 +684,7 @@ ScriptedImporter:
         width: 206
         height: 201
       spriteId: 3b4cbf3b4c4e1474ebe2a17f21d4d0e8
-    - name: Boss_Chickenpox_Frame_17
+    - name: Frame_17
       frameIndex: 17
       additiveSortOrder: 0
       cellRect:
@@ -672,7 +693,7 @@ ScriptedImporter:
         width: 210
         height: 207
       spriteId: 7d7ca9bd118bd544998e7060aaf500e6
-    - name: Boss_Chickenpox_Frame_18
+    - name: Frame_18
       frameIndex: 18
       additiveSortOrder: 0
       cellRect:
@@ -688,3 +709,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 224, y: 224}
+  previousTextureSize: {x: 1024, y: 1024}

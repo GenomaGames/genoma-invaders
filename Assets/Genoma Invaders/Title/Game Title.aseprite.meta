@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -105,6 +106,7 @@ ScriptedImporter:
     pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 0
@@ -126,6 +128,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -146,6 +149,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -166,6 +170,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -186,6 +191,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 524
@@ -206,6 +212,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 524
@@ -226,6 +233,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 524
@@ -246,6 +254,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 1044
@@ -266,6 +275,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 1044
@@ -286,6 +296,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 1044
@@ -306,6 +317,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 1564
@@ -326,6 +338,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 1564
@@ -346,6 +359,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 1564
@@ -366,6 +380,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 2084
@@ -386,6 +401,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 2084
@@ -406,6 +422,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 2084
@@ -426,6 +443,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 2604
@@ -446,6 +464,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 2604
@@ -466,6 +485,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 2604
@@ -486,6 +506,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 3124
@@ -506,6 +527,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 3124
@@ -526,6 +548,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 3124
@@ -546,6 +569,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 3124
@@ -566,6 +590,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 3124
@@ -586,6 +611,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 3124
@@ -606,6 +632,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 3124
@@ -626,6 +653,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 3124
@@ -646,6 +674,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 3124
@@ -666,6 +695,7 @@ ScriptedImporter:
     pivot: {x: 0.5151515, y: -0.8909091}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -684,13 +714,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1050501670
+    guid: -2052879810
     name: Game Title
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Game Title_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -699,7 +729,7 @@ ScriptedImporter:
         width: 512
         height: 1312
       spriteId: b623e70849681a3459cf02e320edb130
-    - name: Game Title_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -708,7 +738,7 @@ ScriptedImporter:
         width: 512
         height: 1312
       spriteId: 2e2206a6d253c4a47a9cc40756f2f6c6
-    - name: Game Title_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -717,7 +747,7 @@ ScriptedImporter:
         width: 512
         height: 1312
       spriteId: 75a86abf59145644dbb524ef4c6179b9
-    - name: Game Title_Frame_14
+    - name: Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -726,7 +756,7 @@ ScriptedImporter:
         width: 512
         height: 1312
       spriteId: c830afa9ef0ec7a4080621442414e5f0
-    - name: Game Title_Frame_15
+    - name: Frame_15
       frameIndex: 15
       additiveSortOrder: 0
       cellRect:
@@ -735,7 +765,7 @@ ScriptedImporter:
         width: 512
         height: 1312
       spriteId: 47409af825ecca144a378eea2a7dad52
-    - name: Game Title_Frame_16
+    - name: Frame_16
       frameIndex: 16
       additiveSortOrder: 0
       cellRect:
@@ -744,7 +774,7 @@ ScriptedImporter:
         width: 512
         height: 1312
       spriteId: ae0d19ce86c3be54aa88fc19b691fb40
-    - name: Game Title_Frame_17
+    - name: Frame_17
       frameIndex: 17
       additiveSortOrder: 0
       cellRect:
@@ -753,7 +783,7 @@ ScriptedImporter:
         width: 512
         height: 1312
       spriteId: a80267bad88d50e45b5d6ae801487de1
-    - name: Game Title_Frame_18
+    - name: Frame_18
       frameIndex: 18
       additiveSortOrder: 0
       cellRect:
@@ -762,7 +792,7 @@ ScriptedImporter:
         width: 512
         height: 1312
       spriteId: 36814caef195b384b9f3dd6a8cc1a074
-    - name: Game Title_Frame_19
+    - name: Frame_19
       frameIndex: 19
       additiveSortOrder: 0
       cellRect:
@@ -771,7 +801,7 @@ ScriptedImporter:
         width: 512
         height: 1312
       spriteId: 352f3402e6b8af04ea6688698aeea312
-    - name: Game Title_Frame_20
+    - name: Frame_20
       frameIndex: 20
       additiveSortOrder: 0
       cellRect:
@@ -780,7 +810,7 @@ ScriptedImporter:
         width: 512
         height: 1312
       spriteId: 3bd9ab9f0c339ef4c9863344853a6dff
-    - name: Game Title_Frame_21
+    - name: Frame_21
       frameIndex: 21
       additiveSortOrder: 0
       cellRect:
@@ -789,7 +819,7 @@ ScriptedImporter:
         width: 512
         height: 1312
       spriteId: 2badf08ef91b4364abd40805ea94581a
-    - name: Game Title_Frame_22
+    - name: Frame_22
       frameIndex: 22
       additiveSortOrder: 0
       cellRect:
@@ -798,7 +828,7 @@ ScriptedImporter:
         width: 512
         height: 1312
       spriteId: f8c15f12834183e4b9896feb947474be
-    - name: Game Title_Frame_23
+    - name: Frame_23
       frameIndex: 23
       additiveSortOrder: 0
       cellRect:
@@ -807,7 +837,7 @@ ScriptedImporter:
         width: 512
         height: 1312
       spriteId: 20b68d2321473b34f8eb830d0190680a
-    - name: Game Title_Frame_24
+    - name: Frame_24
       frameIndex: 24
       additiveSortOrder: 0
       cellRect:
@@ -816,7 +846,7 @@ ScriptedImporter:
         width: 512
         height: 1312
       spriteId: dcedfa36da5ad894c8612c758a269b66
-    - name: Game Title_Frame_25
+    - name: Frame_25
       frameIndex: 25
       additiveSortOrder: 0
       cellRect:
@@ -825,7 +855,7 @@ ScriptedImporter:
         width: 512
         height: 1312
       spriteId: 67c6804469447a743abe24768c680560
-    - name: Game Title_Frame_26
+    - name: Frame_26
       frameIndex: 26
       additiveSortOrder: 0
       cellRect:
@@ -834,7 +864,7 @@ ScriptedImporter:
         width: 512
         height: 1312
       spriteId: 315ca7253275fbd4c924b363549e2b87
-    - name: Game Title_Frame_27
+    - name: Frame_27
       frameIndex: 27
       additiveSortOrder: 0
       cellRect:
@@ -843,7 +873,7 @@ ScriptedImporter:
         width: 512
         height: 1312
       spriteId: 6e068a478c0ef334997dfc5c0f71adca
-    - name: Game Title_Frame_28
+    - name: Frame_28
       frameIndex: 28
       additiveSortOrder: 0
       cellRect:
@@ -852,7 +882,7 @@ ScriptedImporter:
         width: 512
         height: 1312
       spriteId: 3cbd444346955d449a83172cb207e596
-    - name: Game Title_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -861,7 +891,7 @@ ScriptedImporter:
         width: 482
         height: 288
       spriteId: 80bb83454184a75428611cf05c21ce56
-    - name: Game Title_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -870,7 +900,7 @@ ScriptedImporter:
         width: 482
         height: 288
       spriteId: 2480cff1bb153e84fa4d14bfb3aa7543
-    - name: Game Title_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -879,7 +909,7 @@ ScriptedImporter:
         width: 482
         height: 288
       spriteId: ec9d4e438c42e16438b57b548f174db7
-    - name: Game Title_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -888,7 +918,7 @@ ScriptedImporter:
         width: 482
         height: 288
       spriteId: 3dc4549fb7de9cb44acef8aedce5113c
-    - name: Game Title_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -897,7 +927,7 @@ ScriptedImporter:
         width: 482
         height: 288
       spriteId: 0ba5c7434390fee40b4cf17900e26f5f
-    - name: Game Title_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -906,7 +936,7 @@ ScriptedImporter:
         width: 482
         height: 288
       spriteId: 388130d3382de8e4caf40260f313ed93
-    - name: Game Title_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -915,7 +945,7 @@ ScriptedImporter:
         width: 482
         height: 288
       spriteId: 81ede6f4af0628347a568170fdf5ec56
-    - name: Game Title_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -924,7 +954,7 @@ ScriptedImporter:
         width: 482
         height: 288
       spriteId: 107742f5b6785394899ae28467c2a9ee
-    - name: Game Title_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -933,7 +963,7 @@ ScriptedImporter:
         width: 482
         height: 288
       spriteId: 0868fa67b123089448f73df5fe895726
-    - name: Game Title_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -949,3 +979,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 512, y: 288}
+  previousTextureSize: {x: 4096, y: 4096}
