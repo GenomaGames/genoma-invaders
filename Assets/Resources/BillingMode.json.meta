@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bfa79e278e5fe1c44b7456bf18c2db99
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 15277
+  packageName: Behavior Designer - Behavior Trees for Everyone
+  packageVersion: 1.7.12
+  assetPath: Assets/Resources/BillingMode.json
+  uploadId: 732694
