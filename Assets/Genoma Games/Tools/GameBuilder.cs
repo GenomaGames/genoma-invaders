@@ -31,7 +31,7 @@ public static class GameBuilder
         string currentVersion = PlayerSettings.bundleVersion;
 
         PlayerSettings.bundleVersion = GetBuildVersion(isDevelopment);
-        
+
         EditorUserBuildSettings.development = isDevelopment;
 
         AssetDatabase.Refresh();
@@ -148,51 +148,26 @@ public static class GameBuilder
     private static BuildReport BuildPlayer(BuildTarget target, string[] scenePaths, string buildsPath)
     {
         BuildReport report;
+        BuildPlayerOptions buildPlayerOptions;
 
         Debug.Log($"Building version {PlayerSettings.bundleVersion} for {target}");
 
         switch (target)
         {
             case BuildTarget.Android:
-                EditorUserBuildSettings.buildAppBundle = !EditorUserBuildSettings.development;
-
-                string fileExtension = EditorUserBuildSettings.buildAppBundle ? "aab" : "apk";
-
-                BuildPlayerOptions androidBuildOptions = new()
-                {
-                    scenes = scenePaths,
-                    target = BuildTarget.Android,
-                    locationPathName = Path.Combine(buildsPath, BuildTarget.Android.ToString(), $"{PlayerSettings.productName} v{PlayerSettings.bundleVersion} ({BuildTarget.Android}).{fileExtension}"),
-                    options = BuildOptions.None,
-                };
-
-                report = BuildPipeline.BuildPlayer(androidBuildOptions);
+                buildPlayerOptions = GetAndroidBuildPlayerOptions(scenePaths, buildsPath);
                 break;
             case BuildTarget.StandaloneWindows64:
-                BuildPlayerOptions windows64BuildOptions = new()
-                {
-                    scenes = scenePaths,
-                    target = BuildTarget.StandaloneWindows64,
-                    locationPathName = Path.Combine(buildsPath, "Windows 64-bit", $"{PlayerSettings.productName} v{PlayerSettings.bundleVersion} (Windows 64-bit)", $"{PlayerSettings.productName}.exe"),
-                    options = BuildOptions.None,
-                };
-
-                report = BuildPipeline.BuildPlayer(windows64BuildOptions);
+                buildPlayerOptions = GetStandaloneWindows64BuildPlayerOptions(scenePaths, buildsPath);
                 break;
             case BuildTarget.WebGL:
-                BuildPlayerOptions webGLBuildOptions = new()
-                {
-                    scenes = scenePaths,
-                    target = BuildTarget.WebGL,
-                    locationPathName = Path.Combine(buildsPath, BuildTarget.WebGL.ToString(), $"{PlayerSettings.productName} v{PlayerSettings.bundleVersion} ({BuildTarget.WebGL})"),
-                    options = BuildOptions.None,
-                };
-
-                report = BuildPipeline.BuildPlayer(webGLBuildOptions);
+                buildPlayerOptions = GetWebGLBuildPlayerOptions(scenePaths, buildsPath);
                 break;
             default:
                 throw new UnityException($"{target} is not supported.");
         }
+
+        report = BuildPipeline.BuildPlayer(buildPlayerOptions);
 
         BuildSummary summary = report.summary;
 
@@ -207,6 +182,49 @@ public static class GameBuilder
         }
 
         return report;
+    }
+
+    private static BuildPlayerOptions GetAndroidBuildPlayerOptions(string[] scenePaths, string buildsPath)
+    {
+        EditorUserBuildSettings.buildAppBundle = !EditorUserBuildSettings.development;
+
+        string fileExtension = EditorUserBuildSettings.buildAppBundle ? "aab" : "apk";
+
+        BuildPlayerOptions buildPlayerOptions = new()
+        {
+            scenes = scenePaths,
+            target = BuildTarget.Android,
+            locationPathName = Path.Combine(buildsPath, BuildTarget.Android.ToString(), $"{PlayerSettings.productName} v{PlayerSettings.bundleVersion} ({BuildTarget.Android}).{fileExtension}"),
+            options = BuildOptions.None,
+        };
+
+        return buildPlayerOptions;
+    }
+
+    private static BuildPlayerOptions GetStandaloneWindows64BuildPlayerOptions(string[] scenePaths, string buildsPath)
+    {
+        BuildPlayerOptions buildPlayerOptions = new()
+        {
+            scenes = scenePaths,
+            target = BuildTarget.StandaloneWindows64,
+            locationPathName = Path.Combine(buildsPath, "Windows 64-bit", $"{PlayerSettings.productName} v{PlayerSettings.bundleVersion} (Windows 64-bit)", $"{PlayerSettings.productName}.exe"),
+            options = BuildOptions.None,
+        };
+
+        return buildPlayerOptions;
+    }
+
+    private static BuildPlayerOptions GetWebGLBuildPlayerOptions(string[] scenePaths, string buildsPath)
+    {
+        BuildPlayerOptions buildPlayerOptions = new()
+        {
+            scenes = scenePaths,
+            target = BuildTarget.WebGL,
+            locationPathName = Path.Combine(buildsPath, BuildTarget.WebGL.ToString(), $"{PlayerSettings.productName} v{PlayerSettings.bundleVersion} ({BuildTarget.WebGL})"),
+            options = BuildOptions.None,
+        };
+
+        return buildPlayerOptions;
     }
 }
 #endif

@@ -25,6 +25,10 @@ public class GitException : InvalidOperationException
 
 public static class Git
 {
+    /// <summary>
+    /// Returns the current version of the game based on the git tag and commit hash.
+    /// </summary>
+    /// <returns>The git version string.</returns>
     public static string Describe()
     {
         string describe = Run(@"describe --tags --long --dirty --broken");
@@ -44,7 +48,7 @@ public static class Git
             out var output,
             out var errors
         );
-        
+
         if (exitCode == 0)
         {
             return output;
