@@ -27,7 +27,6 @@ public class Boss : MonoBehaviour
     private readonly int animatorDieParam = Animator.StringToHash("Die");
     private readonly int animatorHurtParam = Animator.StringToHash("Hurt");
 
-    private bool isDead = false;
     private new Collider2D collider2D;
     private Animator animator;
     private float dieAnimationLength;
@@ -64,7 +63,6 @@ public class Boss : MonoBehaviour
     [ContextMenu("Kill")]
     private void Die()
     {
-        isDead = true;
         collider2D.enabled = false;
 
         animator.SetTrigger(animatorDieParam);
