@@ -50,7 +50,7 @@ public class AnalyticsManager : SingletonMonoBehaviour<AnalyticsManager>
         string environmentName = "development";
 
 #if !DEVELOPMENT_BUILD && !UNITY_EDITOR
-        environment = "production";
+        environmentName = "production";
 #endif
 
         InitializationOptions initOptions = new();
