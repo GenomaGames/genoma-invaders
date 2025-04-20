@@ -5,6 +5,13 @@ public class Damageable : MonoBehaviour
 {
     public event Action<Damageable, int> OnDamaged;
 
+
+    [SerializeField]
+    private int maxHealth = 1;
+    [SerializeField]
+    private int currentHealth = 1;
+
+
     public int CurrentHealth
     {
         get => currentHealth;
@@ -14,10 +21,11 @@ public class Damageable : MonoBehaviour
         }
     }
 
-    [SerializeField]
-    private int maxHealth = 1;
-    [SerializeField]
-    private int currentHealth = 1;
+
+    private void Start()
+    {
+        CurrentHealth = maxHealth;
+    }
 
     public void Damage(int damage)
     {
